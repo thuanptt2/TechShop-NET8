@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "TechShopSolution.Application/1.0.0": {
+        "dependencies": {
+          "TechShopSolution.Domain": "1.0.0"
+        },
+        "runtime": {
+          "TechShopSolution.Application.dll": {}
+        }
+      },
+      "TechShopSolution.Domain/1.0.0": {
+        "runtime": {
+          "TechShopSolution.Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TechShopSolution.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TechShopSolution.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

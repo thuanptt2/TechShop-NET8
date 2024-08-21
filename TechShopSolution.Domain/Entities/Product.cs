@@ -25,7 +25,7 @@ namespace TechShopSolution.Domain.Entities
         public bool BestSeller { get; set; }
         public bool IsActive { get; set; }
         public bool IsDelete { get; set; }
-        public string? MetaTittle { get; set; }
+        public string? MetaTitle { get; set; }
         public string? MetaKeywords { get; set; }
         public string? MetaDescriptions { get; set; }
         public DateTime CreateAt { get; set; }

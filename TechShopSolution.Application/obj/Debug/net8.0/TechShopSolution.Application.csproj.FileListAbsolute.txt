@@ -1,0 +1,31 @@
+D:\Projects\This Project\TechShopSolution.Application\bin\Debug\net8.0\TechShopSolution.Application.deps.json
+D:\Projects\This Project\TechShopSolution.Application\bin\Debug\net8.0\TechShopSolution.Application.dll
+D:\Projects\This Project\TechShopSolution.Application\bin\Debug\net8.0\TechShopSolution.Application.pdb
+D:\Projects\This Project\TechShopSolution.Application\bin\Debug\net8.0\TechShopSolution.Domain.dll
+D:\Projects\This Project\TechShopSolution.Application\bin\Debug\net8.0\TechShopSolution.Domain.pdb
+D:\Projects\This Project\TechShopSolution.Application\obj\Debug\net8.0\TechShopSolution.Application.csproj.AssemblyReference.cache
+D:\Projects\This Project\TechShopSolution.Application\obj\Debug\net8.0\TechShopSolution.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\This Project\TechShopSolution.Application\obj\Debug\net8.0\TechShopSolution.Application.AssemblyInfoInputs.cache
+D:\Projects\This Project\TechShopSolution.Application\obj\Debug\net8.0\TechShopSolution.Application.AssemblyInfo.cs
+D:\Projects\This Project\TechShopSolution.Application\obj\Debug\net8.0\TechShopSolution.Application.csproj.CoreCompileInputs.cache
+D:\Projects\This Project\TechShopSolution.Application\obj\Debug\net8.0\TechShop.53C82ED2.Up2Date
+D:\Projects\This Project\TechShopSolution.Application\obj\Debug\net8.0\TechShopSolution.Application.dll
+D:\Projects\This Project\TechShopSolution.Application\obj\Debug\net8.0\refint\TechShopSolution.Application.dll
+D:\Projects\This Project\TechShopSolution.Application\obj\Debug\net8.0\TechShopSolution.Application.pdb
+D:\Projects\This Project\TechShopSolution.Application\obj\Debug\net8.0\ref\TechShopSolution.Application.dll
+D:\Projects\TechShopSolution\TechShopSolution.Application\bin\Debug\net8.0\TechShopSolution.Application.deps.json
+D:\Projects\TechShopSolution\TechShopSolution.Application\bin\Debug\net8.0\TechShopSolution.Application.dll
+D:\Projects\TechShopSolution\TechShopSolution.Application\bin\Debug\net8.0\TechShopSolution.Application.pdb
+D:\Projects\TechShopSolution\TechShopSolution.Application\bin\Debug\net8.0\TechShopSolution.Domain.dll
+D:\Projects\TechShopSolution\TechShopSolution.Application\bin\Debug\net8.0\TechShopSolution.Domain.pdb
+D:\Projects\TechShopSolution\TechShopSolution.Application\obj\Debug\net8.0\TechShopSolution.Application.csproj.AssemblyReference.cache
+D:\Projects\TechShopSolution\TechShopSolution.Application\obj\Debug\net8.0\TechShopSolution.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\TechShopSolution\TechShopSolution.Application\obj\Debug\net8.0\TechShopSolution.Application.AssemblyInfoInputs.cache
+D:\Projects\TechShopSolution\TechShopSolution.Application\obj\Debug\net8.0\TechShopSolution.Application.AssemblyInfo.cs
+D:\Projects\TechShopSolution\TechShopSolution.Application\obj\Debug\net8.0\TechShopSolution.Application.csproj.CoreCompileInputs.cache
+D:\Projects\TechShopSolution\TechShopSolution.Application\obj\Debug\net8.0\TechShop.53C82ED2.Up2Date
+D:\Projects\TechShopSolution\TechShopSolution.Application\obj\Debug\net8.0\TechShopSolution.Application.dll
+D:\Projects\TechShopSolution\TechShopSolution.Application\obj\Debug\net8.0\refint\TechShopSolution.Application.dll
+D:\Projects\TechShopSolution\TechShopSolution.Application\obj\Debug\net8.0\TechShopSolution.Application.pdb
+D:\Projects\TechShopSolution\TechShopSolution.Application\obj\Debug\net8.0\ref\TechShopSolution.Application.dll
+D:\Projects\TechShopSolution\TechShopSolution.Application\obj\Debug\net8.0\TechShopSolution.Application.sourcelink.json

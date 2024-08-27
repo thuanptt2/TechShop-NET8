@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using TechShopSolution.API.Controllers;
 using TechShopSolution.Infrastructure.DBContext;
+using TechShopSolution.Domain.Repositories;
+using TechShopSolution.Infrastructure.Repositories;
+using TechShopSolution.Application.Products;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,8 +10,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-
 builder.Services.AddDbContext<TechShopDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("TechShopDB")));
+
+// Injecting Service
+builder.Services.AddScoped<IProductsService, ProductsService>();
+
+builder.Services.AddScoped<IProductsRepository, ProductsRepository>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

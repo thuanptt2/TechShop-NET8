@@ -5,11 +5,11 @@ using TechShopSolution.Infrastructure.DBContext;
 
 namespace TechShopSolution.Infrastructure.Repositories;
 
-public class ProductsRepository : IProductsRepository
+public class ProductRepository : IProductRepository
 {
     private readonly TechShopDbContext _context;
 
-    public ProductsRepository(TechShopDbContext context)
+    public ProductRepository(TechShopDbContext context)
     {
         _context = context;
     }
@@ -21,6 +21,8 @@ public class ProductsRepository : IProductsRepository
 
     public async Task<Product?> GetByIdAsync(int id)
     {
-        return await _context.Products.FirstOrDefaultAsync( x => x.Id == id);
+        return await _context.Products
+        .Include(b => b.Brand)
+        .FirstOrDefaultAsync( x => x.Id == id);
     }
 }

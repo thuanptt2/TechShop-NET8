@@ -2,7 +2,7 @@ using TechShopSolution.Domain.Entities;
 
 namespace TechShopSolution.Domain.Repositories;
 
-public interface IProductsRepository
+public interface IProductRepository
 {
     Task<IEnumerable<Product>> GetAllAsync();
     Task<Product?> GetByIdAsync(int id);

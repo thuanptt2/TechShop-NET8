@@ -2,7 +2,9 @@ using Microsoft.EntityFrameworkCore;
 using TechShopSolution.Infrastructure.DBContext;
 using TechShopSolution.Domain.Repositories;
 using TechShopSolution.Infrastructure.Repositories;
-using TechShopSolution.Application.Products;
+using TechShopSolution.Application.Services.Products;
+using TechShopSolution.Application.Services.Categories;
+using TechShopSolution.Application.Mappings;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,9 +15,14 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<TechShopDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("TechShopDB")));
 
 // Injecting Service
-builder.Services.AddScoped<IProductsService, ProductsService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IProductService, ProductService>();
 
-builder.Services.AddScoped<IProductsRepository, ProductsRepository>();
+
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

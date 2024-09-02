@@ -7,5 +7,6 @@ namespace TechShopSolution.Application.Services.Products
     {
         Task<IEnumerable<Product>> GetAllAsync();
         Task<ProductDTO?> GetByIdAsync(int id);
+        Task<int> Create(CreateProductDTO dto);
     }
 }

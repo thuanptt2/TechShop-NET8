@@ -17,5 +17,13 @@ namespace TechShopSolution.Application.Models.Categories
         public DateTime? UpdateAt { get; set; }
         public DateTime? DeleteAt { get; set; }
         public List<ProductDTO>? Products { get; set; }
-    }       
+
+        public class ProductDTO 
+        {
+            public int Id { get; set; }
+            public string? Name { get; set; }
+            public string? Code { get; set; }
+            public string? Slug { get; set; }
+        }
+    }
 }

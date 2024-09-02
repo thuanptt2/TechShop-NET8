@@ -22,9 +22,9 @@ public class CategoryRepository : ICategoryRepository
     public async Task<Category?> GetByIdAsync(int id)
     {
         return await _context.Categories
-        .Include(p => p.ProductInCategory)
-        .ThenInclude(pc => pc.Product) 
-        .ThenInclude(b => b.Brand)
+        .Include(p => p.ProductInCategory!)
+        .ThenInclude(pc => pc.Product!) 
+        .ThenInclude(b => b.Brand!)
         .FirstOrDefaultAsync( x => x.Id == id);
     }
 }

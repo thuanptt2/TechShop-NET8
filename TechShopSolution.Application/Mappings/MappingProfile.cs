@@ -10,16 +10,24 @@ namespace TechShopSolution.Application.Mappings
     {
         public MappingProfile()
         {
+            //Category
             CreateMap<Category, CategoryDTO>()
-            .ForMember(dest => dest.Products, opt => opt.MapFrom(src => src.ProductInCategory != null ? src.ProductInCategory
-                .Where(pc => pc.Product != null).Select(pc => pc.Product): new List<Product>()));
+            .ForMember(dest => dest.Products, opt => opt.MapFrom(src => src.ProductInCategory!.Where(pc => pc.Product != null).Select(pc => pc.Product)));
+            CreateMap<Product, CategoryDTO.ProductDTO>();
 
+            //CategoryProduct
+            CreateMap<CategoryProductDTO, CategoryProduct>();
+
+            //Product
             CreateMap<Product, ProductDTO>()
-            .ForMember(dest => dest.Brand, opt => opt.MapFrom(src => src.Brand));
-            // .ForMember(dest => dest.Categories, opt => opt.MapFrom(src => src.ProductInCategory != null ? src.ProductInCategory
-            //     .Where(pc => pc.Category != null).Select(pc => pc.Category): new List<Category>()));
+            .ForMember(dest => dest.Brand, opt => opt.MapFrom(src => src.Brand))
+            .ForMember(dest => dest.Categories, opt => opt.MapFrom(src => src.ProductInCategory!.Where(pc => pc.Category != null).Select(pc => pc.Category)));
+            CreateMap<CreateProductDTO, Product>();
+            CreateMap<Category, ProductDTO.CategoryDTO>();
 
+            //Brand
             CreateMap<Brand, BrandDTO>();
+
         }
     }
 }

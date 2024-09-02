@@ -28,4 +28,11 @@ public class ProductService : IProductService
 
         return productDTO;
     }
+    
+    public async Task<int> Create(CreateProductDTO dto)
+    {
+        var product = _mapper.Map<Product>(dto);
+
+        return await _productRepository.Create(product);
+    }
 }

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using TechShopSolution.Application.Models.Products;
 using TechShopSolution.Application.Services.Products;
 
 namespace TechShopSolution.API.Controllers
@@ -22,6 +23,16 @@ namespace TechShopSolution.API.Controllers
             if (product == null) return NotFound();
 
             return Ok(product);
+        }
+
+        [HttpPost]
+        [Route("Create")]
+        public async Task<IActionResult> Create(CreateProductDTO dto)
+        {
+            if(!ModelState.IsValid) return BadRequest(ModelState);
+            
+            var id = await productService.Create(dto);
+            return CreatedAtAction(nameof(GetById), new { id = id }, null);
         }
     }
 }

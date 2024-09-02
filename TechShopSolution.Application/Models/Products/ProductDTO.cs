@@ -1,5 +1,4 @@
 using TechShopSolution.Application.Models.Brands;
-using TechShopSolution.Application.Models.Categories;
 
 namespace TechShopSolution.Application.Models.Products
 {
@@ -18,5 +17,13 @@ namespace TechShopSolution.Application.Models.Products
         public int? Instock { get; set; }
         public int ViewCount { get; set; }
         public BrandDTO? Brand { get; set; }
-    }       
+        public List<CategoryDTO>? Categories { get; set; }
+
+        public class CategoryDTO
+        {
+            public int Id { get; set; }
+            public string? CateName { get; set; }
+            public string? CateSlug { get; set; }
+        }
+    }
 }

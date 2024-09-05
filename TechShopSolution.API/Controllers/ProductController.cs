@@ -1,25 +1,28 @@
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
+using Microsoft.Extensions.Logging;
 using TechShopSolution.Application.Models.Products;
-using TechShopSolution.Application.Services.Products;
+using TechShopSolution.Application.Queries.Products.GetAllProducts;
+using TechShopSolution.Application.Queries.Products.GetProductById;
+using TechShopSolution.Application.Commands.Products.CreateProduct;
 
 namespace TechShopSolution.API.Controllers
 {
     [ApiController]
     [Route("api/products")]
-    public class ProductController(IProductService productService) : ControllerBase
+    public class ProductController(IMediator mediator) : ControllerBase
     {
         [HttpGet]
         [Route("GetAll")]
-        public async Task<IActionResult> GetAll() {
-            var products = await productService.GetAllAsync();
+        public async Task<ActionResult<IEnumerable<ProductDTO>>> GetAll() {
+            var products = await mediator.Send(new GetAllProductQuery());
             return Ok(products);
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<ActionResult<ProductDTO?>> GetById(int id)
         {
-            var product = await productService.GetByIdAsync(id);
+            var product = await mediator.Send(new GetProductByIdQuery(id));
             if (product == null) return NotFound();
 
             return Ok(product);
@@ -27,12 +30,19 @@ namespace TechShopSolution.API.Controllers
 
         [HttpPost]
         [Route("Create")]
-        public async Task<IActionResult> Create(CreateProductDTO dto)
+        public async Task<IActionResult> Create(CreateProductCommand command)
         {
-            if(!ModelState.IsValid) return BadRequest(ModelState);
+            try {
+                if(!ModelState.IsValid) return BadRequest(ModelState);
             
-            var id = await productService.Create(dto);
-            return CreatedAtAction(nameof(GetById), new { id = id }, null);
+                var id = await mediator.Send(command);
+                return CreatedAtAction(nameof(GetById), new { id }, null);
+            }
+            catch(Exception ex)
+            {
+                //logger.LogError(ex, ex.Message);
+                return StatusCode(500, ex.Message);
+            }
         }
     }
 }

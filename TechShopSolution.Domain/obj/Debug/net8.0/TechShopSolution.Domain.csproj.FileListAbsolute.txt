@@ -21,3 +21,15 @@ D:\Projects\TechShopSolution\TechShopSolution.Domain\obj\Debug\net8.0\refint\Tec
 D:\Projects\TechShopSolution\TechShopSolution.Domain\obj\Debug\net8.0\TechShopSolution.Domain.pdb
 D:\Projects\TechShopSolution\TechShopSolution.Domain\obj\Debug\net8.0\ref\TechShopSolution.Domain.dll
 D:\Projects\TechShopSolution\TechShopSolution.Domain\obj\Debug\net8.0\TechShopSolution.Domain.sourcelink.json
+D:\Projects\TechShop-NET8\TechShopSolution.Domain\bin\Debug\net8.0\TechShopSolution.Domain.deps.json
+D:\Projects\TechShop-NET8\TechShopSolution.Domain\bin\Debug\net8.0\TechShopSolution.Domain.dll
+D:\Projects\TechShop-NET8\TechShopSolution.Domain\bin\Debug\net8.0\TechShopSolution.Domain.pdb
+D:\Projects\TechShop-NET8\TechShopSolution.Domain\obj\Debug\net8.0\TechShopSolution.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\TechShop-NET8\TechShopSolution.Domain\obj\Debug\net8.0\TechShopSolution.Domain.AssemblyInfoInputs.cache
+D:\Projects\TechShop-NET8\TechShopSolution.Domain\obj\Debug\net8.0\TechShopSolution.Domain.AssemblyInfo.cs
+D:\Projects\TechShop-NET8\TechShopSolution.Domain\obj\Debug\net8.0\TechShopSolution.Domain.csproj.CoreCompileInputs.cache
+D:\Projects\TechShop-NET8\TechShopSolution.Domain\obj\Debug\net8.0\TechShopSolution.Domain.sourcelink.json
+D:\Projects\TechShop-NET8\TechShopSolution.Domain\obj\Debug\net8.0\TechShopSolution.Domain.dll
+D:\Projects\TechShop-NET8\TechShopSolution.Domain\obj\Debug\net8.0\refint\TechShopSolution.Domain.dll
+D:\Projects\TechShop-NET8\TechShopSolution.Domain\obj\Debug\net8.0\TechShopSolution.Domain.pdb
+D:\Projects\TechShop-NET8\TechShopSolution.Domain\obj\Debug\net8.0\ref\TechShopSolution.Domain.dll

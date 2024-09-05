@@ -601,19 +601,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\thuan\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\TechShop-NET8\\TechShopSolution.Application\\TechShopSolution.Application.csproj",
+      "projectUniqueName": "D:\\Projects\\TechShopSolution\\TechShopSolution.Application\\TechShopSolution.Application.csproj",
       "projectName": "TechShopSolution.Application",
-      "projectPath": "D:\\Projects\\TechShop-NET8\\TechShopSolution.Application\\TechShopSolution.Application.csproj",
-      "packagesPath": "C:\\Users\\thuan\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\TechShop-NET8\\TechShopSolution.Application\\obj\\",
+      "projectPath": "D:\\Projects\\TechShopSolution\\TechShopSolution.Application\\TechShopSolution.Application.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "D:\\Projects\\TechShopSolution\\TechShopSolution.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\thuan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -621,15 +621,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Projects\\TechShop-NET8\\TechShopSolution.Domain\\TechShopSolution.Domain.csproj": {
-              "projectPath": "D:\\Projects\\TechShop-NET8\\TechShopSolution.Domain\\TechShopSolution.Domain.csproj"
+            "D:\\Projects\\TechShopSolution\\TechShopSolution.Domain\\TechShopSolution.Domain.csproj": {
+              "projectPath": "D:\\Projects\\TechShopSolution\\TechShopSolution.Domain\\TechShopSolution.Domain.csproj"
             }
           }
         }

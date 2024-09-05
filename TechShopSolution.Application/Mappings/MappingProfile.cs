@@ -4,6 +4,7 @@ using TechShopSolution.Application.Models.Categories;
 using TechShopSolution.Application.Models.Products;
 using TechShopSolution.Application.Models.Brands;
 using TechShopSolution.Application.Commands.Products.CreateProduct;
+using TechShopSolution.Application.Commands.Products.UpdateProduct;
 
 namespace TechShopSolution.Application.Mappings
 {
@@ -23,6 +24,7 @@ namespace TechShopSolution.Application.Mappings
             CreateMap<Category, ProductDTO.CategoryDTO>();
 
             CreateMap<CreateProductCommand, Product>();
+            CreateMap<UpdateProductCommand, Product>();
 
             //CategoryProduct
             CreateMap<CategoryProductDTO, CategoryProduct>();

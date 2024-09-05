@@ -48,4 +48,15 @@ public class ProductRepository : IProductRepository
         
         return entity.Id;
     }
+
+    public async Task Delete(Product product)
+    {
+        _context.Remove(product);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task SaveChanges()
+    {
+        await _context.SaveChangesAsync();
+    }
 }

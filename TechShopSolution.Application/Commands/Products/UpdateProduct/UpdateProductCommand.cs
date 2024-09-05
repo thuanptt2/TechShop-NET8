@@ -1,10 +1,10 @@
 ﻿using MediatR;
-using TechShopSolution.Application.Models.Categories;
 
-namespace TechShopSolution.Application.Commands.Products.CreateProduct;
+namespace TechShopSolution.Application.Commands.Products.UpdateProduct;
 
-public class CreateProductCommand : IRequest<int>
+public class UpdateProductCommand : IRequest<bool>
 {
+    public int Id { get; set; } = default!;
     public string Name { get; set; } = default!;
     public string Code { get; set; } = default!;
     public string? Slug { get; set; }
@@ -22,6 +22,5 @@ public class CreateProductCommand : IRequest<int>
     public string? MetaTitle { get; set; }
     public string? MetaKeywords { get; set; }
     public string? MetaDescriptions { get; set; }
-    public int BrandId { get; set; }
-    public List<CategoryProductDTO>? ProductInCategory { get; set; }
+
 }

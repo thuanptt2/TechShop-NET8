@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\TechShop-NET8\\TechShopSolution.Infrastructure\\TechShopSolution.Infrastructure.csproj": {}
+    "D:\\Projects\\TechShopSolution\\TechShopSolution.Infrastructure\\TechShopSolution.Infrastructure.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\TechShop-NET8\\TechShopSolution.Application\\TechShopSolution.Application.csproj": {
+    "D:\\Projects\\TechShopSolution\\TechShopSolution.Application\\TechShopSolution.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\TechShop-NET8\\TechShopSolution.Application\\TechShopSolution.Application.csproj",
+        "projectUniqueName": "D:\\Projects\\TechShopSolution\\TechShopSolution.Application\\TechShopSolution.Application.csproj",
         "projectName": "TechShopSolution.Application",
-        "projectPath": "D:\\Projects\\TechShop-NET8\\TechShopSolution.Application\\TechShopSolution.Application.csproj",
-        "packagesPath": "C:\\Users\\thuan\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\TechShop-NET8\\TechShopSolution.Application\\obj\\",
+        "projectPath": "D:\\Projects\\TechShopSolution\\TechShopSolution.Application\\TechShopSolution.Application.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\TechShopSolution\\TechShopSolution.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\thuan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,15 +22,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Projects\\TechShop-NET8\\TechShopSolution.Domain\\TechShopSolution.Domain.csproj": {
-                "projectPath": "D:\\Projects\\TechShop-NET8\\TechShopSolution.Domain\\TechShopSolution.Domain.csproj"
+              "D:\\Projects\\TechShopSolution\\TechShopSolution.Domain\\TechShopSolution.Domain.csproj": {
+                "projectPath": "D:\\Projects\\TechShopSolution\\TechShopSolution.Domain\\TechShopSolution.Domain.csproj"
               }
             }
           }
@@ -91,17 +90,17 @@
         }
       }
     },
-    "D:\\Projects\\TechShop-NET8\\TechShopSolution.Domain\\TechShopSolution.Domain.csproj": {
+    "D:\\Projects\\TechShopSolution\\TechShopSolution.Domain\\TechShopSolution.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\TechShop-NET8\\TechShopSolution.Domain\\TechShopSolution.Domain.csproj",
+        "projectUniqueName": "D:\\Projects\\TechShopSolution\\TechShopSolution.Domain\\TechShopSolution.Domain.csproj",
         "projectName": "TechShopSolution.Domain",
-        "projectPath": "D:\\Projects\\TechShop-NET8\\TechShopSolution.Domain\\TechShopSolution.Domain.csproj",
-        "packagesPath": "C:\\Users\\thuan\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\TechShop-NET8\\TechShopSolution.Domain\\obj\\",
+        "projectPath": "D:\\Projects\\TechShopSolution\\TechShopSolution.Domain\\TechShopSolution.Domain.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\TechShopSolution\\TechShopSolution.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\thuan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -109,7 +108,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -152,17 +150,17 @@
         }
       }
     },
-    "D:\\Projects\\TechShop-NET8\\TechShopSolution.Infrastructure\\TechShopSolution.Infrastructure.csproj": {
+    "D:\\Projects\\TechShopSolution\\TechShopSolution.Infrastructure\\TechShopSolution.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\TechShop-NET8\\TechShopSolution.Infrastructure\\TechShopSolution.Infrastructure.csproj",
+        "projectUniqueName": "D:\\Projects\\TechShopSolution\\TechShopSolution.Infrastructure\\TechShopSolution.Infrastructure.csproj",
         "projectName": "TechShopSolution.Infrastructure",
-        "projectPath": "D:\\Projects\\TechShop-NET8\\TechShopSolution.Infrastructure\\TechShopSolution.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\thuan\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\TechShop-NET8\\TechShopSolution.Infrastructure\\obj\\",
+        "projectPath": "D:\\Projects\\TechShopSolution\\TechShopSolution.Infrastructure\\TechShopSolution.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\TechShopSolution\\TechShopSolution.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\thuan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -170,15 +168,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Projects\\TechShop-NET8\\TechShopSolution.Application\\TechShopSolution.Application.csproj": {
-                "projectPath": "D:\\Projects\\TechShop-NET8\\TechShopSolution.Application\\TechShopSolution.Application.csproj"
+              "D:\\Projects\\TechShopSolution\\TechShopSolution.Application\\TechShopSolution.Application.csproj": {
+                "projectPath": "D:\\Projects\\TechShopSolution\\TechShopSolution.Application\\TechShopSolution.Application.csproj"
               }
             }
           }

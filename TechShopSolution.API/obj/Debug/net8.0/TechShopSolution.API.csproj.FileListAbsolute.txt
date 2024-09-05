@@ -332,3 +332,8 @@ D:\Projects\TechShop-NET8\TechShopSolution.API\bin\Debug\net8.0\FluentValidation
 D:\Projects\TechShop-NET8\TechShopSolution.API\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
 D:\Projects\TechShop-NET8\TechShopSolution.API\bin\Debug\net8.0\MediatR.dll
 D:\Projects\TechShop-NET8\TechShopSolution.API\bin\Debug\net8.0\MediatR.Contracts.dll
+D:\Projects\TechShopSolution\TechShopSolution.API\bin\Debug\net8.0\FluentValidation.dll
+D:\Projects\TechShopSolution\TechShopSolution.API\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+D:\Projects\TechShopSolution\TechShopSolution.API\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\Projects\TechShopSolution\TechShopSolution.API\bin\Debug\net8.0\MediatR.dll
+D:\Projects\TechShopSolution\TechShopSolution.API\bin\Debug\net8.0\MediatR.Contracts.dll

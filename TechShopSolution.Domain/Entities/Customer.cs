@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TechShopSolution.Domain.Entities
+﻿namespace TechShopSolution.Domain.Entities
 {
     public class Customer
     {

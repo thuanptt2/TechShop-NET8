@@ -7,17 +7,21 @@ using TechShopSolution.Application.Queries.Products.GetProductById;
 using TechShopSolution.Application.Commands.Products.CreateProduct;
 using TechShopSolution.Application.Commands.Products.DeleteProduct;
 using TechShopSolution.Application.Commands.Products.UpdateProduct;
+using Serilog;
 
 namespace TechShopSolution.API.Controllers
 {
     [ApiController]
     [Route("api/products")]
-    public class ProductController(IMediator mediator) : ControllerBase
+    public class ProductController(IMediator mediator, ILogger<ProductController> logger) : ControllerBase
     {
         [HttpGet]
         [Route("GetAll")]
         public async Task<ActionResult<IEnumerable<ProductDTO>>> GetAll() {
             var products = await mediator.Send(new GetAllProductQuery());
+
+            logger.LogInformation("Get all products");
+            Log.Information("sdsad");
             return Ok(products);
         }
 
@@ -52,7 +56,7 @@ namespace TechShopSolution.API.Controllers
             }
             catch(Exception ex)
             {
-                //logger.LogError(ex, ex.Message);
+                logger.LogError(ex, ex.Message);
                 return StatusCode(500, ex.Message);
             }
         }

@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 using System.Collections.Generic;
 using TechShopSolution.Application.Models.Products;
 using TechShopSolution.Application.Queries.Categories.GetAllCategories;

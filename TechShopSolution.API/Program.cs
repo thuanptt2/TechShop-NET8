@@ -1,11 +1,6 @@
-using Microsoft.EntityFrameworkCore;
-using TechShopSolution.Infrastructure.DBContext;
-using TechShopSolution.Domain.Repositories;
-using TechShopSolution.Infrastructure.Repositories;
-using TechShopSolution.Application.Mappings;
 using TechShopSolution.Application.Extensions;
 using TechShopSolution.Infrastructure.Extensions;
-
+using TechShopSolution.Infrastructure.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +10,10 @@ builder.Services.AddControllers();
 
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
+
+builder.Services.ConfigureOpentelemetry(builder.Configuration.GetValue<string>("otlpUrl"));
+builder.Services.ConfigureSerilog(builder.Configuration.GetSection(nameof(KafkaLoggingConfig)).Get<KafkaLoggingConfig>(),
+    builder.Configuration.GetValue<string>("otlpUrl"));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

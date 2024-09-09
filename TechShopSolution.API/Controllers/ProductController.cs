@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using TechShopSolution.Application.Models.Products;
 using TechShopSolution.Application.Queries.Products.GetAllProducts;
 using TechShopSolution.Application.Queries.Products.GetProductById;
@@ -8,6 +7,7 @@ using TechShopSolution.Application.Commands.Products.CreateProduct;
 using TechShopSolution.Application.Commands.Products.DeleteProduct;
 using TechShopSolution.Application.Commands.Products.UpdateProduct;
 using Serilog;
+using TechShopSolution.Application.Models.Common;
 
 namespace TechShopSolution.API.Controllers
 {
@@ -17,47 +17,131 @@ namespace TechShopSolution.API.Controllers
     {
         [HttpGet]
         [Route("GetAll")]
-        public async Task<ActionResult<IEnumerable<ProductDTO>>> GetAll() {
-            var products = await mediator.Send(new GetAllProductQuery());
+        public async Task<IActionResult> GetAll() 
+        {
+            var response = new StandardResponse<IEnumerable<ProductDTO>>();
+            
+            try 
+            {
+                var products = await mediator.Send(new GetAllProductQuery());
 
-            logger.LogInformation("Get all products");
-            Log.Information("sdsad");
-            return Ok(products);
+                response.Success = true;
+                response.Data = products;
+                response.Message = "Products retrieved successfully";
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+
+                response.Success = false;
+                response.Message = "An unexpected error occurred";
+                response.ExceptionMessage = ex.Message;
+
+                return StatusCode(StatusCodes.Status500InternalServerError, response);
+            }
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<ProductDTO?>> GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            var product = await mediator.Send(new GetProductByIdQuery(id));
-            if (product == null) return NotFound();
+            var response = new StandardResponse<ProductDTO>();
+            
+            try 
+            {
+                var product = await mediator.Send(new GetProductByIdQuery(id));
 
-            return Ok(product);
+                if (product == null) 
+                {
+                    response.Success = false;
+                    response.Message = $"The product with ID {id} was not found";
+                    return NotFound(response);
+                }
+
+                response.Success = true;
+                response.Data = product;
+                response.Message = "Product retrieved successfully";
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+
+                response.Success = false;
+                response.Message = "An unexpected error occurred";
+                response.ExceptionMessage = ex.Message;
+
+                return StatusCode(StatusCodes.Status500InternalServerError, response);
+            }
         }
 
-        [HttpGet("DeleteProduct/{id}")]
-        public async Task<ActionResult<ProductDTO?>> DeleteProduct(int id)
+        [HttpDelete("DeleteProduct/{id}")]
+        public async Task<IActionResult> DeleteProduct(int id)
         {
-            var isDeleted = await mediator.Send(new DeleteProductCommand(id));
-            if (isDeleted) return NoContent();
+            var response = new StandardResponse<object>();
+            
+            try 
+            {
+                var isDeleted = await mediator.Send(new DeleteProductCommand(id));
 
-            return NotFound();
+                if (!isDeleted)
+                {
+                    response.Success = false;
+                    response.Message = $"Product with id: {id} not found";
+                    return NotFound(response);
+                }
+
+                response.Success = true;
+                response.Message = "Product deleted successfully";
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+
+                response.Success = false;
+                response.Message = "An unexpected error occurred";
+                response.ExceptionMessage = ex.Message;
+
+                return StatusCode(StatusCodes.Status500InternalServerError, response);
+            }
         }
-
 
         [HttpPost]
         [Route("Create")]
         public async Task<IActionResult> Create(CreateProductCommand command)
         {
-            try {
-                if(!ModelState.IsValid) return BadRequest(ModelState);
+            var response = new StandardResponse<object>();
             
-                var id = await mediator.Send(command);
-                return CreatedAtAction(nameof(GetById), new { id }, null);
-            }
-            catch(Exception ex)
+            try 
             {
-                logger.LogError(ex, ex.Message);
-                return StatusCode(500, ex.Message);
+                if (!ModelState.IsValid) 
+                {
+                    response.Success = false;
+                    response.Message = "Invalid request data";
+                    response.ErrorData = ModelState;
+                    return BadRequest(response);
+                }
+                
+                var id = await mediator.Send(command);
+
+                response.Success = true;
+                response.Message = "Product created successfully";
+                response.Data = new { ProductId = id };
+                
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+                
+                response.Success = false;
+                response.Message = "An unexpected error occurred";
+                response.ExceptionMessage = ex.Message;
+
+                return StatusCode(StatusCodes.Status500InternalServerError, response);
             }
         }
 
@@ -65,16 +149,40 @@ namespace TechShopSolution.API.Controllers
         [Route("Update")]
         public async Task<IActionResult> Update(UpdateProductCommand command)
         {
-            try {
-                if(!ModelState.IsValid) return BadRequest(ModelState);
+            var response = new StandardResponse<object>();
             
-                var id = await mediator.Send(command);
-                return NoContent();
-            }
-            catch(Exception ex)
+            try 
             {
-                //logger.LogError(ex, ex.Message);
-                return StatusCode(500, ex.Message);
+                if (!ModelState.IsValid)
+                {
+                    response.Success = false;
+                    response.Message = "Invalid request data";
+                    response.ErrorData = ModelState;
+                    return BadRequest(response);
+                }
+
+                var isUpdated = await mediator.Send(command);
+
+                if (!isUpdated)
+                {
+                    response.Success = false;
+                    response.Message = "Failed to update product";
+                    return NotFound(response);
+                }
+
+                response.Success = true;
+                response.Message = "Product updated successfully";
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+
+                response.Success = false;
+                response.Message = "An unexpected error occurred";
+                response.ExceptionMessage = ex.Message;
+
+                return StatusCode(StatusCodes.Status500InternalServerError, response);
             }
         }
     }

@@ -27,6 +27,7 @@ namespace TechShopSolution.Infrastructure.Configuration
                     || FilterSourceContext("System.Net.Http.HttpClient.OtlpTraceExporter.LogicalHandler")(e)
                 )
                 .Enrich.FromLogContext()
+                .Enrich.With<SerilogRequestEnricher>()
                 .WriteTo.Sink(new KafkaSink(kafkaLoggingConfig))
                 .WriteTo.OpenTelemetry(opt => {
                     opt.Endpoint = otlpEndpoint + "/logs";

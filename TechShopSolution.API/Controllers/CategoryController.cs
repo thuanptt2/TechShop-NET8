@@ -1,10 +1,10 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
-using System.Collections.Generic;
-using TechShopSolution.Application.Models.Products;
 using TechShopSolution.Application.Queries.Categories.GetAllCategories;
 using TechShopSolution.Application.Queries.Categories.GetCategoriesById;
+using TechShopSolution.Application.Models.Common;
+using TechShopSolution.Application.Models.Categories;
 
 namespace TechShopSolution.API.Controllers
 {
@@ -14,18 +14,64 @@ namespace TechShopSolution.API.Controllers
     {
         [HttpGet]
         [Route("GetAll")]
-        public async Task<IActionResult> GetAll() {
-            var categories = await mediator.Send(new GetAllCategoryQuery());
-            return Ok(categories);
+        public async Task<IActionResult> GetAll()
+        {
+            var response = new StandardResponse<IEnumerable<CategoryDTO>>();
+            
+            try 
+            {
+                var categories = await mediator.Send(new GetAllCategoryQuery());
+
+                response.Success = true;
+                response.Data = categories;
+                response.Message = "Categories retrieved successfully";
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+
+                response.Success = false;
+                response.Message = "An unexpected error occurred";
+                response.ExceptionMessage = ex.Message;
+
+                return StatusCode(StatusCodes.Status500InternalServerError, response);
+            }
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var cate = await mediator.Send(new GetCategoryByIdQuery(id));
-            if (cate == null) return NotFound();
+            var response = new StandardResponse<CategoryDTO>();
+            
+            try 
+            {
+                var category = await mediator.Send(new GetCategoryByIdQuery(id));
 
-            return Ok(cate);
+                if (category == null)
+                {
+                    response.Success = false;
+                    response.Message = $"Category with ID {id} not found";
+                    return NotFound(response);
+                }
+
+                response.Success = true;
+                response.Data = category;
+                response.Message = "Category retrieved successfully";
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+
+                response.Success = false;
+                response.Message = "An unexpected error occurred";
+                response.ExceptionMessage = ex.Message;
+
+                return StatusCode(StatusCodes.Status500InternalServerError, response);
+            }
         }
     }
 }

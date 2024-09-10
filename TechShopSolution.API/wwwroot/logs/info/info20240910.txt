@@ -224,3 +224,289 @@ Error Number:547,State:0,Class:16
 2024-09-10 11:28:38.525 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/error/error20240910.txt - null null
 2024-09-10 11:28:38.553 +07:00 [INF] Sending file. Request path: '/logs/error/error20240910.txt'. Physical path: 'D:\Projects\TechShopSolution\TechShopSolution.API\wwwroot\logs\error\error20240910.txt'
 2024-09-10 11:28:38.553 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/error/error20240910.txt - 200 14544 text/plain 28.7192ms
+2024-09-10 11:37:41.310 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 11:37:41.313 +07:00 [INF] Request: Method=GET, Path=/api/products/GetAll, QueryString=, Headers={"Accept":"*/*","Host":"localhost:7042","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en","Cookie":"sid=Fe26.2**3fa8158e02b9c925764218d953c7329005782dfb8b0c57e805983af6fae32ddf*i5A9FnjCxDy_MmvPDYj-5w*rF7M5TG5PwZ7ko3epP4_Hh6v6HzR_6QsW5xjXKb1N4qHPiEnprt-iyZPCBk4HLrW5TdZsIZIz5qLjpAeZpD6nSo4v9XfLKx2ZIIDX5DmKZrpr46uPlUsa7qZofsh8-bnWM2y1YSGL-ClCABIt-krCvq-fHDJereS1N7xb1ntQR1wFa-YaJNJOU9o5DGHi1OonmHklJqGIaY15ly6Kq_sGNNDNe4BUmzBZpFrEdjN20Wyhw-OH8wy4c9xv9f2YMrd**a3c87b3a30862a5d1a08992c34571de5d7a3c1b0fa919b0fb00692332dbe1782*odODT7eld6XYiWOs5yZNj_gWYnETHN8qqrHpkbS5Okc","Referer":"https://localhost:7042/swagger/index.html","sec-ch-ua":"\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-gpc":"1","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty","priority":"u=1, i"}, Body=
+2024-09-10 11:37:41.313 +07:00 [INF] Executing endpoint 'TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API)'
+2024-09-10 11:37:41.317 +07:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller TechShopSolution.API.Controllers.ProductController (TechShopSolution.API).
+2024-09-10 11:37:41.318 +07:00 [INF] Executing action method TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API) - Validation state: "Valid"
+2024-09-10 11:37:41.322 +07:00 [INF] Getting all products
+2024-09-10 11:37:41.746 +07:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[BestSeller], [p].[BrandId], [p].[Code], [p].[CreateAt], [p].[DeleteAt], [p].[Descriptions], [p].[Featured], [p].[Image], [p].[Instock], [p].[IsActive], [p].[IsDelete], [p].[MetaDescriptions], [p].[MetaKeywords], [p].[MetaTitle], [p].[MoreImages], [p].[Name], [p].[PromotionPrice], [p].[ShortDesc], [p].[Slug], [p].[Specifications], [p].[UnitPrice], [p].[UpdateAt], [p].[ViewCount], [p].[Warranty], [b].[Id], [t].[CateId], [t].[ProductId], [t].[Id], [t].[CateName], [t].[CateSlug], [t].[CreateAt], [t].[DeleteAt], [t].[IsActive], [t].[IsDelete], [t].[MetaDescriptions], [t].[MetaKeywords], [t].[MetaTitle], [t].[ParentId], [t].[UpdateAt], [b].[BrandName], [b].[BrandSlug], [b].[CreateAt], [b].[DeleteAt], [b].[IsActive], [b].[IsDelete], [b].[MetaDescriptions], [b].[MetaKeywords], [b].[MetaTitle], [b].[UpdateAt]
+FROM [Product] AS [p]
+INNER JOIN [Brand] AS [b] ON [p].[BrandId] = [b].[Id]
+LEFT JOIN (
+    SELECT [c].[CateId], [c].[ProductId], [c0].[Id], [c0].[CateName], [c0].[CateSlug], [c0].[CreateAt], [c0].[DeleteAt], [c0].[IsActive], [c0].[IsDelete], [c0].[MetaDescriptions], [c0].[MetaKeywords], [c0].[MetaTitle], [c0].[ParentId], [c0].[UpdateAt]
+    FROM [CategoryProduct] AS [c]
+    INNER JOIN [Category] AS [c0] ON [c].[CateId] = [c0].[Id]
+) AS [t] ON [p].[Id] = [t].[ProductId]
+ORDER BY [p].[Id], [b].[Id], [t].[CateId], [t].[ProductId]
+2024-09-10 11:37:42.043 +07:00 [INF] Executed action method TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 725.1774ms.
+2024-09-10 11:37:42.044 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechShopSolution.Application.Models.Common.StandardResponse`1[[System.Collections.Generic.IEnumerable`1[[TechShopSolution.Application.Models.Products.ProductDTO, TechShopSolution.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-10 11:37:42.095 +07:00 [INF] Executed action TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API) in 777.5761ms
+2024-09-10 11:37:42.095 +07:00 [INF] Executed endpoint 'TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API)'
+2024-09-10 11:37:42.095 +07:00 [INF] Response: StatusCode=200
+2024-09-10 11:37:42.095 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 200 null application/json; charset=utf-8 785.8274ms
+2024-09-10 11:39:12.600 +07:00 [INF] Now listening on: https://localhost:7042
+2024-09-10 11:39:12.605 +07:00 [INF] Now listening on: http://localhost:5216
+2024-09-10 11:39:12.606 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 11:39:12.606 +07:00 [INF] Hosting environment: Development
+2024-09-10 11:39:12.606 +07:00 [INF] Content root path: D:\Projects\TechShopSolution\TechShopSolution.API
+2024-09-10 11:39:13.037 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/ - null null
+2024-09-10 11:39:13.069 +07:00 [INF] Request: Method=GET, Path=/, QueryString=, Headers={"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8","Host":"localhost:7042","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en","Cookie":"sid=Fe26.2**3c79395d326b0f29ee09039374ea676278ee91b2785e2091903a7be7dea3300a*9iymWBotw5p3jU7JaeQy_Q*o_nsiI9NT3tx05sBcukaYOCHZTJCrR9SLTYEbMPOVTv-fbSIBamUbi062mZFYsB4ZQyEWg1ARf_X7atpfv2t-F_DXpZmAGtHWCBnhf7V7SN6ZkfQbuZZUV-tJLRZVqKPAxocM8pXels7rNUxYipUE_wXvhxrOwtYN0agvXLK61u_P0J3AV1MnG3iF6lRKr_3a8BZwYgRC1bLadEw02HOqXU5lu5V6-nUCkU4pThN0GVFx2Vk6BKoVaADJSTT5kmQ**fe080398c10b2947738006283c8e424abdf3754b5442082bc0eca37c51225441*cC8RQJzqnLW97eLu1Na6V99GoL4e760_hBthCh38QSg","Upgrade-Insecure-Requests":"1","sec-ch-ua":"\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-gpc":"1","sec-fetch-site":"none","sec-fetch-mode":"navigate","sec-fetch-user":"?1","sec-fetch-dest":"document","priority":"u=0, i"}, Body=
+2024-09-10 11:39:13.073 +07:00 [INF] Response: StatusCode=404
+2024-09-10 11:39:13.074 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/ - 404 0 null 53.8327ms
+2024-09-10 11:39:13.079 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7042/, Response status code: 404
+2024-09-10 11:41:25.288 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 11:41:25.323 +07:00 [INF] Request: Method=GET, Path=/api/products/GetAll, QueryString=, Headers={"Accept":"*/*","Host":"localhost:7042","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en","Cookie":"sid=Fe26.2**766c4c9efec09ad2390b0176d25eaeee4063427cd0124a54dd9968f2d6e6ffa5*yNxcBTLUDsWqAn59_gQrqw*URZI-lcIc8QNX4iM5YEKD0tEdmLT0Bx1Y5jMCJn7nC_Nw51uVhQMU8FJ9GywzHybIK5cvxchSIDMhdfBriM09lPrrWIcc5GVV1pLl7AYvYG2BDkDr2wjqj_ngKBjulddKVGAp33qcA2NBK33hKTgIpw8bFHMRTLjII4AuCHTG32nYB2TCqu5UHE4SeqfbxYhQDjHLCYbfnyQUivXZOqjurMAVEf7F5R31eLDJ9iurCHnoUJTACVPhYQH04s5lML7**f8bf156fe5d151c10d3d35e79a00e9ef2db3166c452d941b25eb9dd0f1822090*PLUWOUwglG2yODcI6A0ATXOEh8Ay6i9kTuUJtYgvdmQ","Referer":"https://localhost:7042/swagger/index.html","sec-ch-ua":"\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-gpc":"1","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty","priority":"u=1, i"}, Body=
+2024-09-10 11:41:25.325 +07:00 [INF] Executing endpoint 'TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API)'
+2024-09-10 11:41:25.368 +07:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller TechShopSolution.API.Controllers.ProductController (TechShopSolution.API).
+2024-09-10 11:41:25.379 +07:00 [INF] Executing action method TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API) - Validation state: "Valid"
+2024-09-10 11:41:25.778 +07:00 [INF] Getting all products
+2024-09-10 11:41:27.180 +07:00 [INF] Executed DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[BestSeller], [p].[BrandId], [p].[Code], [p].[CreateAt], [p].[DeleteAt], [p].[Descriptions], [p].[Featured], [p].[Image], [p].[Instock], [p].[IsActive], [p].[IsDelete], [p].[MetaDescriptions], [p].[MetaKeywords], [p].[MetaTitle], [p].[MoreImages], [p].[Name], [p].[PromotionPrice], [p].[ShortDesc], [p].[Slug], [p].[Specifications], [p].[UnitPrice], [p].[UpdateAt], [p].[ViewCount], [p].[Warranty], [b].[Id], [t].[CateId], [t].[ProductId], [t].[Id], [t].[CateName], [t].[CateSlug], [t].[CreateAt], [t].[DeleteAt], [t].[IsActive], [t].[IsDelete], [t].[MetaDescriptions], [t].[MetaKeywords], [t].[MetaTitle], [t].[ParentId], [t].[UpdateAt], [b].[BrandName], [b].[BrandSlug], [b].[CreateAt], [b].[DeleteAt], [b].[IsActive], [b].[IsDelete], [b].[MetaDescriptions], [b].[MetaKeywords], [b].[MetaTitle], [b].[UpdateAt]
+FROM [Product] AS [p]
+INNER JOIN [Brand] AS [b] ON [p].[BrandId] = [b].[Id]
+LEFT JOIN (
+    SELECT [c].[CateId], [c].[ProductId], [c0].[Id], [c0].[CateName], [c0].[CateSlug], [c0].[CreateAt], [c0].[DeleteAt], [c0].[IsActive], [c0].[IsDelete], [c0].[MetaDescriptions], [c0].[MetaKeywords], [c0].[MetaTitle], [c0].[ParentId], [c0].[UpdateAt]
+    FROM [CategoryProduct] AS [c]
+    INNER JOIN [Category] AS [c0] ON [c].[CateId] = [c0].[Id]
+) AS [t] ON [p].[Id] = [t].[ProductId]
+ORDER BY [p].[Id], [b].[Id], [t].[CateId], [t].[ProductId]
+2024-09-10 11:41:27.599 +07:00 [INF] Executed action method TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2216.8997ms.
+2024-09-10 11:41:27.605 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechShopSolution.Application.Models.Common.StandardResponse`1[[System.Collections.Generic.IEnumerable`1[[TechShopSolution.Application.Models.Products.ProductDTO, TechShopSolution.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-10 11:41:27.660 +07:00 [INF] Executed action TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API) in 2286.1366ms
+2024-09-10 11:41:27.660 +07:00 [INF] Executed endpoint 'TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API)'
+2024-09-10 11:41:27.661 +07:00 [INF] Response: StatusCode=200
+2024-09-10 11:41:27.669 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 200 null application/json; charset=utf-8 2381.6421ms
+2024-09-10 13:58:13.251 +07:00 [INF] Now listening on: https://localhost:7042
+2024-09-10 13:58:13.261 +07:00 [INF] Now listening on: http://localhost:5216
+2024-09-10 13:58:13.262 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 13:58:13.262 +07:00 [INF] Hosting environment: Development
+2024-09-10 13:58:13.262 +07:00 [INF] Content root path: D:\Projects\TechShopSolution\TechShopSolution.API
+2024-09-10 13:58:13.640 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/ - null null
+2024-09-10 13:58:13.672 +07:00 [INF] Request: Method=GET, Path=/, QueryString=, Headers={"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8","Host":"localhost:7042","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en","Cookie":"sid=Fe26.2**7d822a355cb785c4c775501cecc9e33390dc4a40e81e8596f232a9394e268b51*RHA_hd7dJVFOrJMQ6iNgDg*fdpofpOwYkh90wy-CBXlQsTfmUmA-rTIZ9CizrMxzRCgUS3CFLUoFXJBiCDwoCgYFk3G3o_E0viT8KfbHb-PNJsuFcLZ8Cqt8ptlPgtEUKcUC2iIcHWcCc-5-Q3etPQmKL8fMuNq8yGbXQ5zcP1awkYVAIL91qPC4NfFiATe54nqv44YY2GdOFr-7xkIBUz3cjQH66nLq1e1vITMflDZ5k1iKyPqAyuXmr2vP-0cEGVGNrU7pXcSd-7LnVuRUOt1**6414b85c1aa013744a8ec8e86e82acb448fc44fde05aaa47942e4d25447bcd0e*6CiIpNMY1MTrRsG8Hh12Ys3nlbBfxesFPgRTQcXOfEE","Upgrade-Insecure-Requests":"1","sec-ch-ua":"\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-gpc":"1","sec-fetch-site":"none","sec-fetch-mode":"navigate","sec-fetch-user":"?1","sec-fetch-dest":"document","priority":"u=0, i"}, Body=
+2024-09-10 13:58:13.677 +07:00 [INF] Response: StatusCode=404
+2024-09-10 13:58:13.679 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/ - 404 0 null 54.8223ms
+2024-09-10 13:58:13.683 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7042/, Response status code: 404
+2024-09-10 14:17:34.846 +07:00 [INF] Now listening on: https://localhost:7042
+2024-09-10 14:17:34.851 +07:00 [INF] Now listening on: http://localhost:5216
+2024-09-10 14:17:34.851 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 14:17:34.852 +07:00 [INF] Hosting environment: Development
+2024-09-10 14:17:34.852 +07:00 [INF] Content root path: D:\Projects\TechShopSolution\TechShopSolution.API
+2024-09-10 14:17:35.318 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/ - null null
+2024-09-10 14:17:35.352 +07:00 [INF] Request: Method=GET, Path=/, QueryString=, Headers={"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8","Host":"localhost:7042","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en","Cookie":"sid=Fe26.2**fd7d743d9f12ee0470ae61c4f893371a09f1bdc1332cf17693b2c7c1812db0b9*u90hSemmO2vnu_Id_P1Sxw*3zApryynUpq86o6510Lmn3fNspQJDxClLB-WbEmYZEtf2H0_cJp1KnokN7KVGSl19MINGySVdvv5hUK1mRIoBsyoK14z7-mmH9w1R_Rwd4-NzKi-NK-PUsAvOI50R0frqyIuM_yT78evEPAzjPiqNuFOvRTvbYp44MFd-4JtS0C9FIUmjFoeThrQdT9UQWXijq4aERzq3a-NrsifOUx6PRGwZtcoZdqI8PWrwCMLz4hMD6kL_U8aYi9hyoF2jJ2U**52c8d1fc979cb50fabd5c3946154e3e7b931cb1c6e86c640cde60f2ffc902519*bIkgdriGL8EIJOWKS5SCs6vTtD0doyc6q8tpqDDxC48","Upgrade-Insecure-Requests":"1","sec-ch-ua":"\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-gpc":"1","sec-fetch-site":"none","sec-fetch-mode":"navigate","sec-fetch-user":"?1","sec-fetch-dest":"document","priority":"u=0, i"}, Body=
+2024-09-10 14:17:35.358 +07:00 [INF] Response: StatusCode=404
+2024-09-10 14:17:35.361 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/ - 404 0 null 57.6882ms
+2024-09-10 14:17:35.366 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7042/, Response status code: 404
+2024-09-10 14:17:44.681 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 14:17:44.693 +07:00 [INF] Request: Method=GET, Path=/api/products/GetAll, QueryString=, Headers={"Accept":"*/*","Host":"localhost:7042","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en","Cookie":"sid=Fe26.2**fd7d743d9f12ee0470ae61c4f893371a09f1bdc1332cf17693b2c7c1812db0b9*u90hSemmO2vnu_Id_P1Sxw*3zApryynUpq86o6510Lmn3fNspQJDxClLB-WbEmYZEtf2H0_cJp1KnokN7KVGSl19MINGySVdvv5hUK1mRIoBsyoK14z7-mmH9w1R_Rwd4-NzKi-NK-PUsAvOI50R0frqyIuM_yT78evEPAzjPiqNuFOvRTvbYp44MFd-4JtS0C9FIUmjFoeThrQdT9UQWXijq4aERzq3a-NrsifOUx6PRGwZtcoZdqI8PWrwCMLz4hMD6kL_U8aYi9hyoF2jJ2U**52c8d1fc979cb50fabd5c3946154e3e7b931cb1c6e86c640cde60f2ffc902519*bIkgdriGL8EIJOWKS5SCs6vTtD0doyc6q8tpqDDxC48","Referer":"https://localhost:7042/swagger/index.html","sec-ch-ua":"\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-gpc":"1","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty","priority":"u=1, i"}, Body=
+2024-09-10 14:17:44.702 +07:00 [INF] Executing endpoint 'TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API)'
+2024-09-10 14:17:44.737 +07:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller TechShopSolution.API.Controllers.ProductController (TechShopSolution.API).
+2024-09-10 14:17:44.745 +07:00 [INF] Executing action method TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API) - Validation state: "Valid"
+2024-09-10 14:17:45.063 +07:00 [INF] Getting all products
+2024-09-10 14:17:46.460 +07:00 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[BestSeller], [p].[BrandId], [p].[Code], [p].[CreateAt], [p].[DeleteAt], [p].[Descriptions], [p].[Featured], [p].[Image], [p].[Instock], [p].[IsActive], [p].[IsDelete], [p].[MetaDescriptions], [p].[MetaKeywords], [p].[MetaTitle], [p].[MoreImages], [p].[Name], [p].[PromotionPrice], [p].[ShortDesc], [p].[Slug], [p].[Specifications], [p].[UnitPrice], [p].[UpdateAt], [p].[ViewCount], [p].[Warranty], [b].[Id], [t].[CateId], [t].[ProductId], [t].[Id], [t].[CateName], [t].[CateSlug], [t].[CreateAt], [t].[DeleteAt], [t].[IsActive], [t].[IsDelete], [t].[MetaDescriptions], [t].[MetaKeywords], [t].[MetaTitle], [t].[ParentId], [t].[UpdateAt], [b].[BrandName], [b].[BrandSlug], [b].[CreateAt], [b].[DeleteAt], [b].[IsActive], [b].[IsDelete], [b].[MetaDescriptions], [b].[MetaKeywords], [b].[MetaTitle], [b].[UpdateAt]
+FROM [Product] AS [p]
+INNER JOIN [Brand] AS [b] ON [p].[BrandId] = [b].[Id]
+LEFT JOIN (
+    SELECT [c].[CateId], [c].[ProductId], [c0].[Id], [c0].[CateName], [c0].[CateSlug], [c0].[CreateAt], [c0].[DeleteAt], [c0].[IsActive], [c0].[IsDelete], [c0].[MetaDescriptions], [c0].[MetaKeywords], [c0].[MetaTitle], [c0].[ParentId], [c0].[UpdateAt]
+    FROM [CategoryProduct] AS [c]
+    INNER JOIN [Category] AS [c0] ON [c].[CateId] = [c0].[Id]
+) AS [t] ON [p].[Id] = [t].[ProductId]
+ORDER BY [p].[Id], [b].[Id], [t].[CateId], [t].[ProductId]
+2024-09-10 14:17:46.951 +07:00 [INF] Executed action method TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2204.1322ms.
+2024-09-10 14:17:46.957 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechShopSolution.Application.Models.Common.StandardResponse`1[[System.Collections.Generic.IEnumerable`1[[TechShopSolution.Application.Models.Products.ProductDTO, TechShopSolution.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-10 14:17:47.044 +07:00 [INF] Executed action TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API) in 2302.3328ms
+2024-09-10 14:17:47.045 +07:00 [INF] Executed endpoint 'TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API)'
+2024-09-10 14:17:47.045 +07:00 [INF] Response: StatusCode=200
+2024-09-10 14:17:47.055 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 200 null application/json; charset=utf-8 2374.7681ms
+2024-09-10 14:59:31.161 +07:00 [INF] Now listening on: https://localhost:7042
+2024-09-10 14:59:31.323 +07:00 [INF] Now listening on: http://localhost:5216
+2024-09-10 14:59:31.327 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 14:59:31.329 +07:00 [INF] Hosting environment: Development
+2024-09-10 14:59:31.331 +07:00 [INF] Content root path: D:\Projects\TechShopSolution\TechShopSolution.API
+2024-09-10 14:59:31.720 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/ - null null
+2024-09-10 14:59:31.757 +07:00 [INF] Request: Method=GET, Path=/, QueryString=, Headers={"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8","Host":"localhost:7042","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en","Cookie":"sid=Fe26.2**fb72bc6c6abc8546ee8755b7c848458d6ff320ff788796c409df304d3d54ab6e*IgHaUBbK1KSEDpunlZI5IA*1kKSlrvJehiFt7CPCM9EuCn4xM4ib_q-Aq8Z_juR7F4JZ96fY-1Odm0dyirB2J6oGdO_IzfPx0Ig62iWgMxsby8tW7Pn3_30n7dHXNfo8-oM8OwGWgnCieUuX6aDW3gpx367tryrsSbBQdxLIMW8RMxlFZaRVo2UZa2Pj2h3cnDBCEsPCaI-lgO1JjJ4zf_PWUoo-DrG8tnJJcus3m13nuLqca-abZSkhfuno3kHLoZ0a667uCD6aNYOf-yGbjWk**04717396c4de65ffd7c80de05a54c92eb75e1dc894ed2e3bf03ad02ab9a9994e*7fh68d1FAhQ_ZZJY_3JmQ9IfVoGs9MQEM7T4nnHdoRM","Upgrade-Insecure-Requests":"1","sec-ch-ua":"\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-gpc":"1","sec-fetch-site":"none","sec-fetch-mode":"navigate","sec-fetch-user":"?1","sec-fetch-dest":"document","priority":"u=0, i"}, Body=
+2024-09-10 14:59:31.767 +07:00 [INF] Response: StatusCode=404
+2024-09-10 14:59:31.771 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/ - 404 0 null 76.8923ms
+2024-09-10 14:59:31.785 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7042/, Response status code: 404
+2024-09-10 14:59:37.736 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 14:59:37.745 +07:00 [INF] Request: Method=GET, Path=/api/products/GetAll, QueryString=, Headers={"Accept":"*/*","Host":"localhost:7042","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en","Cookie":"sid=Fe26.2**fb72bc6c6abc8546ee8755b7c848458d6ff320ff788796c409df304d3d54ab6e*IgHaUBbK1KSEDpunlZI5IA*1kKSlrvJehiFt7CPCM9EuCn4xM4ib_q-Aq8Z_juR7F4JZ96fY-1Odm0dyirB2J6oGdO_IzfPx0Ig62iWgMxsby8tW7Pn3_30n7dHXNfo8-oM8OwGWgnCieUuX6aDW3gpx367tryrsSbBQdxLIMW8RMxlFZaRVo2UZa2Pj2h3cnDBCEsPCaI-lgO1JjJ4zf_PWUoo-DrG8tnJJcus3m13nuLqca-abZSkhfuno3kHLoZ0a667uCD6aNYOf-yGbjWk**04717396c4de65ffd7c80de05a54c92eb75e1dc894ed2e3bf03ad02ab9a9994e*7fh68d1FAhQ_ZZJY_3JmQ9IfVoGs9MQEM7T4nnHdoRM","Referer":"https://localhost:7042/swagger/index.html","sec-ch-ua":"\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-gpc":"1","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty","priority":"u=1, i"}, Body=
+2024-09-10 14:59:37.756 +07:00 [INF] Executing endpoint 'TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API)'
+2024-09-10 14:59:37.786 +07:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller TechShopSolution.API.Controllers.ProductController (TechShopSolution.API).
+2024-09-10 14:59:37.792 +07:00 [INF] Executing action method TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API) - Validation state: "Valid"
+2024-09-10 14:59:38.069 +07:00 [INF] Getting all products
+2024-09-10 14:59:39.446 +07:00 [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[BestSeller], [p].[BrandId], [p].[Code], [p].[CreateAt], [p].[DeleteAt], [p].[Descriptions], [p].[Featured], [p].[Image], [p].[Instock], [p].[IsActive], [p].[IsDelete], [p].[MetaDescriptions], [p].[MetaKeywords], [p].[MetaTitle], [p].[MoreImages], [p].[Name], [p].[PromotionPrice], [p].[ShortDesc], [p].[Slug], [p].[Specifications], [p].[UnitPrice], [p].[UpdateAt], [p].[ViewCount], [p].[Warranty], [b].[Id], [t].[CateId], [t].[ProductId], [t].[Id], [t].[CateName], [t].[CateSlug], [t].[CreateAt], [t].[DeleteAt], [t].[IsActive], [t].[IsDelete], [t].[MetaDescriptions], [t].[MetaKeywords], [t].[MetaTitle], [t].[ParentId], [t].[UpdateAt], [b].[BrandName], [b].[BrandSlug], [b].[CreateAt], [b].[DeleteAt], [b].[IsActive], [b].[IsDelete], [b].[MetaDescriptions], [b].[MetaKeywords], [b].[MetaTitle], [b].[UpdateAt]
+FROM [Product] AS [p]
+INNER JOIN [Brand] AS [b] ON [p].[BrandId] = [b].[Id]
+LEFT JOIN (
+    SELECT [c].[CateId], [c].[ProductId], [c0].[Id], [c0].[CateName], [c0].[CateSlug], [c0].[CreateAt], [c0].[DeleteAt], [c0].[IsActive], [c0].[IsDelete], [c0].[MetaDescriptions], [c0].[MetaKeywords], [c0].[MetaTitle], [c0].[ParentId], [c0].[UpdateAt]
+    FROM [CategoryProduct] AS [c]
+    INNER JOIN [Category] AS [c0] ON [c].[CateId] = [c0].[Id]
+) AS [t] ON [p].[Id] = [t].[ProductId]
+ORDER BY [p].[Id], [b].[Id], [t].[CateId], [t].[ProductId]
+2024-09-10 14:59:39.708 +07:00 [INF] Executed action method TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1913.1548ms.
+2024-09-10 14:59:39.714 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechShopSolution.Application.Models.Common.StandardResponse`1[[System.Collections.Generic.IEnumerable`1[[TechShopSolution.Application.Models.Products.ProductDTO, TechShopSolution.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-10 14:59:39.760 +07:00 [INF] Executed action TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API) in 1971.2795ms
+2024-09-10 14:59:39.761 +07:00 [INF] Executed endpoint 'TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API)'
+2024-09-10 14:59:39.761 +07:00 [INF] Response: StatusCode=200
+2024-09-10 14:59:39.770 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 200 null application/json; charset=utf-8 2034.0665ms
+2024-09-10 15:00:02.879 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/ - null null
+2024-09-10 15:00:02.891 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/ - 200 2294 text/html; charset=utf-8 11.7382ms
+2024-09-10 15:00:05.327 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/trace/ - null null
+2024-09-10 15:00:05.329 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/trace/ - 200 1992 text/html; charset=utf-8 1.8806ms
+2024-09-10 15:00:06.046 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/trace/traces20240910.txt - null null
+2024-09-10 15:00:06.117 +07:00 [INF] Sending file. Request path: '/logs/trace/traces20240910.txt'. Physical path: 'D:\Projects\TechShopSolution\TechShopSolution.API\wwwroot\logs\trace\traces20240910.txt'
+2024-09-10 15:00:06.118 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/trace/traces20240910.txt - 200 665148 text/plain 72.283ms
+2024-09-10 15:00:33.108 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7042/api/products/Create - application/json 492
+2024-09-10 15:00:33.126 +07:00 [INF] Request: Method=POST, Path=/api/products/Create, QueryString=, Headers={"Accept":"*/*","Host":"localhost:7042","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en","Content-Type":"application/json","Cookie":"sid=Fe26.2**798f642abd1cb269398620c11a09cd04cf3bd549616c62604714644382e0c658*fs-zSYiiaeaz9MoogyFO8w*OohlzMXDF4TEUP1ohlGJIlEBrnNzmu5sRxrrIE7JTDiLs9xLUhHeVdE00cgdcoI8MvGJymh7iORwyYXU5-oOuYZonPkZP_A40kpO45TMuxrBbto79d_pkr3Vi129i0wDU9QtGiurSHxp08NWacHWxLD0Y052jYfS7NR_wlOt0284x4tFwsQQbWeQesuhCT0m8cNEl6LtdSqpLipoiwc3HKdz_k-5TvTtfwP1dTZ1Iz023RM4ZUEDKKMBFdpu2FvU**9f417c148233a28d599d6cb60fc2496485455bf1e817ec3180ce3fa7558ceeda*zfkP13T_bekEN1gKENMHd68mB7UreEhW-aWyo2mdg60","Origin":"https://localhost:7042","Referer":"https://localhost:7042/swagger/index.html","Content-Length":"492","sec-ch-ua":"\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"","sec-ch-ua-platform":"\"Windows\"","sec-ch-ua-mobile":"?0","sec-gpc":"1","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty","priority":"u=1, i"}, Body={
+  "name": "string",
+  "code": "string",
+  "slug": "string",
+  "image": "string",
+  "moreImages": "string",
+  "unitPrice": 0,
+  "promotionPrice": 0,
+  "warranty": 0,
+  "instock": 0,
+  "specifications": "string",
+  "shortDesc": "string",
+  "descriptions": "string",
+  "featured": true,
+  "bestSeller": true,
+  "metaTitle": "string",
+  "metaKeywords": "string",
+  "metaDescriptions": "string",
+  "brandId": 0,
+  "productInCategory": [
+    {
+      "productId": 0,
+      "cateId": 12
+    }
+  ]
+}
+2024-09-10 15:00:33.126 +07:00 [INF] Executing endpoint 'TechShopSolution.API.Controllers.ProductController.Create (TechShopSolution.API)'
+2024-09-10 15:00:33.136 +07:00 [INF] Route matched with {action = "Create", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(TechShopSolution.Application.Commands.Products.CreateProduct.CreateProductCommand) on controller TechShopSolution.API.Controllers.ProductController (TechShopSolution.API).
+2024-09-10 15:00:33.212 +07:00 [INF] Executing action method TechShopSolution.API.Controllers.ProductController.Create (TechShopSolution.API) - Validation state: "Valid"
+2024-09-10 15:00:33.218 +07:00 [INF] Creating a new product
+2024-09-10 15:00:33.481 +07:00 [INF] Executed DbCommand (88ms) [Parameters=[@p0='?' (DbType = Boolean), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (Size = 4000), @p8='?' (DbType = Int32), @p9='?' (DbType = Boolean), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (DbType = Currency), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Currency), @p21='?' (DbType = DateTime2), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Product] ([BestSeller], [BrandId], [Code], [CreateAt], [DeleteAt], [Descriptions], [Featured], [Image], [Instock], [IsActive], [IsDelete], [MetaDescriptions], [MetaKeywords], [MetaTitle], [MoreImages], [Name], [PromotionPrice], [ShortDesc], [Slug], [Specifications], [UnitPrice], [UpdateAt], [ViewCount], [Warranty])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23);
+2024-09-10 15:00:33.637 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'TechShopSolution.Infrastructure.DBContext.TechShopDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Product_Brand_BrandId". The conflict occurred in database "TechShop", table "dbo.Brand", column 'Id'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:d32aa370-14e6-4de9-abca-cd1ec0fd2680
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Product_Brand_BrandId". The conflict occurred in database "TechShop", table "dbo.Brand", column 'Id'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:d32aa370-14e6-4de9-abca-cd1ec0fd2680
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-09-10 15:00:33.864 +07:00 [ERR] {"ClassName":"Microsoft.EntityFrameworkCore.DbUpdateException","Message":"An error occurred while saving the entity changes. See the inner exception for details.","Data":null,"InnerException":{"ClassName":"Microsoft.Data.SqlClient.SqlException","Message":"The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Product_Brand_BrandId\". The conflict occurred in database \"TechShop\", table \"dbo.Brand\", column 'Id'.","Data":{"HelpLink.ProdName":"Microsoft SQL Server","HelpLink.ProdVer":"16.00.1121","HelpLink.EvtSrc":"MSSQLServer","HelpLink.EvtID":"547","HelpLink.BaseHelpUrl":"https://go.microsoft.com/fwlink","HelpLink.LinkId":"20476","SqlError 1":"Microsoft.Data.SqlClient.SqlError: The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Product_Brand_BrandId\". The conflict occurred in database \"TechShop\", table \"dbo.Brand\", column 'Id'."},"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)\r\n   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)\r\n   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)\r\n   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)\r\n--- End of stack trace from previous location ---\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146232060,"Source":"Core Microsoft SqlClient Data Provider","WatsonBuckets":null,"Errors":null,"ClientConnectionId":"d32aa370-14e6-4de9-abca-cd1ec0fd2680"},"HelpURL":null,"StackTraceString":"   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at TechShopSolution.Infrastructure.Repositories.ProductRepository.Create(Product entity) in D:\\Projects\\TechShopSolution\\TechShopSolution.Infrastructure\\Repositories\\ProductRepository.cs:line 47\r\n   at TechShopSolution.Application.Commands.Products.CreateProduct.CreateProductCommandHandler.Handle(CreateProductCommand request, CancellationToken cancellationToken) in D:\\Projects\\TechShopSolution\\TechShopSolution.Application\\Commands\\Products\\CreateProduct\\CreateProductCommandHandler.cs:line 19\r\n   at TechShopSolution.API.Controllers.ProductController.Create(CreateProductCommand command) in D:\\Projects\\TechShopSolution\\TechShopSolution.API\\Controllers\\ProductController.cs:line 129","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233088,"Source":"Microsoft.EntityFrameworkCore.Relational","WatsonBuckets":null}
+2024-09-10 15:00:33.864 +07:00 [INF] Executed action method TechShopSolution.API.Controllers.ProductController.Create (TechShopSolution.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 651.7341ms.
+2024-09-10 15:00:33.865 +07:00 [INF] Executing ObjectResult, writing value of type 'TechShopSolution.Application.Models.Common.StandardResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-10 15:00:33.866 +07:00 [INF] Executed action TechShopSolution.API.Controllers.ProductController.Create (TechShopSolution.API) in 729.3965ms
+2024-09-10 15:00:33.866 +07:00 [INF] Executed endpoint 'TechShopSolution.API.Controllers.ProductController.Create (TechShopSolution.API)'
+2024-09-10 15:00:33.866 +07:00 [INF] Response: StatusCode=500
+2024-09-10 15:00:33.868 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7042/api/products/Create - 500 null application/json; charset=utf-8 760.0793ms
+2024-09-10 15:00:40.661 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/trace/traces20240910.txt - null null
+2024-09-10 15:00:40.683 +07:00 [INF] Sending file. Request path: '/logs/trace/traces20240910.txt'. Physical path: 'D:\Projects\TechShopSolution\TechShopSolution.API\wwwroot\logs\trace\traces20240910.txt'
+2024-09-10 15:00:40.683 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/trace/traces20240910.txt - 200 684085 text/plain 22.0311ms
+2024-09-10 15:01:08.810 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/ - null null
+2024-09-10 15:01:08.811 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/ - 200 2294 text/html; charset=utf-8 1.8008ms
+2024-09-10 15:01:11.049 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/error/ - null null
+2024-09-10 15:01:11.050 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/error/ - 200 1989 text/html; charset=utf-8 1.5451ms
+2024-09-10 15:01:11.906 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/error/error20240910.txt - null null
+2024-09-10 15:01:11.909 +07:00 [INF] Sending file. Request path: '/logs/error/error20240910.txt'. Physical path: 'D:\Projects\TechShopSolution\TechShopSolution.API\wwwroot\logs\error\error20240910.txt'
+2024-09-10 15:01:11.909 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/error/error20240910.txt - 200 28083 text/plain 3.7229ms
+2024-09-10 15:01:32.290 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/ - null null
+2024-09-10 15:01:32.291 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/ - 200 2294 text/html; charset=utf-8 1.667ms
+2024-09-10 15:01:33.752 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/trace/ - null null
+2024-09-10 15:01:33.753 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/trace/ - 200 1992 text/html; charset=utf-8 1.0775ms
+2024-09-10 15:03:51.647 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/ - null null
+2024-09-10 15:03:51.651 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/ - 200 2294 text/html; charset=utf-8 4.108ms
+2024-09-10 15:03:52.662 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/info/ - null null
+2024-09-10 15:03:52.663 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/info/ - 200 1984 text/html; charset=utf-8 2.1453ms
+2024-09-10 15:03:53.384 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/info/info20240910.txt - null null
+2024-09-10 15:03:53.406 +07:00 [INF] Sending file. Request path: '/logs/info/info20240910.txt'. Physical path: 'D:\Projects\TechShopSolution\TechShopSolution.API\wwwroot\logs\info\info20240910.txt'
+2024-09-10 15:03:53.406 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/info/info20240910.txt - 200 91439 text/plain 22.4215ms
+2024-09-10 15:04:29.050 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/1 - null null
+2024-09-10 15:04:29.053 +07:00 [INF] Request: Method=GET, Path=/api/products/1, QueryString=, Headers={"Accept":"*/*","Host":"localhost:7042","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en","Cookie":"sid=Fe26.2**451189ee569146e2e1a5bc41f1fb9f651d53d4e0608a63b0846b448b07f17693*_BuFeZw6i187b0miFxzRRQ*IYnAPj2o3nZ1bmhacVPOXc7o6vwZJPD2m8li8OT3DO7wUhcXRgj7y7D388fBmlG4BhAf9dUbvzCj-fU9Ly1vLa_z0zOlZ8wjnwmN4727OitWVpzNB2OATJZQKYZ6Fiuzl-hzJWdXGH_UB18-tHyZM4FRzeUU9VMt1i0j38TLLR-rDmR9nF7JGQxxVNS92SCg3FH7hTYNDuXo8fjdPMbm0z1i13CcMBiK27Dcu1pAyTFPn3lJla2DfVfiBvX09zpB**dc91ee94a6e2ab1559ed6bf2c8c83664617354d8191e7befcf9af54ba6a09645*HhkzxWJnJr8UKkHlPj6UkdeN6yVAxyLoqPN-Pe0YyPI","Referer":"https://localhost:7042/swagger/index.html","sec-ch-ua":"\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-gpc":"1","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty","priority":"u=1, i"}, Body=
+2024-09-10 15:04:29.054 +07:00 [INF] Executing endpoint 'TechShopSolution.API.Controllers.ProductController.GetById (TechShopSolution.API)'
+2024-09-10 15:04:29.058 +07:00 [INF] Route matched with {action = "GetById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int32) on controller TechShopSolution.API.Controllers.ProductController (TechShopSolution.API).
+2024-09-10 15:04:29.061 +07:00 [INF] Executing action method TechShopSolution.API.Controllers.ProductController.GetById (TechShopSolution.API) - Validation state: "Valid"
+2024-09-10 15:04:29.068 +07:00 [INF] Getting product 1
+2024-09-10 15:04:29.170 +07:00 [INF] Executed DbCommand (16ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[BestSeller], [t].[BrandId], [t].[Code], [t].[CreateAt], [t].[DeleteAt], [t].[Descriptions], [t].[Featured], [t].[Image], [t].[Instock], [t].[IsActive], [t].[IsDelete], [t].[MetaDescriptions], [t].[MetaKeywords], [t].[MetaTitle], [t].[MoreImages], [t].[Name], [t].[PromotionPrice], [t].[ShortDesc], [t].[Slug], [t].[Specifications], [t].[UnitPrice], [t].[UpdateAt], [t].[ViewCount], [t].[Warranty], [t].[Id0], [t0].[CateId], [t0].[ProductId], [t0].[Id], [t0].[CateName], [t0].[CateSlug], [t0].[CreateAt], [t0].[DeleteAt], [t0].[IsActive], [t0].[IsDelete], [t0].[MetaDescriptions], [t0].[MetaKeywords], [t0].[MetaTitle], [t0].[ParentId], [t0].[UpdateAt], [t].[BrandName], [t].[BrandSlug], [t].[CreateAt0], [t].[DeleteAt0], [t].[IsActive0], [t].[IsDelete0], [t].[MetaDescriptions0], [t].[MetaKeywords0], [t].[MetaTitle0], [t].[UpdateAt0]
+FROM (
+    SELECT TOP(1) [p].[Id], [p].[BestSeller], [p].[BrandId], [p].[Code], [p].[CreateAt], [p].[DeleteAt], [p].[Descriptions], [p].[Featured], [p].[Image], [p].[Instock], [p].[IsActive], [p].[IsDelete], [p].[MetaDescriptions], [p].[MetaKeywords], [p].[MetaTitle], [p].[MoreImages], [p].[Name], [p].[PromotionPrice], [p].[ShortDesc], [p].[Slug], [p].[Specifications], [p].[UnitPrice], [p].[UpdateAt], [p].[ViewCount], [p].[Warranty], [b].[Id] AS [Id0], [b].[BrandName], [b].[BrandSlug], [b].[CreateAt] AS [CreateAt0], [b].[DeleteAt] AS [DeleteAt0], [b].[IsActive] AS [IsActive0], [b].[IsDelete] AS [IsDelete0], [b].[MetaDescriptions] AS [MetaDescriptions0], [b].[MetaKeywords] AS [MetaKeywords0], [b].[MetaTitle] AS [MetaTitle0], [b].[UpdateAt] AS [UpdateAt0]
+    FROM [Product] AS [p]
+    INNER JOIN [Brand] AS [b] ON [p].[BrandId] = [b].[Id]
+    WHERE [p].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [c].[CateId], [c].[ProductId], [c0].[Id], [c0].[CateName], [c0].[CateSlug], [c0].[CreateAt], [c0].[DeleteAt], [c0].[IsActive], [c0].[IsDelete], [c0].[MetaDescriptions], [c0].[MetaKeywords], [c0].[MetaTitle], [c0].[ParentId], [c0].[UpdateAt]
+    FROM [CategoryProduct] AS [c]
+    INNER JOIN [Category] AS [c0] ON [c].[CateId] = [c0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[ProductId]
+ORDER BY [t].[Id], [t].[Id0], [t0].[CateId], [t0].[ProductId]
+2024-09-10 15:04:29.178 +07:00 [INF] Executed action method TechShopSolution.API.Controllers.ProductController.GetById (TechShopSolution.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 116.9347ms.
+2024-09-10 15:04:29.178 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechShopSolution.Application.Models.Common.StandardResponse`1[[TechShopSolution.Application.Models.Products.ProductDTO, TechShopSolution.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 15:04:29.182 +07:00 [INF] Executed action TechShopSolution.API.Controllers.ProductController.GetById (TechShopSolution.API) in 123.5143ms
+2024-09-10 15:04:29.183 +07:00 [INF] Executed endpoint 'TechShopSolution.API.Controllers.ProductController.GetById (TechShopSolution.API)'
+2024-09-10 15:04:29.183 +07:00 [INF] Response: StatusCode=200
+2024-09-10 15:04:29.183 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/1 - 200 null application/json; charset=utf-8 138.3221ms
+2024-09-10 15:04:31.496 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/info/info20240910.txt - null null
+2024-09-10 15:04:31.501 +07:00 [INF] Sending file. Request path: '/logs/info/info20240910.txt'. Physical path: 'D:\Projects\TechShopSolution\TechShopSolution.API\wwwroot\logs\info\info20240910.txt'
+2024-09-10 15:04:31.501 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/info/info20240910.txt - 200 97251 text/plain 4.9077ms
+2024-09-10 15:06:28.593 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/error/ - null null
+2024-09-10 15:06:28.598 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/error/ - 200 1989 text/html; charset=utf-8 5.5051ms

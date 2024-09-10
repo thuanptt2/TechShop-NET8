@@ -20,9 +20,10 @@
           "OpenTelemetry.Instrumentation.EntityFrameworkCore": "1.0.0-beta.3",
           "OpenTelemetry.Instrumentation.Http": "1.6.0-beta.2",
           "OpenTelemetry.Instrumentation.Runtime": "1.5.0",
-          "Serilog": "3.0.1",
+          "Serilog": "4.0.0",
           "Serilog.Extensions.Logging": "3.0.1",
           "Serilog.Sinks.Console": "3.0.1",
+          "Serilog.Sinks.File": "6.0.0",
           "Serilog.Sinks.OpenTelemetry": "1.0.2",
           "System.Diagnostics.PerformanceCounter": "7.0.0",
           "TechShopSolution.Application": "1.0.0"
@@ -1039,18 +1040,18 @@
           "Microsoft.NETCore.Targets": "1.1.0"
         }
       },
-      "Serilog/3.0.1": {
+      "Serilog/4.0.0": {
         "runtime": {
-          "lib/net7.0/Serilog.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "3.0.1.0"
+          "lib/net8.0/Serilog.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
           }
         }
       },
       "Serilog.Extensions.Logging/3.0.1": {
         "dependencies": {
           "Microsoft.Extensions.Logging": "8.0.0",
-          "Serilog": "3.0.1"
+          "Serilog": "4.0.0"
         },
         "runtime": {
           "lib/netstandard2.0/Serilog.Extensions.Logging.dll": {
@@ -1061,7 +1062,7 @@
       },
       "Serilog.Sinks.Console/3.0.1": {
         "dependencies": {
-          "Serilog": "3.0.1",
+          "Serilog": "4.0.0",
           "System.Console": "4.3.0",
           "System.Runtime.InteropServices": "4.3.0",
           "System.Runtime.InteropServices.RuntimeInformation": "4.3.0"
@@ -1073,11 +1074,22 @@
           }
         }
       },
+      "Serilog.Sinks.File/6.0.0": {
+        "dependencies": {
+          "Serilog": "4.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/Serilog.Sinks.File.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.0.0"
+          }
+        }
+      },
       "Serilog.Sinks.OpenTelemetry/1.0.2": {
         "dependencies": {
           "Google.Protobuf": "3.23.4",
           "Grpc.Net.Client": "2.55.0",
-          "Serilog": "3.0.1",
+          "Serilog": "4.0.0",
           "Serilog.Sinks.PeriodicBatching": "3.1.0"
         },
         "runtime": {
@@ -1089,7 +1101,7 @@
       },
       "Serilog.Sinks.PeriodicBatching/3.1.0": {
         "dependencies": {
-          "Serilog": "3.0.1"
+          "Serilog": "4.0.0"
         },
         "runtime": {
           "lib/netstandard2.1/Serilog.Sinks.PeriodicBatching.dll": {
@@ -2002,12 +2014,12 @@
       "path": "runtime.native.system/4.3.0",
       "hashPath": "runtime.native.system.4.3.0.nupkg.sha512"
     },
-    "Serilog/3.0.1": {
+    "Serilog/4.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-E4UmOQ++eNJax1laE+lws7E3zbhKgHsGJbO7ra0yE5smUh+5FfUPIKKBxM3MO1tK4sgpQke6/pLReDxIc/ggNw==",
-      "path": "serilog/3.0.1",
-      "hashPath": "serilog.3.0.1.nupkg.sha512"
+      "sha512": "sha512-2jDkUrSh5EofOp7Lx5Zgy0EB+7hXjjxE2ktTb1WVQmU00lDACR2TdROGKU0K1pDTBSJBN1PqgYpgOZF8mL7NJw==",
+      "path": "serilog/4.0.0",
+      "hashPath": "serilog.4.0.0.nupkg.sha512"
     },
     "Serilog.Extensions.Logging/3.0.1": {
       "type": "package",
@@ -2022,6 +2034,13 @@
       "sha512": "sha512-u9jFZu9yT7d7zvH+sRERszf+VAFufEIHOGoFqihVOvlD9G0D/BJnH0QZ3O5jFQxexD0geTeDuUlvq14eVEGqSA==",
       "path": "serilog.sinks.console/3.0.1",
       "hashPath": "serilog.sinks.console.3.0.1.nupkg.sha512"
+    },
+    "Serilog.Sinks.File/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lxjg89Y8gJMmFxVkbZ+qDgjl+T4yC5F7WSLTvA+5q0R04tfKVLRL/EHpYoJ/MEQd2EeCKDuylBIVnAYMotmh2A==",
+      "path": "serilog.sinks.file/6.0.0",
+      "hashPath": "serilog.sinks.file.6.0.0.nupkg.sha512"
     },
     "Serilog.Sinks.OpenTelemetry/1.0.2": {
       "type": "package",

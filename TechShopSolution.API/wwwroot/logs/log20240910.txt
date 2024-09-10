@@ -1,0 +1,153 @@
+2024-09-10 10:33:26.775 +07:00 [WRN] The WebRootPath was not found: D:\Projects\TechShopSolution\TechShopSolution.API\wwwroot. Static files may be unavailable.
+2024-09-10 10:33:26.922 +07:00 [INF] Now listening on: https://localhost:7042
+2024-09-10 10:33:26.922 +07:00 [INF] Now listening on: http://localhost:5216
+2024-09-10 10:33:26.924 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 10:33:26.925 +07:00 [INF] Hosting environment: Development
+2024-09-10 10:33:26.925 +07:00 [INF] Content root path: D:\Projects\TechShopSolution\TechShopSolution.API
+2024-09-10 10:33:27.514 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/ - null null
+2024-09-10 10:33:27.574 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/ - 404 0 null 79.1979ms
+2024-09-10 10:33:27.582 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7042/, Response status code: 404
+2024-09-10 10:33:31.797 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7042/api/products/Create - application/json 488
+2024-09-10 10:33:31.809 +07:00 [INF] Executing endpoint 'TechShopSolution.API.Controllers.ProductController.Create (TechShopSolution.API)'
+2024-09-10 10:33:31.854 +07:00 [INF] Route matched with {action = "Create", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(TechShopSolution.Application.Commands.Products.CreateProduct.CreateProductCommand) on controller TechShopSolution.API.Controllers.ProductController (TechShopSolution.API).
+2024-09-10 10:33:31.998 +07:00 [INF] Executing action method TechShopSolution.API.Controllers.ProductController.Create (TechShopSolution.API) - Validation state: "Valid"
+2024-09-10 10:33:32.337 +07:00 [INF] Creating a new product
+2024-09-10 10:33:33.949 +07:00 [INF] Executed DbCommand (79ms) [Parameters=[@p0='?' (DbType = Boolean), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (Size = 4000), @p8='?' (DbType = Int32), @p9='?' (DbType = Boolean), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (DbType = Currency), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Currency), @p21='?' (DbType = DateTime2), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Product] ([BestSeller], [BrandId], [Code], [CreateAt], [DeleteAt], [Descriptions], [Featured], [Image], [Instock], [IsActive], [IsDelete], [MetaDescriptions], [MetaKeywords], [MetaTitle], [MoreImages], [Name], [PromotionPrice], [ShortDesc], [Slug], [Specifications], [UnitPrice], [UpdateAt], [ViewCount], [Warranty])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23);
+2024-09-10 10:33:34.000 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'TechShopSolution.Infrastructure.DBContext.TechShopDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Product_Brand_BrandId". The conflict occurred in database "TechShop", table "dbo.Brand", column 'Id'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:ac82302b-2d06-49d0-9602-47155874d511
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Product_Brand_BrandId". The conflict occurred in database "TechShop", table "dbo.Brand", column 'Id'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:ac82302b-2d06-49d0-9602-47155874d511
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-09-10 10:33:34.218 +07:00 [ERR] {"ClassName":"Microsoft.EntityFrameworkCore.DbUpdateException","Message":"An error occurred while saving the entity changes. See the inner exception for details.","Data":null,"InnerException":{"ClassName":"Microsoft.Data.SqlClient.SqlException","Message":"The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Product_Brand_BrandId\". The conflict occurred in database \"TechShop\", table \"dbo.Brand\", column 'Id'.","Data":{"HelpLink.ProdName":"Microsoft SQL Server","HelpLink.ProdVer":"16.00.1121","HelpLink.EvtSrc":"MSSQLServer","HelpLink.EvtID":"547","HelpLink.BaseHelpUrl":"https://go.microsoft.com/fwlink","HelpLink.LinkId":"20476","SqlError 1":"Microsoft.Data.SqlClient.SqlError: The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Product_Brand_BrandId\". The conflict occurred in database \"TechShop\", table \"dbo.Brand\", column 'Id'."},"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)\r\n   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)\r\n   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)\r\n   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)\r\n--- End of stack trace from previous location ---\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146232060,"Source":"Core Microsoft SqlClient Data Provider","WatsonBuckets":null,"Errors":null,"ClientConnectionId":"ac82302b-2d06-49d0-9602-47155874d511"},"HelpURL":null,"StackTraceString":"   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at TechShopSolution.Infrastructure.Repositories.ProductRepository.Create(Product entity) in D:\\Projects\\TechShopSolution\\TechShopSolution.Infrastructure\\Repositories\\ProductRepository.cs:line 47\r\n   at TechShopSolution.Application.Commands.Products.CreateProduct.CreateProductCommandHandler.Handle(CreateProductCommand request, CancellationToken cancellationToken) in D:\\Projects\\TechShopSolution\\TechShopSolution.Application\\Commands\\Products\\CreateProduct\\CreateProductCommandHandler.cs:line 19\r\n   at TechShopSolution.API.Controllers.ProductController.Create(CreateProductCommand command) in D:\\Projects\\TechShopSolution\\TechShopSolution.API\\Controllers\\ProductController.cs:line 129","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233088,"Source":"Microsoft.EntityFrameworkCore.Relational","WatsonBuckets":null}
+2024-09-10 10:33:34.221 +07:00 [INF] Executed action method TechShopSolution.API.Controllers.ProductController.Create (TechShopSolution.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 2220.2225ms.
+2024-09-10 10:33:34.227 +07:00 [INF] Executing ObjectResult, writing value of type 'TechShopSolution.Application.Models.Common.StandardResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-10 10:33:34.242 +07:00 [INF] Executed action TechShopSolution.API.Controllers.ProductController.Create (TechShopSolution.API) in 2384.0622ms
+2024-09-10 10:33:34.243 +07:00 [INF] Executed endpoint 'TechShopSolution.API.Controllers.ProductController.Create (TechShopSolution.API)'
+2024-09-10 10:33:34.251 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7042/api/products/Create - 500 null application/json; charset=utf-8 2454.7617ms
+2024-09-10 10:33:52.569 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs - null null
+2024-09-10 10:33:52.574 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs - 404 0 null 5.1268ms
+2024-09-10 10:33:52.574 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7042/logs, Response status code: 404
+2024-09-10 10:33:55.474 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/log - null null
+2024-09-10 10:33:55.475 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/log - 404 0 null 1.0176ms
+2024-09-10 10:33:55.475 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7042/log, Response status code: 404
+2024-09-10 10:33:57.936 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs - null null
+2024-09-10 10:33:57.938 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs - 404 0 null 2.4511ms
+2024-09-10 10:33:57.938 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7042/logs, Response status code: 404
+2024-09-10 10:35:05.169 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/log20240910.txt - null null
+2024-09-10 10:35:05.176 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/log20240910.txt - 404 0 null 9.7996ms
+2024-09-10 10:35:05.177 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7042/logs/log20240910.txt, Response status code: 404
+2024-09-10 10:36:48.413 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/test.txt - null null
+2024-09-10 10:36:48.417 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/test.txt - 404 0 null 5.1033ms
+2024-09-10 10:36:48.418 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7042/logs/test.txt, Response status code: 404
+2024-09-10 10:37:12.099 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/log20240910.txt - null null
+2024-09-10 10:37:12.100 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/log20240910.txt - 404 0 null 1.2825ms
+2024-09-10 10:37:12.100 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7042/logs/log20240910.txt, Response status code: 404
+2024-09-10 10:37:58.199 +07:00 [INF] Now listening on: http://localhost:5216
+2024-09-10 10:37:58.234 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 10:37:58.234 +07:00 [INF] Hosting environment: Development
+2024-09-10 10:37:58.234 +07:00 [INF] Content root path: D:\Projects\TechShopSolution\TechShopSolution.API
+2024-09-10 10:37:58.460 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5216/swagger - null null
+2024-09-10 10:37:58.486 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5216/swagger - 301 0 null 38.8271ms
+2024-09-10 10:37:58.497 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5216/swagger/index.html - null null
+2024-09-10 10:37:58.552 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5216/swagger/index.html - 200 null text/html;charset=utf-8 55.291ms
+2024-09-10 10:37:58.598 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5216/swagger/swagger-ui.css - null null
+2024-09-10 10:37:58.600 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5216/swagger/swagger-ui-bundle.js - null null
+2024-09-10 10:37:58.600 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5216/swagger/swagger-ui-standalone-preset.js - null null
+2024-09-10 10:37:58.627 +07:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-09-10 10:37:58.627 +07:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-09-10 10:37:58.629 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5216/swagger/swagger-ui-standalone-preset.js - 200 339486 text/javascript 28.4827ms
+2024-09-10 10:37:58.629 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5216/swagger/swagger-ui.css - 200 143943 text/css 30.6209ms
+2024-09-10 10:37:58.643 +07:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-09-10 10:37:58.644 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5216/swagger/swagger-ui-bundle.js - 200 1096145 text/javascript 43.3963ms
+2024-09-10 10:37:58.820 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5216/swagger/v1/swagger.json - null null
+2024-09-10 10:37:58.892 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5216/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 71.8063ms
+2024-09-10 11:00:40.915 +07:00 [INF] Now listening on: https://localhost:7042
+2024-09-10 11:00:40.944 +07:00 [INF] Now listening on: http://localhost:5216
+2024-09-10 11:00:40.946 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 11:00:40.946 +07:00 [INF] Hosting environment: Development
+2024-09-10 11:00:40.946 +07:00 [INF] Content root path: D:\Projects\TechShopSolution\TechShopSolution.API
+2024-09-10 11:00:41.377 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/ - null null
+2024-09-10 11:00:41.421 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/ - 404 0 null 63.74ms
+2024-09-10 11:00:41.426 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7042/, Response status code: 404
+2024-09-10 11:00:44.725 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/swagger/index.html - null null
+2024-09-10 11:00:44.809 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/swagger/index.html - 200 null text/html;charset=utf-8 84.1251ms
+2024-09-10 11:00:44.916 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/swagger/v1/swagger.json - null null
+2024-09-10 11:00:44.934 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/swagger/favicon-32x32.png - null null
+2024-09-10 11:00:44.954 +07:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-09-10 11:00:44.954 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/swagger/favicon-32x32.png - 200 628 image/png 20.6189ms
+2024-09-10 11:00:45.004 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 88.3196ms
+2024-09-10 11:00:48.210 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/swagger/index.html - null null
+2024-09-10 11:00:48.212 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/swagger/index.html - 200 null text/html;charset=utf-8 1.9718ms
+2024-09-10 11:00:48.483 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/swagger/v1/swagger.json - null null
+2024-09-10 11:00:48.490 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 8.5572ms
+2024-09-10 11:00:59.839 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/log/test.txt - null null
+2024-09-10 11:00:59.841 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/log/test.txt - 404 0 null 2.3192ms
+2024-09-10 11:00:59.842 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7042/log/test.txt, Response status code: 404
+2024-09-10 11:01:11.058 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/test.txt - null null
+2024-09-10 11:01:11.062 +07:00 [INF] Sending file. Request path: '/logs/test.txt'. Physical path: 'D:\Projects\TechShopSolution\TechShopSolution.API\wwwroot\logs\test.txt'
+2024-09-10 11:01:11.062 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/test.txt - 200 0 text/plain 4.0259ms
+2024-09-10 11:01:11.178 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/favicon.ico - null null
+2024-09-10 11:01:11.178 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/favicon.ico - 404 0 null 0.5078ms
+2024-09-10 11:01:11.178 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7042/favicon.ico, Response status code: 404
+2024-09-10 11:01:15.711 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/log20240910.txt - null null
+2024-09-10 11:01:15.724 +07:00 [INF] Sending file. Request path: '/logs/log20240910.txt'. Physical path: 'D:\Projects\TechShopSolution\TechShopSolution.API\wwwroot\logs\log20240910.txt'
+2024-09-10 11:01:15.724 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/log20240910.txt - 200 26471 text/plain 14.0368ms
+2024-09-10 11:01:22.434 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs - null null
+2024-09-10 11:01:22.440 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs - 301 0 null 5.8846ms
+2024-09-10 11:01:22.446 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/ - null null
+2024-09-10 11:01:22.457 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/ - 200 2153 text/html; charset=utf-8 12.2346ms

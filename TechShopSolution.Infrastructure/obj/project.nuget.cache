@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/f+rqrE7QXA=",
+  "dgSpecHash": "1TauFl2cU+Q=",
   "success": true,
   "projectFilePath": "D:\\Projects\\TechShopSolution\\TechShopSolution.Infrastructure\\TechShopSolution.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -76,9 +76,10 @@
     "C:\\Users\\User\\.nuget\\packages\\opentelemetry.instrumentation.http\\1.6.0-beta.2\\opentelemetry.instrumentation.http.1.6.0-beta.2.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\opentelemetry.instrumentation.runtime\\1.5.0\\opentelemetry.instrumentation.runtime.1.5.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\serilog\\3.0.1\\serilog.3.0.1.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\serilog\\4.0.0\\serilog.4.0.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\serilog.extensions.logging\\3.0.1\\serilog.extensions.logging.3.0.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\serilog.sinks.console\\3.0.1\\serilog.sinks.console.3.0.1.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\serilog.sinks.file\\6.0.0\\serilog.sinks.file.6.0.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\serilog.sinks.opentelemetry\\1.0.2\\serilog.sinks.opentelemetry.1.0.2.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\serilog.sinks.periodicbatching\\3.1.0\\serilog.sinks.periodicbatching.3.1.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",

@@ -2,8 +2,6 @@ using TechShopSolution.Application.Extensions;
 using TechShopSolution.Infrastructure.Extensions;
 using TechShopSolution.Infrastructure.Configuration;
 using Microsoft.AspNetCore.Mvc;
-using Serilog;
-using Serilog.Events;
 using Microsoft.Extensions.FileProviders;
 using TechShopSolution.Infrastructure.Middlewares;
 
@@ -33,15 +31,6 @@ builder.Services.ConfigureSerilog(
     builder.Configuration.GetSection(nameof(KafkaLoggingConfig)).Get<KafkaLoggingConfig>(),
     builder.Configuration.GetValue<string>("otlpUrl")
 );
-
-// Set up Serilog for logging
-builder.Host.UseSerilog((context, services, configuration) => configuration
-    .MinimumLevel.Debug()
-    .WriteTo.Console() // Log to console for all levels
-    .WriteTo.File("wwwroot/logs/error/error.txt", LogEventLevel.Error, rollingInterval: RollingInterval.Day, retainedFileCountLimit: 7) // Error logs
-    .WriteTo.File("wwwroot/logs/info/info.txt", LogEventLevel.Information, rollingInterval: RollingInterval.Day, retainedFileCountLimit: 7) // Info logs
-    .WriteTo.File("wwwroot/logs/trace/traces.txt", LogEventLevel.Debug, rollingInterval: RollingInterval.Day, retainedFileCountLimit: 7) // Trace logs
-    .ReadFrom.Configuration(context.Configuration));
 
 // Add Swagger/OpenAPI support
 builder.Services.AddEndpointsApiExplorer();

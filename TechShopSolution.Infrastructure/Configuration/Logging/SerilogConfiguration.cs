@@ -28,6 +28,9 @@ namespace TechShopSolution.Infrastructure.Configuration
                 )
                 .Enrich.FromLogContext()
                 .Enrich.With<SerilogRequestEnricher>()
+                .WriteTo.File("wwwroot/logs/error/error.txt", LogEventLevel.Error, rollingInterval: RollingInterval.Day, retainedFileCountLimit: 7) // Error logs
+                .WriteTo.File("wwwroot/logs/info/info.txt", LogEventLevel.Information, rollingInterval: RollingInterval.Day, retainedFileCountLimit: 7) // Info logs
+                .WriteTo.File("wwwroot/logs/trace/traces.txt", LogEventLevel.Debug, rollingInterval: RollingInterval.Day, retainedFileCountLimit: 7) // Trace logs
                 .WriteTo.Sink(new KafkaSink(kafkaLoggingConfig))
                 .WriteTo.OpenTelemetry(opt => {
                     opt.Endpoint = otlpEndpoint + "/logs";

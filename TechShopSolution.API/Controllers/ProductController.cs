@@ -8,6 +8,7 @@ using TechShopSolution.Application.Commands.Products.DeleteProduct;
 using TechShopSolution.Application.Commands.Products.UpdateProduct;
 using Serilog;
 using TechShopSolution.Application.Models.Common;
+using Newtonsoft.Json;
 
 namespace TechShopSolution.API.Controllers
 {
@@ -33,7 +34,7 @@ namespace TechShopSolution.API.Controllers
             }
             catch (Exception ex)
             {
-                Log.Error(ex.Message);
+                logger.LogError(JsonConvert.SerializeObject(ex));
 
                 response.Success = false;
                 response.Message = "An unexpected error occurred";
@@ -55,7 +56,7 @@ namespace TechShopSolution.API.Controllers
                 if (product == null) 
                 {
                     response.Success = false;
-                    response.Message = $"The product with ID {id} was not found";
+                    response.Message = $"Product with ID {id} was not found";
                     return NotFound(response);
                 }
 
@@ -67,7 +68,7 @@ namespace TechShopSolution.API.Controllers
             }
             catch (Exception ex)
             {
-                Log.Error(ex.Message);
+                logger.LogError(JsonConvert.SerializeObject(ex));
 
                 response.Success = false;
                 response.Message = "An unexpected error occurred";
@@ -99,7 +100,7 @@ namespace TechShopSolution.API.Controllers
             }
             catch (Exception ex)
             {
-                Log.Error(ex.Message);
+                logger.LogError(JsonConvert.SerializeObject(ex));
 
                 response.Success = false;
                 response.Message = "An unexpected error occurred";
@@ -135,7 +136,7 @@ namespace TechShopSolution.API.Controllers
             }
             catch (Exception ex)
             {
-                Log.Error(ex.Message);
+                logger.LogError(JsonConvert.SerializeObject(ex));
                 
                 response.Success = false;
                 response.Message = "An unexpected error occurred";
@@ -176,7 +177,7 @@ namespace TechShopSolution.API.Controllers
             }
             catch (Exception ex)
             {
-                Log.Error(ex.Message);
+                logger.LogError(JsonConvert.SerializeObject(ex));
 
                 response.Success = false;
                 response.Message = "An unexpected error occurred";

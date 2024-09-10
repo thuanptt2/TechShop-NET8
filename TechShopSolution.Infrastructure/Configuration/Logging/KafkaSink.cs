@@ -52,7 +52,5 @@ namespace TechShopSolution.Infrastructure.Configuration.Logging
         {
             this._producer.Flush();
         }
-
-        
     }
 }

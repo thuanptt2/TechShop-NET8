@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\error\\error20240910.txt",
+      "PackagePath": "staticwebassets\\logs\\error\\error20240910.txt"
+    },
+    {
+      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\info\\info20240910.txt",
+      "PackagePath": "staticwebassets\\logs\\info\\info20240910.txt"
+    },
+    {
+      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\trace\\traces20240910.txt",
+      "PackagePath": "staticwebassets\\logs\\trace\\traces20240910.txt"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.TechShopSolution.API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.TechShopSolution.API.props",
+      "PackagePath": "build\\TechShopSolution.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.TechShopSolution.API.props",
+      "PackagePath": "buildMultiTargeting\\TechShopSolution.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.TechShopSolution.API.props",
+      "PackagePath": "buildTransitive\\TechShopSolution.API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

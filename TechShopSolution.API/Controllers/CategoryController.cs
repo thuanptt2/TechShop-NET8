@@ -5,12 +5,13 @@ using TechShopSolution.Application.Queries.Categories.GetAllCategories;
 using TechShopSolution.Application.Queries.Categories.GetCategoriesById;
 using TechShopSolution.Application.Models.Common;
 using TechShopSolution.Application.Models.Categories;
+using Newtonsoft.Json;
 
 namespace TechShopSolution.API.Controllers
 {
     [ApiController]
     [Route("api/categories")]
-    public class CategoryController(IMediator mediator) : ControllerBase
+    public class CategoryController(IMediator mediator, ILogger<ProductController> logger) : ControllerBase
     {
         [HttpGet]
         [Route("GetAll")]
@@ -30,7 +31,7 @@ namespace TechShopSolution.API.Controllers
             }
             catch (Exception ex)
             {
-                Log.Error(ex.Message);
+                logger.LogError(JsonConvert.SerializeObject(ex));
 
                 response.Success = false;
                 response.Message = "An unexpected error occurred";
@@ -64,7 +65,7 @@ namespace TechShopSolution.API.Controllers
             }
             catch (Exception ex)
             {
-                Log.Error(ex.Message);
+                logger.LogError(JsonConvert.SerializeObject(ex));
 
                 response.Success = false;
                 response.Message = "An unexpected error occurred";

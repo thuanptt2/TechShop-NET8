@@ -1,5 +1,4 @@
 using FluentValidation;
-using TechShopSolution.Application.Models.Products;
 
 namespace TechShopSolution.Application.Commands.Products.CreateProduct;
 

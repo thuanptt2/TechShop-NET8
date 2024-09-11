@@ -4,6 +4,8 @@ using TechShopSolution.Infrastructure.Configuration;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.FileProviders;
 using TechShopSolution.Infrastructure.Middlewares;
+using TechShopSolution.Domain.Entities;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,7 +36,26 @@ builder.Services.ConfigureSerilog(
 
 // Add Swagger/OpenAPI support
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c => {
+    c.AddSecurityDefinition("bearerAuth", new OpenApiSecurityScheme {
+        Type = SecuritySchemeType.Http,
+        Scheme = "Bearer"
+    });
+
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement {
+        {
+            new OpenApiSecurityScheme 
+            {
+                Reference = new OpenApiReference {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "bearerAuth"
+                }
+            }, []
+        }
+    });
+});
+
+builder.Services.AddEndpointsApiExplorer();
 
 var app = builder.Build(); // Build the app here (only once)
 
@@ -63,10 +84,13 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseAuthorization();
+
+app.MapGroup("api/identity").MapIdentityApi<User>();
 
 // Register the custom middleware
-app.UseMiddleware<RequestLoggingMiddleware>();
+app.UseMiddleware<CustomUnauthorizedMiddleware>();
+
+app.UseAuthorization();
 
 app.MapControllers();
 

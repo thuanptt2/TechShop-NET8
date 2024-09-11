@@ -33,3 +33,4 @@ D:\Projects\TechShop-NET8\TechShopSolution.Domain\obj\Debug\net8.0\TechShopSolut
 D:\Projects\TechShop-NET8\TechShopSolution.Domain\obj\Debug\net8.0\refint\TechShopSolution.Domain.dll
 D:\Projects\TechShop-NET8\TechShopSolution.Domain\obj\Debug\net8.0\TechShopSolution.Domain.pdb
 D:\Projects\TechShop-NET8\TechShopSolution.Domain\obj\Debug\net8.0\ref\TechShopSolution.Domain.dll
+D:\Projects\TechShopSolution\TechShopSolution.Domain\obj\Debug\net8.0\TechShopSolution.Domain.csproj.AssemblyReference.cache

@@ -1,10 +1,10 @@
-using System.Diagnostics.Contracts;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using TechShopSolution.Domain.Entities;
 
 namespace TechShopSolution.Infrastructure.DBContext
 {
-    public class TechShopDbContext : DbContext
+    public class TechShopDbContext : IdentityDbContext<User>
     {
         public TechShopDbContext(DbContextOptions<TechShopDbContext> options) : base(options)
         {

@@ -6,14 +6,17 @@ using TechShopSolution.Application.Queries.Categories.GetCategoriesById;
 using TechShopSolution.Application.Models.Common;
 using TechShopSolution.Application.Models.Categories;
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TechShopSolution.API.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("api/categories")]
     public class CategoryController(IMediator mediator, ILogger<ProductController> logger) : ControllerBase
     {
         [HttpGet]
+        [AllowAnonymous]
         [Route("GetAll")]
         public async Task<IActionResult> GetAll()
         {

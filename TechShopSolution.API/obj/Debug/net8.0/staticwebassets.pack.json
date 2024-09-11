@@ -9,8 +9,16 @@
       "PackagePath": "staticwebassets\\logs\\info\\info20240910.txt"
     },
     {
+      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\info\\info20240911.txt",
+      "PackagePath": "staticwebassets\\logs\\info\\info20240911.txt"
+    },
+    {
       "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\trace\\traces20240910.txt",
       "PackagePath": "staticwebassets\\logs\\trace\\traces20240910.txt"
+    },
+    {
+      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\trace\\traces20240911.txt",
+      "PackagePath": "staticwebassets\\logs\\trace\\traces20240911.txt"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.TechShopSolution.API.Microsoft.AspNetCore.StaticWebAssets.props",

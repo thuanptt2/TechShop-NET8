@@ -6,17 +6,19 @@ using TechShopSolution.Application.Queries.Products.GetProductById;
 using TechShopSolution.Application.Commands.Products.CreateProduct;
 using TechShopSolution.Application.Commands.Products.DeleteProduct;
 using TechShopSolution.Application.Commands.Products.UpdateProduct;
-using Serilog;
 using TechShopSolution.Application.Models.Common;
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TechShopSolution.API.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("api/products")]
     public class ProductController(IMediator mediator, ILogger<ProductController> logger) : ControllerBase
     {
         [HttpGet]
+        [AllowAnonymous]
         [Route("GetAll")]
         public async Task<IActionResult> GetAll() 
         {

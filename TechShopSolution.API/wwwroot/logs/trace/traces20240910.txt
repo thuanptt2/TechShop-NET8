@@ -3829,3 +3829,884 @@ ORDER BY [t].[Id], [t].[Id0], [t0].[CateId], [t0].[ProductId]
 2024-09-10 15:04:31.501 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/info/info20240910.txt - 200 97251 text/plain 4.9077ms
 2024-09-10 15:06:28.593 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/error/ - null null
 2024-09-10 15:06:28.598 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/error/ - 200 1989 text/html; charset=utf-8 5.5051ms
+2024-09-10 15:45:04.628 +07:00 [INF] Now listening on: https://localhost:7042
+2024-09-10 15:45:04.871 +07:00 [INF] Now listening on: http://localhost:5216
+2024-09-10 15:45:04.882 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 15:45:04.887 +07:00 [INF] Hosting environment: Development
+2024-09-10 15:45:04.890 +07:00 [INF] Content root path: D:\Projects\TechShopSolution\TechShopSolution.API
+2024-09-10 15:45:05.298 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/ - null null
+2024-09-10 15:45:05.356 +07:00 [INF] Request: Method=GET, Path=/, QueryString=, Headers={"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8","Host":"localhost:7042","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en","Cookie":"sid=Fe26.2**d4b61aab0f481016d198c1d8cdabd301d7afce2b58d2dac2632529ad09cbde71*8xXJKJx6PKfMbzetXL7R0Q*9ug0NlysogAxUIVhQWxHKHDMQ4v2GA3mN-mJ27O1tO4G3z9Q9sZFK-aHBw24coL6waZraP4Ck1u5Goh9YhXP57PlWotvKEgfEyV-nGf7FYguZPFqjWK5ZTxrZLN7tBfUZL8ijpCPtFCiqPKq3NAXzO6K0uXZ5FR-MksbthHo9gScEWDpNsT3demgAXOZUKkk5LphRAfMOlVqUcOwOGWxEJi8kD2DGExRK3XMLuSeuwLGin20lOfv8wQNWMfeqoLs**109bb3f509d7b3881a44d1fd80b04df2259c269ec83fe496df508e3db81bab8e*ccTtJd2lYaLYlTCh4B7WcDMosdD99G6sdykNxQLvopA","Upgrade-Insecure-Requests":"1","sec-ch-ua":"\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-gpc":"1","sec-fetch-site":"none","sec-fetch-mode":"navigate","sec-fetch-user":"?1","sec-fetch-dest":"document","priority":"u=0, i"}, Body=
+2024-09-10 15:45:05.363 +07:00 [INF] Response: StatusCode=404
+2024-09-10 15:45:05.366 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/ - 404 0 null 147.7453ms
+2024-09-10 15:45:05.411 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7042/, Response status code: 404
+2024-09-10 16:02:46.869 +07:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-09-10 16:02:47.087 +07:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-09-10 16:02:47.090 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-09-10 16:02:47.091 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-09-10 16:02:47.133 +07:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-09-10 16:02:47.152 +07:00 [INF] Applying migration '20240910090138_IdentityAdded'.
+2024-09-10 16:02:47.277 +07:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetRoles] (
+    [Id] nvarchar(450) NOT NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+);
+2024-09-10 16:02:47.287 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUsers] (
+    [Id] nvarchar(450) NOT NULL,
+    [UserName] nvarchar(256) NULL,
+    [NormalizedUserName] nvarchar(256) NULL,
+    [Email] nvarchar(256) NULL,
+    [NormalizedEmail] nvarchar(256) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    CONSTRAINT [PK_AspNetUsers] PRIMARY KEY ([Id])
+);
+2024-09-10 16:02:47.296 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetRoleClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [RoleId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoleClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetRoleClaims_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE
+);
+2024-09-10 16:02:47.302 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetUserClaims_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2024-09-10 16:02:47.312 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserLogins] (
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [ProviderKey] nvarchar(450) NOT NULL,
+    [ProviderDisplayName] nvarchar(max) NULL,
+    [UserId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserLogins] PRIMARY KEY ([LoginProvider], [ProviderKey]),
+    CONSTRAINT [FK_AspNetUserLogins_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2024-09-10 16:02:47.320 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserRoles] (
+    [UserId] nvarchar(450) NOT NULL,
+    [RoleId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_AspNetUserRoles_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_AspNetUserRoles_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2024-09-10 16:02:47.325 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserTokens] (
+    [UserId] nvarchar(450) NOT NULL,
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [Name] nvarchar(450) NOT NULL,
+    [Value] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name]),
+    CONSTRAINT [FK_AspNetUserTokens_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2024-09-10 16:02:47.333 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetRoleClaims_RoleId] ON [AspNetRoleClaims] ([RoleId]);
+2024-09-10 16:02:47.338 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [RoleNameIndex] ON [AspNetRoles] ([NormalizedName]) WHERE [NormalizedName] IS NOT NULL;
+2024-09-10 16:02:47.340 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserClaims_UserId] ON [AspNetUserClaims] ([UserId]);
+2024-09-10 16:02:47.342 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserLogins_UserId] ON [AspNetUserLogins] ([UserId]);
+2024-09-10 16:02:47.343 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserRoles_RoleId] ON [AspNetUserRoles] ([RoleId]);
+2024-09-10 16:02:47.345 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [EmailIndex] ON [AspNetUsers] ([NormalizedEmail]);
+2024-09-10 16:02:47.346 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [UserNameIndex] ON [AspNetUsers] ([NormalizedUserName]) WHERE [NormalizedUserName] IS NOT NULL;
+2024-09-10 16:02:47.358 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240910090138_IdentityAdded', N'8.0.8');
+2024-09-10 16:09:00.576 +07:00 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-10 16:09:01.190 +07:00 [INF] Now listening on: https://localhost:7042
+2024-09-10 16:09:01.193 +07:00 [INF] Now listening on: http://localhost:5216
+2024-09-10 16:09:01.197 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 16:09:01.200 +07:00 [INF] Hosting environment: Development
+2024-09-10 16:09:01.202 +07:00 [INF] Content root path: D:\Projects\TechShopSolution\TechShopSolution.API
+2024-09-10 16:09:01.689 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/ - null null
+2024-09-10 16:09:01.742 +07:00 [INF] Request: Method=GET, Path=/, QueryString=, Headers={"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8","Host":"localhost:7042","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en","Cookie":"sid=Fe26.2**d4b61aab0f481016d198c1d8cdabd301d7afce2b58d2dac2632529ad09cbde71*8xXJKJx6PKfMbzetXL7R0Q*9ug0NlysogAxUIVhQWxHKHDMQ4v2GA3mN-mJ27O1tO4G3z9Q9sZFK-aHBw24coL6waZraP4Ck1u5Goh9YhXP57PlWotvKEgfEyV-nGf7FYguZPFqjWK5ZTxrZLN7tBfUZL8ijpCPtFCiqPKq3NAXzO6K0uXZ5FR-MksbthHo9gScEWDpNsT3demgAXOZUKkk5LphRAfMOlVqUcOwOGWxEJi8kD2DGExRK3XMLuSeuwLGin20lOfv8wQNWMfeqoLs**109bb3f509d7b3881a44d1fd80b04df2259c269ec83fe496df508e3db81bab8e*ccTtJd2lYaLYlTCh4B7WcDMosdD99G6sdykNxQLvopA","Upgrade-Insecure-Requests":"1","sec-ch-ua":"\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-gpc":"1","sec-fetch-site":"none","sec-fetch-mode":"navigate","sec-fetch-user":"?1","sec-fetch-dest":"document","priority":"u=0, i"}, Body=
+2024-09-10 16:09:01.754 +07:00 [INF] Response: StatusCode=404
+2024-09-10 16:09:01.758 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/ - 404 0 null 110.339ms
+2024-09-10 16:09:01.766 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7042/, Response status code: 404
+2024-09-10 16:09:04.336 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/swagger/index.html - null null
+2024-09-10 16:09:04.416 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/swagger/index.html - 200 null text/html;charset=utf-8 80.7289ms
+2024-09-10 16:09:04.644 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/swagger/v1/swagger.json - null null
+2024-09-10 16:09:04.744 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 99.2829ms
+2024-09-10 16:09:11.050 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7042/register - application/json 44
+2024-09-10 16:09:11.066 +07:00 [INF] Request: Method=POST, Path=/register, QueryString=, Headers={"Accept":"*/*","Host":"localhost:7042","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en","Content-Type":"application/json","Cookie":"sid=Fe26.2**d4b61aab0f481016d198c1d8cdabd301d7afce2b58d2dac2632529ad09cbde71*8xXJKJx6PKfMbzetXL7R0Q*9ug0NlysogAxUIVhQWxHKHDMQ4v2GA3mN-mJ27O1tO4G3z9Q9sZFK-aHBw24coL6waZraP4Ck1u5Goh9YhXP57PlWotvKEgfEyV-nGf7FYguZPFqjWK5ZTxrZLN7tBfUZL8ijpCPtFCiqPKq3NAXzO6K0uXZ5FR-MksbthHo9gScEWDpNsT3demgAXOZUKkk5LphRAfMOlVqUcOwOGWxEJi8kD2DGExRK3XMLuSeuwLGin20lOfv8wQNWMfeqoLs**109bb3f509d7b3881a44d1fd80b04df2259c269ec83fe496df508e3db81bab8e*ccTtJd2lYaLYlTCh4B7WcDMosdD99G6sdykNxQLvopA","Origin":"https://localhost:7042","Referer":"https://localhost:7042/swagger/index.html","Content-Length":"44","sec-ch-ua":"\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"","sec-ch-ua-platform":"\"Windows\"","sec-ch-ua-mobile":"?0","sec-gpc":"1","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty","priority":"u=1, i"}, Body={
+  "email": "123",
+  "password": "string"
+}
+2024-09-10 16:09:11.067 +07:00 [INF] Executing endpoint 'HTTP: POST /register'
+2024-09-10 16:09:11.214 +07:00 [INF] Setting HTTP status code 400.
+2024-09-10 16:09:11.219 +07:00 [INF] Writing value of type 'HttpValidationProblemDetails' as Json.
+2024-09-10 16:09:11.222 +07:00 [INF] Executed endpoint 'HTTP: POST /register'
+2024-09-10 16:09:11.223 +07:00 [INF] Response: StatusCode=400
+2024-09-10 16:09:11.225 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7042/register - 400 null application/problem+json 175.8571ms
+2024-09-10 16:10:14.706 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7042/register - application/json 49
+2024-09-10 16:10:14.731 +07:00 [INF] Request: Method=POST, Path=/register, QueryString=, Headers={"Accept":"*/*","Host":"localhost:7042","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en","Content-Type":"application/json","Cookie":"sid=Fe26.2**d4b61aab0f481016d198c1d8cdabd301d7afce2b58d2dac2632529ad09cbde71*8xXJKJx6PKfMbzetXL7R0Q*9ug0NlysogAxUIVhQWxHKHDMQ4v2GA3mN-mJ27O1tO4G3z9Q9sZFK-aHBw24coL6waZraP4Ck1u5Goh9YhXP57PlWotvKEgfEyV-nGf7FYguZPFqjWK5ZTxrZLN7tBfUZL8ijpCPtFCiqPKq3NAXzO6K0uXZ5FR-MksbthHo9gScEWDpNsT3demgAXOZUKkk5LphRAfMOlVqUcOwOGWxEJi8kD2DGExRK3XMLuSeuwLGin20lOfv8wQNWMfeqoLs**109bb3f509d7b3881a44d1fd80b04df2259c269ec83fe496df508e3db81bab8e*ccTtJd2lYaLYlTCh4B7WcDMosdD99G6sdykNxQLvopA","Origin":"https://localhost:7042","Referer":"https://localhost:7042/swagger/index.html","Content-Length":"49","sec-ch-ua":"\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"","sec-ch-ua-platform":"\"Windows\"","sec-ch-ua-mobile":"?0","sec-gpc":"1","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty","priority":"u=1, i"}, Body={
+  "email": "user01",
+  "password": "User@123"
+}
+2024-09-10 16:10:14.731 +07:00 [INF] Executing endpoint 'HTTP: POST /register'
+2024-09-10 16:10:14.767 +07:00 [INF] Setting HTTP status code 400.
+2024-09-10 16:10:14.767 +07:00 [INF] Writing value of type 'HttpValidationProblemDetails' as Json.
+2024-09-10 16:10:14.767 +07:00 [INF] Executed endpoint 'HTTP: POST /register'
+2024-09-10 16:10:14.767 +07:00 [INF] Response: StatusCode=400
+2024-09-10 16:10:14.767 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7042/register - 400 null application/problem+json 62.5928ms
+2024-09-10 16:10:27.753 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7042/register - application/json 59
+2024-09-10 16:10:27.754 +07:00 [INF] Request: Method=POST, Path=/register, QueryString=, Headers={"Accept":"*/*","Host":"localhost:7042","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en","Content-Type":"application/json","Cookie":"sid=Fe26.2**d4b61aab0f481016d198c1d8cdabd301d7afce2b58d2dac2632529ad09cbde71*8xXJKJx6PKfMbzetXL7R0Q*9ug0NlysogAxUIVhQWxHKHDMQ4v2GA3mN-mJ27O1tO4G3z9Q9sZFK-aHBw24coL6waZraP4Ck1u5Goh9YhXP57PlWotvKEgfEyV-nGf7FYguZPFqjWK5ZTxrZLN7tBfUZL8ijpCPtFCiqPKq3NAXzO6K0uXZ5FR-MksbthHo9gScEWDpNsT3demgAXOZUKkk5LphRAfMOlVqUcOwOGWxEJi8kD2DGExRK3XMLuSeuwLGin20lOfv8wQNWMfeqoLs**109bb3f509d7b3881a44d1fd80b04df2259c269ec83fe496df508e3db81bab8e*ccTtJd2lYaLYlTCh4B7WcDMosdD99G6sdykNxQLvopA","Origin":"https://localhost:7042","Referer":"https://localhost:7042/swagger/index.html","Content-Length":"59","sec-ch-ua":"\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"","sec-ch-ua-platform":"\"Windows\"","sec-ch-ua-mobile":"?0","sec-gpc":"1","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty","priority":"u=1, i"}, Body={
+  "email": "user01@gmail.com",
+  "password": "User@123"
+}
+2024-09-10 16:10:27.754 +07:00 [INF] Executing endpoint 'HTTP: POST /register'
+2024-09-10 16:10:29.124 +07:00 [INF] Executed DbCommand (66ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-09-10 16:10:29.302 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 256), @p8='?' (Size = 256), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+2024-09-10 16:10:29.320 +07:00 [INF] Setting HTTP status code 200.
+2024-09-10 16:10:29.320 +07:00 [INF] Executed endpoint 'HTTP: POST /register'
+2024-09-10 16:10:29.321 +07:00 [INF] Response: StatusCode=200
+2024-09-10 16:10:29.325 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7042/register - 200 0 null 1573.1038ms
+2024-09-10 16:13:25.117 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7042/login - application/json 125
+2024-09-10 16:13:25.118 +07:00 [INF] Request: Method=POST, Path=/login, QueryString=, Headers={"Accept":"application/json","Host":"localhost:7042","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en","Content-Type":"application/json","Cookie":"sid=Fe26.2**a8df9184648689a32fda7a056e62e7ed0a173d16b652235ec640e3b13d7039a9*3ai2OYUISjqr1JGVfgltlA*6pE5wVvayA78aBmHiHjryRuTKVFHyZbkGcB5u-h90zMIikys-BQSMu8Y4TqyePsKNInRCCC6clL_yYwjT2We5UemJj2cscm7RkYqWlAWA5GXAQutdAjqa_ovaob08RaHd49LLnnMadInueW5o-VMFL07e0vTIxLnkBhV4wlb-KIIWkj19dXpYcFzRoA2PDleIarb9ey7sFO9KyUfPu5uRnrszXNu07u0PUQ-4B8QM-g-nwpW0X1O17d9_px2cn-7**0925c4979ea6041d621b50451fe0532bd50c85411c9bc3ebc2590ba719c9a2e9*RSFqBQL_E6gioQiWCTrCkcER12yQVGrWr4xnchR2eHw","Origin":"https://localhost:7042","Referer":"https://localhost:7042/swagger/index.html","Content-Length":"125","sec-ch-ua":"\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"","sec-ch-ua-platform":"\"Windows\"","sec-ch-ua-mobile":"?0","sec-gpc":"1","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty","priority":"u=1, i"}, Body={
+  "email": "user01@gmail.com",
+  "password": "User@123",
+  "twoFactorCode": "string",
+  "twoFactorRecoveryCode": "string"
+}
+2024-09-10 16:13:25.118 +07:00 [INF] Executing endpoint 'HTTP: POST /login'
+2024-09-10 16:13:25.194 +07:00 [INF] Executed DbCommand (28ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-09-10 16:13:25.367 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-09-10 16:13:25.374 +07:00 [INF] AuthenticationScheme: Identity.Bearer signed in.
+2024-09-10 16:13:25.384 +07:00 [INF] Executed endpoint 'HTTP: POST /login'
+2024-09-10 16:13:25.384 +07:00 [INF] Response: StatusCode=200
+2024-09-10 16:13:25.384 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7042/login - 200 null application/json; charset=utf-8 267.4026ms
+2024-09-10 16:16:56.024 +07:00 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-10 16:16:56.912 +07:00 [INF] Now listening on: https://localhost:7042
+2024-09-10 16:16:56.914 +07:00 [INF] Now listening on: http://localhost:5216
+2024-09-10 16:16:56.917 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 16:16:56.919 +07:00 [INF] Hosting environment: Development
+2024-09-10 16:16:56.921 +07:00 [INF] Content root path: D:\Projects\TechShopSolution\TechShopSolution.API
+2024-09-10 16:16:57.527 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/ - null null
+2024-09-10 16:16:57.574 +07:00 [INF] Request: Method=GET, Path=/, QueryString=, Headers={"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8","Host":"localhost:7042","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en","Cookie":"sid=Fe26.2**4f1511ecd5e7cc4057c694bac24ac800a228aa0e17f6f430c259c720650138c8*9IQKnaaJrEm0Thnz5G2TKA*BluZdR27pfQ4qsP9Rsg1M62kcSzd1jp8jrLgAeY27AhyMSBWabON-VtciiGjBPRhe5K6TUaka3uosKESonaa_34wkykhij-l2M2v8Sftb_3OmYiSQgy2O5plPjLaj7LbVqsNGB1DkLAiJb8E_oE2ZL9MXE8LpXtJ8GFcjNmSYvfQmVhk9cN8bnjVglU6YLAknRQ6ZYKM1JlxPRMFiYZtGdh0OFOxqIRPo5d08wh_4-q36HgImBK0cwJ-ztEMahfa**e6f08f6d96c015175cb43563479fddbbc0609b88152fcd6d79e9061292fdaab7*hhwOFiwSQvwQ5hgFE_RBwprkmV9n99wQHgpdk_Kd7Jw","Upgrade-Insecure-Requests":"1","sec-ch-ua":"\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-gpc":"1","sec-fetch-site":"none","sec-fetch-mode":"navigate","sec-fetch-user":"?1","sec-fetch-dest":"document","priority":"u=0, i"}, Body=
+2024-09-10 16:16:57.578 +07:00 [INF] Response: StatusCode=404
+2024-09-10 16:16:57.581 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/ - 404 0 null 84.7695ms
+2024-09-10 16:16:57.588 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7042/, Response status code: 404
+2024-09-10 16:17:01.769 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/swagger/index.html - null null
+2024-09-10 16:17:01.835 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/swagger/index.html - 200 null text/html;charset=utf-8 66.004ms
+2024-09-10 16:17:01.987 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/swagger/v1/swagger.json - null null
+2024-09-10 16:17:02.077 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 91.0687ms
+2024-09-10 16:21:10.373 +07:00 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-10 16:21:10.981 +07:00 [INF] Now listening on: https://localhost:7042
+2024-09-10 16:21:10.983 +07:00 [INF] Now listening on: http://localhost:5216
+2024-09-10 16:21:10.989 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 16:21:10.992 +07:00 [INF] Hosting environment: Development
+2024-09-10 16:21:10.994 +07:00 [INF] Content root path: D:\Projects\TechShopSolution\TechShopSolution.API
+2024-09-10 16:21:11.446 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/ - null null
+2024-09-10 16:21:11.543 +07:00 [INF] Request: Method=GET, Path=/, QueryString=, Headers={"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8","Host":"localhost:7042","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en","Cookie":"sid=Fe26.2**4f1511ecd5e7cc4057c694bac24ac800a228aa0e17f6f430c259c720650138c8*9IQKnaaJrEm0Thnz5G2TKA*BluZdR27pfQ4qsP9Rsg1M62kcSzd1jp8jrLgAeY27AhyMSBWabON-VtciiGjBPRhe5K6TUaka3uosKESonaa_34wkykhij-l2M2v8Sftb_3OmYiSQgy2O5plPjLaj7LbVqsNGB1DkLAiJb8E_oE2ZL9MXE8LpXtJ8GFcjNmSYvfQmVhk9cN8bnjVglU6YLAknRQ6ZYKM1JlxPRMFiYZtGdh0OFOxqIRPo5d08wh_4-q36HgImBK0cwJ-ztEMahfa**e6f08f6d96c015175cb43563479fddbbc0609b88152fcd6d79e9061292fdaab7*hhwOFiwSQvwQ5hgFE_RBwprkmV9n99wQHgpdk_Kd7Jw","Upgrade-Insecure-Requests":"1","sec-ch-ua":"\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-gpc":"1","sec-fetch-site":"none","sec-fetch-mode":"navigate","sec-fetch-user":"?1","sec-fetch-dest":"document","priority":"u=0, i"}, Body=
+2024-09-10 16:21:11.549 +07:00 [INF] Response: StatusCode=404
+2024-09-10 16:21:11.554 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/ - 404 0 null 150.3761ms
+2024-09-10 16:21:11.563 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7042/, Response status code: 404
+2024-09-10 16:21:15.256 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/swagger/index.html - null null
+2024-09-10 16:21:15.317 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/swagger/index.html - 200 null text/html;charset=utf-8 61.3974ms
+2024-09-10 16:21:15.400 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/swagger/v1/swagger.json - null null
+2024-09-10 16:21:15.504 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 103.9289ms
+2024-09-10 16:27:55.757 +07:00 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-10 16:27:56.402 +07:00 [INF] Now listening on: https://localhost:7042
+2024-09-10 16:27:56.405 +07:00 [INF] Now listening on: http://localhost:5216
+2024-09-10 16:27:56.411 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 16:27:56.413 +07:00 [INF] Hosting environment: Development
+2024-09-10 16:27:56.415 +07:00 [INF] Content root path: D:\Projects\TechShopSolution\TechShopSolution.API
+2024-09-10 16:27:57.179 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/ - null null
+2024-09-10 16:27:57.289 +07:00 [INF] Request: Method=GET, Path=/, QueryString=, Headers={"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8","Host":"localhost:7042","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en","Cookie":"sid=Fe26.2**4f1511ecd5e7cc4057c694bac24ac800a228aa0e17f6f430c259c720650138c8*9IQKnaaJrEm0Thnz5G2TKA*BluZdR27pfQ4qsP9Rsg1M62kcSzd1jp8jrLgAeY27AhyMSBWabON-VtciiGjBPRhe5K6TUaka3uosKESonaa_34wkykhij-l2M2v8Sftb_3OmYiSQgy2O5plPjLaj7LbVqsNGB1DkLAiJb8E_oE2ZL9MXE8LpXtJ8GFcjNmSYvfQmVhk9cN8bnjVglU6YLAknRQ6ZYKM1JlxPRMFiYZtGdh0OFOxqIRPo5d08wh_4-q36HgImBK0cwJ-ztEMahfa**e6f08f6d96c015175cb43563479fddbbc0609b88152fcd6d79e9061292fdaab7*hhwOFiwSQvwQ5hgFE_RBwprkmV9n99wQHgpdk_Kd7Jw","Upgrade-Insecure-Requests":"1","sec-ch-ua":"\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-gpc":"1","sec-fetch-site":"none","sec-fetch-mode":"navigate","sec-fetch-user":"?1","sec-fetch-dest":"document","priority":"u=0, i"}, Body=
+2024-09-10 16:27:57.301 +07:00 [INF] Response: StatusCode=404
+2024-09-10 16:27:57.314 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/ - 404 0 null 249.9285ms
+2024-09-10 16:27:57.334 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7042/, Response status code: 404
+2024-09-10 16:28:02.627 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/swagger/index.html - null null
+2024-09-10 16:28:02.695 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/swagger/index.html - 200 null text/html;charset=utf-8 67.5027ms
+2024-09-10 16:28:02.794 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/swagger/v1/swagger.json - null null
+2024-09-10 16:28:02.891 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 97.3346ms
+2024-09-10 16:28:15.629 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 16:28:15.646 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 16:28:15.650 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 16:28:15.650 +07:00 [INF] Request: Method=GET, Path=/api/products/GetAll, QueryString=, Headers={"Accept":"*/*","Host":"localhost:7042","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en","Authorization":"Bearer 123","Cookie":"sid=Fe26.2**4f1511ecd5e7cc4057c694bac24ac800a228aa0e17f6f430c259c720650138c8*9IQKnaaJrEm0Thnz5G2TKA*BluZdR27pfQ4qsP9Rsg1M62kcSzd1jp8jrLgAeY27AhyMSBWabON-VtciiGjBPRhe5K6TUaka3uosKESonaa_34wkykhij-l2M2v8Sftb_3OmYiSQgy2O5plPjLaj7LbVqsNGB1DkLAiJb8E_oE2ZL9MXE8LpXtJ8GFcjNmSYvfQmVhk9cN8bnjVglU6YLAknRQ6ZYKM1JlxPRMFiYZtGdh0OFOxqIRPo5d08wh_4-q36HgImBK0cwJ-ztEMahfa**e6f08f6d96c015175cb43563479fddbbc0609b88152fcd6d79e9061292fdaab7*hhwOFiwSQvwQ5hgFE_RBwprkmV9n99wQHgpdk_Kd7Jw","Referer":"https://localhost:7042/swagger/index.html","sec-ch-ua":"\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-gpc":"1","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty","priority":"u=1, i"}, Body=
+2024-09-10 16:28:15.652 +07:00 [INF] Executing endpoint 'TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API)'
+2024-09-10 16:28:15.675 +07:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller TechShopSolution.API.Controllers.ProductController (TechShopSolution.API).
+2024-09-10 16:28:15.680 +07:00 [INF] Executing action method TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API) - Validation state: "Valid"
+2024-09-10 16:28:16.015 +07:00 [INF] Getting all products
+2024-09-10 16:28:17.395 +07:00 [INF] Executed DbCommand (59ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[BestSeller], [p].[BrandId], [p].[Code], [p].[CreateAt], [p].[DeleteAt], [p].[Descriptions], [p].[Featured], [p].[Image], [p].[Instock], [p].[IsActive], [p].[IsDelete], [p].[MetaDescriptions], [p].[MetaKeywords], [p].[MetaTitle], [p].[MoreImages], [p].[Name], [p].[PromotionPrice], [p].[ShortDesc], [p].[Slug], [p].[Specifications], [p].[UnitPrice], [p].[UpdateAt], [p].[ViewCount], [p].[Warranty], [b].[Id], [t].[CateId], [t].[ProductId], [t].[Id], [t].[CateName], [t].[CateSlug], [t].[CreateAt], [t].[DeleteAt], [t].[IsActive], [t].[IsDelete], [t].[MetaDescriptions], [t].[MetaKeywords], [t].[MetaTitle], [t].[ParentId], [t].[UpdateAt], [b].[BrandName], [b].[BrandSlug], [b].[CreateAt], [b].[DeleteAt], [b].[IsActive], [b].[IsDelete], [b].[MetaDescriptions], [b].[MetaKeywords], [b].[MetaTitle], [b].[UpdateAt]
+FROM [Product] AS [p]
+INNER JOIN [Brand] AS [b] ON [p].[BrandId] = [b].[Id]
+LEFT JOIN (
+    SELECT [c].[CateId], [c].[ProductId], [c0].[Id], [c0].[CateName], [c0].[CateSlug], [c0].[CreateAt], [c0].[DeleteAt], [c0].[IsActive], [c0].[IsDelete], [c0].[MetaDescriptions], [c0].[MetaKeywords], [c0].[MetaTitle], [c0].[ParentId], [c0].[UpdateAt]
+    FROM [CategoryProduct] AS [c]
+    INNER JOIN [Category] AS [c0] ON [c].[CateId] = [c0].[Id]
+) AS [t] ON [p].[Id] = [t].[ProductId]
+ORDER BY [p].[Id], [b].[Id], [t].[CateId], [t].[ProductId]
+2024-09-10 16:28:17.708 +07:00 [INF] Executed action method TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2023.1904ms.
+2024-09-10 16:28:17.715 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechShopSolution.Application.Models.Common.StandardResponse`1[[System.Collections.Generic.IEnumerable`1[[TechShopSolution.Application.Models.Products.ProductDTO, TechShopSolution.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-10 16:28:17.768 +07:00 [INF] Executed action TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API) in 2087.5837ms
+2024-09-10 16:28:17.769 +07:00 [INF] Executed endpoint 'TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API)'
+2024-09-10 16:28:17.770 +07:00 [INF] Response: StatusCode=200
+2024-09-10 16:28:17.784 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 200 null application/json; charset=utf-8 2155.152ms
+2024-09-10 16:31:05.753 +07:00 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-10 16:31:06.337 +07:00 [INF] Now listening on: https://localhost:7042
+2024-09-10 16:31:06.340 +07:00 [INF] Now listening on: http://localhost:5216
+2024-09-10 16:31:06.344 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 16:31:06.346 +07:00 [INF] Hosting environment: Development
+2024-09-10 16:31:06.348 +07:00 [INF] Content root path: D:\Projects\TechShopSolution\TechShopSolution.API
+2024-09-10 16:31:06.669 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/ - null null
+2024-09-10 16:31:06.718 +07:00 [INF] Request: Method=GET, Path=/, QueryString=, Headers={"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8","Host":"localhost:7042","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en","Cookie":"sid=Fe26.2**4f1511ecd5e7cc4057c694bac24ac800a228aa0e17f6f430c259c720650138c8*9IQKnaaJrEm0Thnz5G2TKA*BluZdR27pfQ4qsP9Rsg1M62kcSzd1jp8jrLgAeY27AhyMSBWabON-VtciiGjBPRhe5K6TUaka3uosKESonaa_34wkykhij-l2M2v8Sftb_3OmYiSQgy2O5plPjLaj7LbVqsNGB1DkLAiJb8E_oE2ZL9MXE8LpXtJ8GFcjNmSYvfQmVhk9cN8bnjVglU6YLAknRQ6ZYKM1JlxPRMFiYZtGdh0OFOxqIRPo5d08wh_4-q36HgImBK0cwJ-ztEMahfa**e6f08f6d96c015175cb43563479fddbbc0609b88152fcd6d79e9061292fdaab7*hhwOFiwSQvwQ5hgFE_RBwprkmV9n99wQHgpdk_Kd7Jw","Upgrade-Insecure-Requests":"1","sec-ch-ua":"\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-gpc":"1","sec-fetch-site":"none","sec-fetch-mode":"navigate","sec-fetch-user":"?1","sec-fetch-dest":"document","priority":"u=0, i"}, Body=
+2024-09-10 16:31:06.726 +07:00 [INF] Response: StatusCode=404
+2024-09-10 16:31:06.729 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/ - 404 0 null 85.9127ms
+2024-09-10 16:31:06.739 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7042/, Response status code: 404
+2024-09-10 16:32:25.816 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/categories/GetAll - null null
+2024-09-10 16:32:25.822 +07:00 [INF] Request: Method=GET, Path=/api/categories/GetAll, QueryString=, Headers={"Accept":"*/*","Host":"localhost:7042","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en","Cookie":"sid=Fe26.2**6f80c597a21eaf113963c5d0e094258759a904886d9bdac0bc1ef87cc2f68a22*CfkN-65DBuX4JyAm2jzuZQ*1sT_N1ucAbGQsh5WNjb-vQmsHbip5sg7ECmR2jNlYQSN11N7M8GkbERM5LGRHKpi3WD0A07_9Hub6wn8f6ODQ4cUFdEP6rgrohKgmmS3pljhVwBN1ITW7xAqcGbIGjnF9jLX55G6oxLm2XegQBQf6wcN9-9dXlB8oOcaCD3o7B2bOccsjRFusJnxTlaBbSkTXKBpRuIIbfSRxOZGgql7WijR4-JvtMOZaoZl8uarGfnvhVn3RWSFFXF3E4EvbykB**5fba650e1d68202187faa1198c08d8308e555461e6ee3af6aa2d201708c8e1d5*2B8V7Dl5S-Akl_WW8O50EaTbK7f_78j0jybc086FK-A","Referer":"https://localhost:7042/swagger/index.html","sec-ch-ua":"\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-gpc":"1","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty","priority":"u=1, i"}, Body=
+2024-09-10 16:32:25.824 +07:00 [INF] Executing endpoint 'TechShopSolution.API.Controllers.CategoryController.GetAll (TechShopSolution.API)'
+2024-09-10 16:32:25.841 +07:00 [INF] Route matched with {action = "GetAll", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller TechShopSolution.API.Controllers.CategoryController (TechShopSolution.API).
+2024-09-10 16:32:25.845 +07:00 [INF] Executing action method TechShopSolution.API.Controllers.CategoryController.GetAll (TechShopSolution.API) - Validation state: "Valid"
+2024-09-10 16:32:26.055 +07:00 [INF] Getting all categories
+2024-09-10 16:32:27.082 +07:00 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CateName], [c].[CateSlug], [c].[CreateAt], [c].[DeleteAt], [c].[IsActive], [c].[IsDelete], [c].[MetaDescriptions], [c].[MetaKeywords], [c].[MetaTitle], [c].[ParentId], [c].[UpdateAt]
+FROM [Category] AS [c]
+2024-09-10 16:32:27.180 +07:00 [INF] Executed action method TechShopSolution.API.Controllers.CategoryController.GetAll (TechShopSolution.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1331.6176ms.
+2024-09-10 16:32:27.190 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechShopSolution.Application.Models.Common.StandardResponse`1[[System.Collections.Generic.IEnumerable`1[[TechShopSolution.Application.Models.Categories.CategoryDTO, TechShopSolution.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-10 16:32:27.240 +07:00 [INF] Executed action TechShopSolution.API.Controllers.CategoryController.GetAll (TechShopSolution.API) in 1396.3303ms
+2024-09-10 16:32:27.240 +07:00 [INF] Executed endpoint 'TechShopSolution.API.Controllers.CategoryController.GetAll (TechShopSolution.API)'
+2024-09-10 16:32:27.240 +07:00 [INF] Response: StatusCode=200
+2024-09-10 16:32:27.248 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/categories/GetAll - 200 null application/json; charset=utf-8 1431.6845ms
+2024-09-10 16:32:44.664 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/swagger/index.html - null null
+2024-09-10 16:32:44.725 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/swagger/index.html - 200 null text/html;charset=utf-8 61.2692ms
+2024-09-10 16:32:44.893 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/swagger/v1/swagger.json - null null
+2024-09-10 16:32:44.973 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 80.8823ms
+2024-09-10 16:34:37.274 +07:00 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-10 16:34:37.916 +07:00 [INF] Now listening on: https://localhost:7042
+2024-09-10 16:34:37.918 +07:00 [INF] Now listening on: http://localhost:5216
+2024-09-10 16:34:37.924 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 16:34:37.926 +07:00 [INF] Hosting environment: Development
+2024-09-10 16:34:37.928 +07:00 [INF] Content root path: D:\Projects\TechShopSolution\TechShopSolution.API
+2024-09-10 16:34:38.350 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/ - null null
+2024-09-10 16:34:38.405 +07:00 [INF] Request: Method=GET, Path=/, QueryString=, Headers={"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8","Host":"localhost:7042","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en","Cookie":"sid=Fe26.2**6f80c597a21eaf113963c5d0e094258759a904886d9bdac0bc1ef87cc2f68a22*CfkN-65DBuX4JyAm2jzuZQ*1sT_N1ucAbGQsh5WNjb-vQmsHbip5sg7ECmR2jNlYQSN11N7M8GkbERM5LGRHKpi3WD0A07_9Hub6wn8f6ODQ4cUFdEP6rgrohKgmmS3pljhVwBN1ITW7xAqcGbIGjnF9jLX55G6oxLm2XegQBQf6wcN9-9dXlB8oOcaCD3o7B2bOccsjRFusJnxTlaBbSkTXKBpRuIIbfSRxOZGgql7WijR4-JvtMOZaoZl8uarGfnvhVn3RWSFFXF3E4EvbykB**5fba650e1d68202187faa1198c08d8308e555461e6ee3af6aa2d201708c8e1d5*2B8V7Dl5S-Akl_WW8O50EaTbK7f_78j0jybc086FK-A","Upgrade-Insecure-Requests":"1","sec-ch-ua":"\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-gpc":"1","sec-fetch-site":"none","sec-fetch-mode":"navigate","sec-fetch-user":"?1","sec-fetch-dest":"document","priority":"u=0, i"}, Body=
+2024-09-10 16:34:38.411 +07:00 [INF] Response: StatusCode=404
+2024-09-10 16:34:38.415 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/ - 404 0 null 92.1449ms
+2024-09-10 16:34:38.426 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7042/, Response status code: 404
+2024-09-10 16:34:42.936 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/swagger/index.html - null null
+2024-09-10 16:34:42.991 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/swagger/index.html - 200 null text/html;charset=utf-8 55.2654ms
+2024-09-10 16:34:43.073 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/swagger/v1/swagger.json - null null
+2024-09-10 16:34:43.150 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 76.8151ms
+2024-09-10 16:34:46.751 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 16:34:46.760 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 16:34:46.763 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 16:34:46.763 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 401 0 null 12.4579ms
+2024-09-10 16:36:10.843 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7042/api/identity/login - application/json 123
+2024-09-10 16:36:10.862 +07:00 [INF] Request: Method=POST, Path=/api/identity/login, QueryString=, Headers={"Accept":"application/json","Host":"localhost:7042","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en","Content-Type":"application/json","Cookie":"sid=Fe26.2**ba6b793965bf8048aa560588e557897f5a280891c8f4a014d6126bdc9f4e1f4e*dDvemN8Q5oQ7cHCPBmSMJQ*nXwTy30Jldj6lP5x6FnLRzufUJwa3FZXO1abztzBR-AvIe6-bEoyUkjPlJW11FBnQ0QWbTlUP5GvpsFfqAlzZvPnfxXZUhoBV7CY2ivFjyzdLln1YJp61tN4_MawGTE48pBDWZ91_dsylFHoV8se8pNcIdczPznoTsR5nehAm-TQyvSaeCypbuG1Q1Fq16hwHtwPbAlcWsipDQ-eHugO_vCF8jaddMek8H9uhrIaKrXcKggXVQr0ZFgf3dby84U-**228b11860343aa5229b0e477ffd5d24126adf935e868dc9e7e0e51b93ef918a2*2WA_JAbTSvqi5c14A2fJu98Zjwkk3j3aU8kttEttPZw","Origin":"https://localhost:7042","Referer":"https://localhost:7042/swagger/index.html","Content-Length":"123","sec-ch-ua":"\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"","sec-ch-ua-platform":"\"Windows\"","sec-ch-ua-mobile":"?0","sec-gpc":"1","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty","priority":"u=1, i"}, Body={
+  "email": "user01@gmail.com",
+  "password": "string",
+  "twoFactorCode": "string",
+  "twoFactorRecoveryCode": "string"
+}
+2024-09-10 16:36:10.864 +07:00 [INF] Executing endpoint 'HTTP: POST api/identity/login'
+2024-09-10 16:36:12.165 +07:00 [INF] Executed DbCommand (57ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-09-10 16:36:12.350 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-09-10 16:36:12.464 +07:00 [INF] Executed DbCommand (23ms) [Parameters=[@p14='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p15='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTimeOffset), @p6='?' (Size = 256), @p7='?' (Size = 256), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [LockoutEnabled] = @p4, [LockoutEnd] = @p5, [NormalizedEmail] = @p6, [NormalizedUserName] = @p7, [PasswordHash] = @p8, [PhoneNumber] = @p9, [PhoneNumberConfirmed] = @p10, [SecurityStamp] = @p11, [TwoFactorEnabled] = @p12, [UserName] = @p13
+OUTPUT 1
+WHERE [Id] = @p14 AND [ConcurrencyStamp] = @p15;
+2024-09-10 16:36:12.480 +07:00 [INF] Setting HTTP status code 401.
+2024-09-10 16:36:12.485 +07:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-09-10 16:36:12.488 +07:00 [INF] Executed endpoint 'HTTP: POST api/identity/login'
+2024-09-10 16:36:12.488 +07:00 [INF] Response: StatusCode=401
+2024-09-10 16:36:12.500 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7042/api/identity/login - 401 null application/problem+json 1657.5307ms
+2024-09-10 16:36:19.262 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7042/api/identity/login - application/json 125
+2024-09-10 16:36:19.264 +07:00 [INF] Request: Method=POST, Path=/api/identity/login, QueryString=, Headers={"Accept":"application/json","Host":"localhost:7042","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en","Content-Type":"application/json","Cookie":"sid=Fe26.2**ba6b793965bf8048aa560588e557897f5a280891c8f4a014d6126bdc9f4e1f4e*dDvemN8Q5oQ7cHCPBmSMJQ*nXwTy30Jldj6lP5x6FnLRzufUJwa3FZXO1abztzBR-AvIe6-bEoyUkjPlJW11FBnQ0QWbTlUP5GvpsFfqAlzZvPnfxXZUhoBV7CY2ivFjyzdLln1YJp61tN4_MawGTE48pBDWZ91_dsylFHoV8se8pNcIdczPznoTsR5nehAm-TQyvSaeCypbuG1Q1Fq16hwHtwPbAlcWsipDQ-eHugO_vCF8jaddMek8H9uhrIaKrXcKggXVQr0ZFgf3dby84U-**228b11860343aa5229b0e477ffd5d24126adf935e868dc9e7e0e51b93ef918a2*2WA_JAbTSvqi5c14A2fJu98Zjwkk3j3aU8kttEttPZw","Origin":"https://localhost:7042","Referer":"https://localhost:7042/swagger/index.html","Content-Length":"125","sec-ch-ua":"\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"","sec-ch-ua-platform":"\"Windows\"","sec-ch-ua-mobile":"?0","sec-gpc":"1","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty","priority":"u=1, i"}, Body={
+  "email": "user01@gmail.com",
+  "password": "User@123",
+  "twoFactorCode": "string",
+  "twoFactorRecoveryCode": "string"
+}
+2024-09-10 16:36:19.265 +07:00 [INF] Executing endpoint 'HTTP: POST api/identity/login'
+2024-09-10 16:36:19.313 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-09-10 16:36:19.389 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-09-10 16:36:19.399 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@p14='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p15='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTimeOffset), @p6='?' (Size = 256), @p7='?' (Size = 256), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [LockoutEnabled] = @p4, [LockoutEnd] = @p5, [NormalizedEmail] = @p6, [NormalizedUserName] = @p7, [PasswordHash] = @p8, [PhoneNumber] = @p9, [PhoneNumberConfirmed] = @p10, [SecurityStamp] = @p11, [TwoFactorEnabled] = @p12, [UserName] = @p13
+OUTPUT 1
+WHERE [Id] = @p14 AND [ConcurrencyStamp] = @p15;
+2024-09-10 16:36:19.434 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-09-10 16:36:19.443 +07:00 [INF] AuthenticationScheme: Identity.Bearer signed in.
+2024-09-10 16:36:19.448 +07:00 [INF] Executed endpoint 'HTTP: POST api/identity/login'
+2024-09-10 16:36:19.448 +07:00 [INF] Response: StatusCode=200
+2024-09-10 16:36:19.449 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7042/api/identity/login - 200 null application/json; charset=utf-8 187.0688ms
+2024-09-10 16:36:34.808 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 16:36:34.812 +07:00 [INF] Request: Method=GET, Path=/api/products/GetAll, QueryString=, Headers={"Accept":"*/*","Host":"localhost:7042","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en","Authorization":"Bearer CfDJ8A5pweG1JAlPmCtGzzQdwUpIdbRJk2j0_8RZBLzBcpSdnxJgbuFdVNURvA5WEkxjiUavpUAu0KB77aXvyTAc4bVwJ5SCMk-ihm0kkLaNXpfgIC4dLGnMXoQDvBEIAPH_w1meuK41yRgohVYgnVel4pWmBFLIwMyNgi24fk_ofMgviGsnpbXovw6H9f7lQIlD1EnLjwDIKnDnqb-0tnwl0r2ZFFRs5yn_KiQ91iVqomfGeJNZPP5AXn0b2cLn8SMuu0OZ39RFugjULkxOR68Ar8iA4STV1rcjwBfruZ51ov1kOmcc-Mr2XHQPiBskP5LKKa0zvLlp8VqH_Z2Lfri5Z0Yi-axlrd-bYcjAE__5vqBAsXUAha1J2xfVHMTyjk0WPtF9Un4DRuVWUjJ3uaID83D4gv11goJa5U58RbD-TchWexOT630BcFmmPwBx9fIpRq55-FX9-k4SJBnG7XJO41rqU9U2fHrpr86rLsFbKkmjhRLzGeVST-0I1eASNGb5WBA0rr2xFEosq-vY70hTj_lDdrwKKRUBLc-MnS6uZXonCx-uEbXGxYSPBc-49voM8voERtg14rxmR88sw_tw9md55SFBrdI7qguk08ZDVDfWk-1xw5EpYI4Mvxm233K8ge5LfzeO7K6SLJMR4g4QwOZA1KI2TYX5SsJlw_uIAKdK_AtVsvFz5unRC6BP2n93oA","Cookie":"sid=Fe26.2**ba6b793965bf8048aa560588e557897f5a280891c8f4a014d6126bdc9f4e1f4e*dDvemN8Q5oQ7cHCPBmSMJQ*nXwTy30Jldj6lP5x6FnLRzufUJwa3FZXO1abztzBR-AvIe6-bEoyUkjPlJW11FBnQ0QWbTlUP5GvpsFfqAlzZvPnfxXZUhoBV7CY2ivFjyzdLln1YJp61tN4_MawGTE48pBDWZ91_dsylFHoV8se8pNcIdczPznoTsR5nehAm-TQyvSaeCypbuG1Q1Fq16hwHtwPbAlcWsipDQ-eHugO_vCF8jaddMek8H9uhrIaKrXcKggXVQr0ZFgf3dby84U-**228b11860343aa5229b0e477ffd5d24126adf935e868dc9e7e0e51b93ef918a2*2WA_JAbTSvqi5c14A2fJu98Zjwkk3j3aU8kttEttPZw","Referer":"https://localhost:7042/swagger/index.html","sec-ch-ua":"\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-gpc":"1","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty","priority":"u=1, i"}, Body=
+2024-09-10 16:36:34.812 +07:00 [INF] Executing endpoint 'TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API)'
+2024-09-10 16:36:34.825 +07:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller TechShopSolution.API.Controllers.ProductController (TechShopSolution.API).
+2024-09-10 16:36:34.830 +07:00 [INF] Executing action method TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API) - Validation state: "Valid"
+2024-09-10 16:36:34.903 +07:00 [INF] Getting all products
+2024-09-10 16:36:34.999 +07:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[BestSeller], [p].[BrandId], [p].[Code], [p].[CreateAt], [p].[DeleteAt], [p].[Descriptions], [p].[Featured], [p].[Image], [p].[Instock], [p].[IsActive], [p].[IsDelete], [p].[MetaDescriptions], [p].[MetaKeywords], [p].[MetaTitle], [p].[MoreImages], [p].[Name], [p].[PromotionPrice], [p].[ShortDesc], [p].[Slug], [p].[Specifications], [p].[UnitPrice], [p].[UpdateAt], [p].[ViewCount], [p].[Warranty], [b].[Id], [t].[CateId], [t].[ProductId], [t].[Id], [t].[CateName], [t].[CateSlug], [t].[CreateAt], [t].[DeleteAt], [t].[IsActive], [t].[IsDelete], [t].[MetaDescriptions], [t].[MetaKeywords], [t].[MetaTitle], [t].[ParentId], [t].[UpdateAt], [b].[BrandName], [b].[BrandSlug], [b].[CreateAt], [b].[DeleteAt], [b].[IsActive], [b].[IsDelete], [b].[MetaDescriptions], [b].[MetaKeywords], [b].[MetaTitle], [b].[UpdateAt]
+FROM [Product] AS [p]
+INNER JOIN [Brand] AS [b] ON [p].[BrandId] = [b].[Id]
+LEFT JOIN (
+    SELECT [c].[CateId], [c].[ProductId], [c0].[Id], [c0].[CateName], [c0].[CateSlug], [c0].[CreateAt], [c0].[DeleteAt], [c0].[IsActive], [c0].[IsDelete], [c0].[MetaDescriptions], [c0].[MetaKeywords], [c0].[MetaTitle], [c0].[ParentId], [c0].[UpdateAt]
+    FROM [CategoryProduct] AS [c]
+    INNER JOIN [Category] AS [c0] ON [c].[CateId] = [c0].[Id]
+) AS [t] ON [p].[Id] = [t].[ProductId]
+ORDER BY [p].[Id], [b].[Id], [t].[CateId], [t].[ProductId]
+2024-09-10 16:36:35.210 +07:00 [INF] Executed action method TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 376.8538ms.
+2024-09-10 16:36:35.217 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechShopSolution.Application.Models.Common.StandardResponse`1[[System.Collections.Generic.IEnumerable`1[[TechShopSolution.Application.Models.Products.ProductDTO, TechShopSolution.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-10 16:36:35.241 +07:00 [INF] Executed action TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API) in 412.2204ms
+2024-09-10 16:36:35.241 +07:00 [INF] Executed endpoint 'TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API)'
+2024-09-10 16:36:35.241 +07:00 [INF] Response: StatusCode=200
+2024-09-10 16:36:35.241 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 200 null application/json; charset=utf-8 434.4241ms
+2024-09-10 16:37:55.489 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 16:37:55.495 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 16:37:55.502 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 16:37:55.504 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 16:37:55.504 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 16:37:55.504 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 401 0 null 15.7427ms
+2024-09-10 16:54:19.803 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 16:54:19.812 +07:00 [INF] Request: Method=GET, Path=/api/products/GetAll, QueryString=, Headers={"Accept":"*/*","Host":"localhost:7042","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en","Authorization":"Bearer CfDJ8A5pweG1JAlPmCtGzzQdwUpIdbRJk2j0_8RZBLzBcpSdnxJgbuFdVNURvA5WEkxjiUavpUAu0KB77aXvyTAc4bVwJ5SCMk-ihm0kkLaNXpfgIC4dLGnMXoQDvBEIAPH_w1meuK41yRgohVYgnVel4pWmBFLIwMyNgi24fk_ofMgviGsnpbXovw6H9f7lQIlD1EnLjwDIKnDnqb-0tnwl0r2ZFFRs5yn_KiQ91iVqomfGeJNZPP5AXn0b2cLn8SMuu0OZ39RFugjULkxOR68Ar8iA4STV1rcjwBfruZ51ov1kOmcc-Mr2XHQPiBskP5LKKa0zvLlp8VqH_Z2Lfri5Z0Yi-axlrd-bYcjAE__5vqBAsXUAha1J2xfVHMTyjk0WPtF9Un4DRuVWUjJ3uaID83D4gv11goJa5U58RbD-TchWexOT630BcFmmPwBx9fIpRq55-FX9-k4SJBnG7XJO41rqU9U2fHrpr86rLsFbKkmjhRLzGeVST-0I1eASNGb5WBA0rr2xFEosq-vY70hTj_lDdrwKKRUBLc-MnS6uZXonCx-uEbXGxYSPBc-49voM8voERtg14rxmR88sw_tw9md55SFBrdI7qguk08ZDVDfWk-1xw5EpYI4Mvxm233K8ge5LfzeO7K6SLJMR4g4QwOZA1KI2TYX5SsJlw_uIAKdK_AtVsvFz5unRC6BP2n93oA","Cookie":"sid=Fe26.2**6482fe2636d0e99d1da765ca5743a1e2a061df034adaeca798040add8aed9eb8*HvqG7wXSqz2dq3p2sp5KHg*lk57HFKsYULCglwE9I3HHi9c63HGmX0UNsfK8OXOVUmSMYuwoyjHvkk-ilYjkp32x3M_c3dYx0S0TxiktJm63px0nWOdDfSXiCdBg429zkehDiV3FeyJnvO0qWylf5XCBSq8_XEv6jHsvGbMqyyw1aomVRHFKK6LM-pAOUDlxuI_Zmt2fVOJBiUc4Wyy4TtgfqCJZlsKyyMiI1XYi7OLpVIA3g1YuM4y5G6282dfM-3VEnx5PU0jBf0bVjCRlilp**786ac311265625f3f6342f80a43bb6e8e48861135a0df5ba0f8dce46cc36ea08*-r0lhxDcxouWHIC1uJwlrR7D9rmf7RS6Wsr9n5y1Gbc","Referer":"https://localhost:7042/swagger/index.html","sec-ch-ua":"\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-gpc":"1","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty","priority":"u=1, i"}, Body=
+2024-09-10 16:54:19.813 +07:00 [INF] Executing endpoint 'TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API)'
+2024-09-10 16:54:19.814 +07:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller TechShopSolution.API.Controllers.ProductController (TechShopSolution.API).
+2024-09-10 16:54:19.815 +07:00 [INF] Executing action method TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API) - Validation state: "Valid"
+2024-09-10 16:54:19.818 +07:00 [INF] Getting all products
+2024-09-10 16:54:19.865 +07:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[BestSeller], [p].[BrandId], [p].[Code], [p].[CreateAt], [p].[DeleteAt], [p].[Descriptions], [p].[Featured], [p].[Image], [p].[Instock], [p].[IsActive], [p].[IsDelete], [p].[MetaDescriptions], [p].[MetaKeywords], [p].[MetaTitle], [p].[MoreImages], [p].[Name], [p].[PromotionPrice], [p].[ShortDesc], [p].[Slug], [p].[Specifications], [p].[UnitPrice], [p].[UpdateAt], [p].[ViewCount], [p].[Warranty], [b].[Id], [t].[CateId], [t].[ProductId], [t].[Id], [t].[CateName], [t].[CateSlug], [t].[CreateAt], [t].[DeleteAt], [t].[IsActive], [t].[IsDelete], [t].[MetaDescriptions], [t].[MetaKeywords], [t].[MetaTitle], [t].[ParentId], [t].[UpdateAt], [b].[BrandName], [b].[BrandSlug], [b].[CreateAt], [b].[DeleteAt], [b].[IsActive], [b].[IsDelete], [b].[MetaDescriptions], [b].[MetaKeywords], [b].[MetaTitle], [b].[UpdateAt]
+FROM [Product] AS [p]
+INNER JOIN [Brand] AS [b] ON [p].[BrandId] = [b].[Id]
+LEFT JOIN (
+    SELECT [c].[CateId], [c].[ProductId], [c0].[Id], [c0].[CateName], [c0].[CateSlug], [c0].[CreateAt], [c0].[DeleteAt], [c0].[IsActive], [c0].[IsDelete], [c0].[MetaDescriptions], [c0].[MetaKeywords], [c0].[MetaTitle], [c0].[ParentId], [c0].[UpdateAt]
+    FROM [CategoryProduct] AS [c]
+    INNER JOIN [Category] AS [c0] ON [c].[CateId] = [c0].[Id]
+) AS [t] ON [p].[Id] = [t].[ProductId]
+ORDER BY [p].[Id], [b].[Id], [t].[CateId], [t].[ProductId]
+2024-09-10 16:54:19.938 +07:00 [INF] Executed action method TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 122.5781ms.
+2024-09-10 16:54:19.939 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechShopSolution.Application.Models.Common.StandardResponse`1[[System.Collections.Generic.IEnumerable`1[[TechShopSolution.Application.Models.Products.ProductDTO, TechShopSolution.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-10 16:54:19.948 +07:00 [INF] Executed action TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API) in 133.7754ms
+2024-09-10 16:54:19.949 +07:00 [INF] Executed endpoint 'TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API)'
+2024-09-10 16:54:19.949 +07:00 [INF] Response: StatusCode=200
+2024-09-10 16:54:19.949 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 200 null application/json; charset=utf-8 148.707ms
+2024-09-10 16:54:57.484 +07:00 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-10 16:54:58.204 +07:00 [INF] Now listening on: https://localhost:7042
+2024-09-10 16:54:58.206 +07:00 [INF] Now listening on: http://localhost:5216
+2024-09-10 16:54:58.212 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 16:54:58.215 +07:00 [INF] Hosting environment: Development
+2024-09-10 16:54:58.219 +07:00 [INF] Content root path: D:\Projects\TechShopSolution\TechShopSolution.API
+2024-09-10 16:54:58.824 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/ - null null
+2024-09-10 16:54:58.890 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/ - 404 0 null 91.2288ms
+2024-09-10 16:54:58.897 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7042/, Response status code: 404
+2024-09-10 16:55:05.009 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/ - null null
+2024-09-10 16:55:05.020 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/ - 200 2294 text/html; charset=utf-8 11.5386ms
+2024-09-10 16:55:06.590 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/info/ - null null
+2024-09-10 16:55:06.593 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/info/ - 200 1985 text/html; charset=utf-8 3.5337ms
+2024-09-10 16:55:07.460 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/info/info20240910.txt - null null
+2024-09-10 16:55:07.509 +07:00 [INF] Sending file. Request path: '/logs/info/info20240910.txt'. Physical path: 'D:\Projects\TechShopSolution\TechShopSolution.API\wwwroot\logs\info\info20240910.txt'
+2024-09-10 16:55:07.510 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/info/info20240910.txt - 200 164162 text/plain 49.9947ms
+2024-09-10 16:55:24.799 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 16:55:24.835 +07:00 [INF] Executing endpoint 'TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API)'
+2024-09-10 16:55:24.855 +07:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller TechShopSolution.API.Controllers.ProductController (TechShopSolution.API).
+2024-09-10 16:55:24.860 +07:00 [INF] Executing action method TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API) - Validation state: "Valid"
+2024-09-10 16:55:25.213 +07:00 [INF] Getting all products
+2024-09-10 16:55:26.612 +07:00 [INF] Executed DbCommand (57ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[BestSeller], [p].[BrandId], [p].[Code], [p].[CreateAt], [p].[DeleteAt], [p].[Descriptions], [p].[Featured], [p].[Image], [p].[Instock], [p].[IsActive], [p].[IsDelete], [p].[MetaDescriptions], [p].[MetaKeywords], [p].[MetaTitle], [p].[MoreImages], [p].[Name], [p].[PromotionPrice], [p].[ShortDesc], [p].[Slug], [p].[Specifications], [p].[UnitPrice], [p].[UpdateAt], [p].[ViewCount], [p].[Warranty], [b].[Id], [t].[CateId], [t].[ProductId], [t].[Id], [t].[CateName], [t].[CateSlug], [t].[CreateAt], [t].[DeleteAt], [t].[IsActive], [t].[IsDelete], [t].[MetaDescriptions], [t].[MetaKeywords], [t].[MetaTitle], [t].[ParentId], [t].[UpdateAt], [b].[BrandName], [b].[BrandSlug], [b].[CreateAt], [b].[DeleteAt], [b].[IsActive], [b].[IsDelete], [b].[MetaDescriptions], [b].[MetaKeywords], [b].[MetaTitle], [b].[UpdateAt]
+FROM [Product] AS [p]
+INNER JOIN [Brand] AS [b] ON [p].[BrandId] = [b].[Id]
+LEFT JOIN (
+    SELECT [c].[CateId], [c].[ProductId], [c0].[Id], [c0].[CateName], [c0].[CateSlug], [c0].[CreateAt], [c0].[DeleteAt], [c0].[IsActive], [c0].[IsDelete], [c0].[MetaDescriptions], [c0].[MetaKeywords], [c0].[MetaTitle], [c0].[ParentId], [c0].[UpdateAt]
+    FROM [CategoryProduct] AS [c]
+    INNER JOIN [Category] AS [c0] ON [c].[CateId] = [c0].[Id]
+) AS [t] ON [p].[Id] = [t].[ProductId]
+ORDER BY [p].[Id], [b].[Id], [t].[CateId], [t].[ProductId]
+2024-09-10 16:55:26.876 +07:00 [INF] Executed action method TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2012.7269ms.
+2024-09-10 16:55:26.881 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechShopSolution.Application.Models.Common.StandardResponse`1[[System.Collections.Generic.IEnumerable`1[[TechShopSolution.Application.Models.Products.ProductDTO, TechShopSolution.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-10 16:55:26.921 +07:00 [INF] Executed action TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API) in 2062.5923ms
+2024-09-10 16:55:26.922 +07:00 [INF] Executed endpoint 'TechShopSolution.API.Controllers.ProductController.GetAll (TechShopSolution.API)'
+2024-09-10 16:55:26.928 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 200 null application/json; charset=utf-8 2129.6287ms
+2024-09-10 16:55:28.067 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/info/info20240910.txt - null null
+2024-09-10 16:55:28.073 +07:00 [INF] Sending file. Request path: '/logs/info/info20240910.txt'. Physical path: 'D:\Projects\TechShopSolution\TechShopSolution.API\wwwroot\logs\info\info20240910.txt'
+2024-09-10 16:55:28.075 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/info/info20240910.txt - 200 168041 text/plain 7.7557ms
+2024-09-10 16:55:59.137 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/ - null null
+2024-09-10 16:55:59.142 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/ - 200 2294 text/html; charset=utf-8 5.6965ms
+2024-09-10 16:56:00.512 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/trace/ - null null
+2024-09-10 16:56:00.514 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/trace/ - 200 1992 text/html; charset=utf-8 1.8294ms
+2024-09-10 16:56:01.531 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/trace/traces20240910.txt - null null
+2024-09-10 16:56:01.573 +07:00 [INF] Sending file. Request path: '/logs/trace/traces20240910.txt'. Physical path: 'D:\Projects\TechShopSolution\TechShopSolution.API\wwwroot\logs\trace\traces20240910.txt'
+2024-09-10 16:56:01.573 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/trace/traces20240910.txt - 200 764155 text/plain 43.0951ms
+2024-09-10 16:56:17.834 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/categories/GetAll - null null
+2024-09-10 16:56:17.836 +07:00 [INF] Executing endpoint 'TechShopSolution.API.Controllers.CategoryController.GetAll (TechShopSolution.API)'
+2024-09-10 16:56:17.841 +07:00 [INF] Route matched with {action = "GetAll", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller TechShopSolution.API.Controllers.CategoryController (TechShopSolution.API).
+2024-09-10 16:56:17.841 +07:00 [INF] Executing action method TechShopSolution.API.Controllers.CategoryController.GetAll (TechShopSolution.API) - Validation state: "Valid"
+2024-09-10 16:56:17.845 +07:00 [INF] Getting all categories
+2024-09-10 16:56:17.867 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CateName], [c].[CateSlug], [c].[CreateAt], [c].[DeleteAt], [c].[IsActive], [c].[IsDelete], [c].[MetaDescriptions], [c].[MetaKeywords], [c].[MetaTitle], [c].[ParentId], [c].[UpdateAt]
+FROM [Category] AS [c]
+2024-09-10 16:56:17.876 +07:00 [INF] Executed action method TechShopSolution.API.Controllers.CategoryController.GetAll (TechShopSolution.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 34.1727ms.
+2024-09-10 16:56:17.876 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechShopSolution.Application.Models.Common.StandardResponse`1[[System.Collections.Generic.IEnumerable`1[[TechShopSolution.Application.Models.Categories.CategoryDTO, TechShopSolution.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-10 16:56:17.889 +07:00 [INF] Executed action TechShopSolution.API.Controllers.CategoryController.GetAll (TechShopSolution.API) in 47.8495ms
+2024-09-10 16:56:17.889 +07:00 [INF] Executed endpoint 'TechShopSolution.API.Controllers.CategoryController.GetAll (TechShopSolution.API)'
+2024-09-10 16:56:17.889 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/categories/GetAll - 200 null application/json; charset=utf-8 55.7868ms
+2024-09-10 16:56:20.535 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/trace/traces20240910.txt - null null
+2024-09-10 16:56:20.550 +07:00 [INF] Sending file. Request path: '/logs/trace/traces20240910.txt'. Physical path: 'D:\Projects\TechShopSolution\TechShopSolution.API\wwwroot\logs\trace\traces20240910.txt'
+2024-09-10 16:56:20.550 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/trace/traces20240910.txt - 200 766908 text/plain 15.6757ms
+2024-09-10 16:57:17.602 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7042/api/products/Create - application/json 491
+2024-09-10 16:57:17.606 +07:00 [INF] Executing endpoint 'TechShopSolution.API.Controllers.ProductController.Create (TechShopSolution.API)'
+2024-09-10 16:57:17.615 +07:00 [INF] Route matched with {action = "Create", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(TechShopSolution.Application.Commands.Products.CreateProduct.CreateProductCommand) on controller TechShopSolution.API.Controllers.ProductController (TechShopSolution.API).
+2024-09-10 16:57:17.696 +07:00 [INF] Executing action method TechShopSolution.API.Controllers.ProductController.Create (TechShopSolution.API) - Validation state: "Valid"
+2024-09-10 16:57:17.702 +07:00 [INF] Creating a new product
+2024-09-10 16:57:17.862 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'TechShopSolution.Infrastructure.DBContext.TechShopDbContext'.
+System.InvalidOperationException: The value of 'CategoryProduct.CateId' is unknown when attempting to save changes. This is because the property is also part of a foreign key for which the principal entity in the relationship is not known.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.PrepareToSave()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.GetEntriesToSave(Boolean cascadeChanges)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+System.InvalidOperationException: The value of 'CategoryProduct.CateId' is unknown when attempting to save changes. This is because the property is also part of a foreign key for which the principal entity in the relationship is not known.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.PrepareToSave()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.GetEntriesToSave(Boolean cascadeChanges)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-09-10 16:57:18.014 +07:00 [ERR] {"ClassName":"System.InvalidOperationException","Message":"The value of 'CategoryProduct.CateId' is unknown when attempting to save changes. This is because the property is also part of a foreign key for which the principal entity in the relationship is not known.","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.PrepareToSave()\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.GetEntriesToSave(Boolean cascadeChanges)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at TechShopSolution.Infrastructure.Repositories.ProductRepository.Create(Product entity) in D:\\Projects\\TechShopSolution\\TechShopSolution.Infrastructure\\Repositories\\ProductRepository.cs:line 47\r\n   at TechShopSolution.Application.Commands.Products.CreateProduct.CreateProductCommandHandler.Handle(CreateProductCommand request, CancellationToken cancellationToken) in D:\\Projects\\TechShopSolution\\TechShopSolution.Application\\Commands\\Products\\CreateProduct\\CreateProductCommandHandler.cs:line 19\r\n   at TechShopSolution.API.Controllers.ProductController.Create(CreateProductCommand command) in D:\\Projects\\TechShopSolution\\TechShopSolution.API\\Controllers\\ProductController.cs:line 131","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233079,"Source":"Microsoft.EntityFrameworkCore","WatsonBuckets":null}
+2024-09-10 16:57:18.015 +07:00 [INF] Executed action method TechShopSolution.API.Controllers.ProductController.Create (TechShopSolution.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 318.7583ms.
+2024-09-10 16:57:18.016 +07:00 [INF] Executing ObjectResult, writing value of type 'TechShopSolution.Application.Models.Common.StandardResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-10 16:57:18.017 +07:00 [INF] Executed action TechShopSolution.API.Controllers.ProductController.Create (TechShopSolution.API) in 401.6743ms
+2024-09-10 16:57:18.017 +07:00 [INF] Executed endpoint 'TechShopSolution.API.Controllers.ProductController.Create (TechShopSolution.API)'
+2024-09-10 16:57:18.017 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7042/api/products/Create - 500 null application/json; charset=utf-8 415.6692ms
+2024-09-10 16:57:27.243 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7042/api/products/Create - application/json 491
+2024-09-10 16:57:27.245 +07:00 [INF] Executing endpoint 'TechShopSolution.API.Controllers.ProductController.Create (TechShopSolution.API)'
+2024-09-10 16:57:27.245 +07:00 [INF] Route matched with {action = "Create", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(TechShopSolution.Application.Commands.Products.CreateProduct.CreateProductCommand) on controller TechShopSolution.API.Controllers.ProductController (TechShopSolution.API).
+2024-09-10 16:57:27.247 +07:00 [INF] Executing action method TechShopSolution.API.Controllers.ProductController.Create (TechShopSolution.API) - Validation state: "Valid"
+2024-09-10 16:57:27.250 +07:00 [INF] Creating a new product
+2024-09-10 16:57:27.426 +07:00 [INF] Executed DbCommand (91ms) [Parameters=[@p0='?' (DbType = Boolean), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (Size = 4000), @p8='?' (DbType = Int32), @p9='?' (DbType = Boolean), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (DbType = Currency), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Currency), @p21='?' (DbType = DateTime2), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Product] ([BestSeller], [BrandId], [Code], [CreateAt], [DeleteAt], [Descriptions], [Featured], [Image], [Instock], [IsActive], [IsDelete], [MetaDescriptions], [MetaKeywords], [MetaTitle], [MoreImages], [Name], [PromotionPrice], [ShortDesc], [Slug], [Specifications], [UnitPrice], [UpdateAt], [ViewCount], [Warranty])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23);
+2024-09-10 16:57:27.460 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'TechShopSolution.Infrastructure.DBContext.TechShopDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Product_Brand_BrandId". The conflict occurred in database "TechShop", table "dbo.Brand", column 'Id'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:6032db5c-54bb-45be-b418-7b89409c5e81
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Product_Brand_BrandId". The conflict occurred in database "TechShop", table "dbo.Brand", column 'Id'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:6032db5c-54bb-45be-b418-7b89409c5e81
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-09-10 16:57:27.597 +07:00 [ERR] {"ClassName":"Microsoft.EntityFrameworkCore.DbUpdateException","Message":"An error occurred while saving the entity changes. See the inner exception for details.","Data":null,"InnerException":{"ClassName":"Microsoft.Data.SqlClient.SqlException","Message":"The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Product_Brand_BrandId\". The conflict occurred in database \"TechShop\", table \"dbo.Brand\", column 'Id'.","Data":{"HelpLink.ProdName":"Microsoft SQL Server","HelpLink.ProdVer":"16.00.1121","HelpLink.EvtSrc":"MSSQLServer","HelpLink.EvtID":"547","HelpLink.BaseHelpUrl":"https://go.microsoft.com/fwlink","HelpLink.LinkId":"20476","SqlError 1":"Microsoft.Data.SqlClient.SqlError: The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Product_Brand_BrandId\". The conflict occurred in database \"TechShop\", table \"dbo.Brand\", column 'Id'."},"InnerException":null,"HelpURL":null,"StackTraceString":"   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)\r\n   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)\r\n   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)\r\n   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)\r\n--- End of stack trace from previous location ---\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146232060,"Source":"Core Microsoft SqlClient Data Provider","WatsonBuckets":null,"Errors":null,"ClientConnectionId":"6032db5c-54bb-45be-b418-7b89409c5e81"},"HelpURL":null,"StackTraceString":"   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)\r\n   at TechShopSolution.Infrastructure.Repositories.ProductRepository.Create(Product entity) in D:\\Projects\\TechShopSolution\\TechShopSolution.Infrastructure\\Repositories\\ProductRepository.cs:line 47\r\n   at TechShopSolution.Application.Commands.Products.CreateProduct.CreateProductCommandHandler.Handle(CreateProductCommand request, CancellationToken cancellationToken) in D:\\Projects\\TechShopSolution\\TechShopSolution.Application\\Commands\\Products\\CreateProduct\\CreateProductCommandHandler.cs:line 19\r\n   at TechShopSolution.API.Controllers.ProductController.Create(CreateProductCommand command) in D:\\Projects\\TechShopSolution\\TechShopSolution.API\\Controllers\\ProductController.cs:line 131","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233088,"Source":"Microsoft.EntityFrameworkCore.Relational","WatsonBuckets":null}
+2024-09-10 16:57:27.597 +07:00 [INF] Executed action method TechShopSolution.API.Controllers.ProductController.Create (TechShopSolution.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 349.61ms.
+2024-09-10 16:57:27.597 +07:00 [INF] Executing ObjectResult, writing value of type 'TechShopSolution.Application.Models.Common.StandardResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-10 16:57:27.598 +07:00 [INF] Executed action TechShopSolution.API.Controllers.ProductController.Create (TechShopSolution.API) in 352.585ms
+2024-09-10 16:57:27.598 +07:00 [INF] Executed endpoint 'TechShopSolution.API.Controllers.ProductController.Create (TechShopSolution.API)'
+2024-09-10 16:57:27.598 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7042/api/products/Create - 500 null application/json; charset=utf-8 355.2276ms
+2024-09-10 16:58:38.500 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/1233 - null null
+2024-09-10 16:58:38.505 +07:00 [INF] Executing endpoint 'TechShopSolution.API.Controllers.ProductController.GetById (TechShopSolution.API)'
+2024-09-10 16:58:38.510 +07:00 [INF] Route matched with {action = "GetById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int32) on controller TechShopSolution.API.Controllers.ProductController (TechShopSolution.API).
+2024-09-10 16:58:38.512 +07:00 [INF] Executing action method TechShopSolution.API.Controllers.ProductController.GetById (TechShopSolution.API) - Validation state: "Valid"
+2024-09-10 16:58:38.516 +07:00 [INF] Getting product 1233
+2024-09-10 16:58:38.580 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[BestSeller], [t].[BrandId], [t].[Code], [t].[CreateAt], [t].[DeleteAt], [t].[Descriptions], [t].[Featured], [t].[Image], [t].[Instock], [t].[IsActive], [t].[IsDelete], [t].[MetaDescriptions], [t].[MetaKeywords], [t].[MetaTitle], [t].[MoreImages], [t].[Name], [t].[PromotionPrice], [t].[ShortDesc], [t].[Slug], [t].[Specifications], [t].[UnitPrice], [t].[UpdateAt], [t].[ViewCount], [t].[Warranty], [t].[Id0], [t0].[CateId], [t0].[ProductId], [t0].[Id], [t0].[CateName], [t0].[CateSlug], [t0].[CreateAt], [t0].[DeleteAt], [t0].[IsActive], [t0].[IsDelete], [t0].[MetaDescriptions], [t0].[MetaKeywords], [t0].[MetaTitle], [t0].[ParentId], [t0].[UpdateAt], [t].[BrandName], [t].[BrandSlug], [t].[CreateAt0], [t].[DeleteAt0], [t].[IsActive0], [t].[IsDelete0], [t].[MetaDescriptions0], [t].[MetaKeywords0], [t].[MetaTitle0], [t].[UpdateAt0]
+FROM (
+    SELECT TOP(1) [p].[Id], [p].[BestSeller], [p].[BrandId], [p].[Code], [p].[CreateAt], [p].[DeleteAt], [p].[Descriptions], [p].[Featured], [p].[Image], [p].[Instock], [p].[IsActive], [p].[IsDelete], [p].[MetaDescriptions], [p].[MetaKeywords], [p].[MetaTitle], [p].[MoreImages], [p].[Name], [p].[PromotionPrice], [p].[ShortDesc], [p].[Slug], [p].[Specifications], [p].[UnitPrice], [p].[UpdateAt], [p].[ViewCount], [p].[Warranty], [b].[Id] AS [Id0], [b].[BrandName], [b].[BrandSlug], [b].[CreateAt] AS [CreateAt0], [b].[DeleteAt] AS [DeleteAt0], [b].[IsActive] AS [IsActive0], [b].[IsDelete] AS [IsDelete0], [b].[MetaDescriptions] AS [MetaDescriptions0], [b].[MetaKeywords] AS [MetaKeywords0], [b].[MetaTitle] AS [MetaTitle0], [b].[UpdateAt] AS [UpdateAt0]
+    FROM [Product] AS [p]
+    INNER JOIN [Brand] AS [b] ON [p].[BrandId] = [b].[Id]
+    WHERE [p].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [c].[CateId], [c].[ProductId], [c0].[Id], [c0].[CateName], [c0].[CateSlug], [c0].[CreateAt], [c0].[DeleteAt], [c0].[IsActive], [c0].[IsDelete], [c0].[MetaDescriptions], [c0].[MetaKeywords], [c0].[MetaTitle], [c0].[ParentId], [c0].[UpdateAt]
+    FROM [CategoryProduct] AS [c]
+    INNER JOIN [Category] AS [c0] ON [c].[CateId] = [c0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[ProductId]
+ORDER BY [t].[Id], [t].[Id0], [t0].[CateId], [t0].[ProductId]
+2024-09-10 16:58:38.583 +07:00 [INF] Executed action method TechShopSolution.API.Controllers.ProductController.GetById (TechShopSolution.API), returned result Microsoft.AspNetCore.Mvc.NotFoundObjectResult in 71.1306ms.
+2024-09-10 16:58:38.583 +07:00 [INF] Executing NotFoundObjectResult, writing value of type 'TechShopSolution.Application.Models.Common.StandardResponse`1[[TechShopSolution.Application.Models.Products.ProductDTO, TechShopSolution.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 16:58:38.585 +07:00 [INF] Executed action TechShopSolution.API.Controllers.ProductController.GetById (TechShopSolution.API) in 74.8452ms
+2024-09-10 16:58:38.585 +07:00 [INF] Executed endpoint 'TechShopSolution.API.Controllers.ProductController.GetById (TechShopSolution.API)'
+2024-09-10 16:58:38.585 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/1233 - 404 null application/json; charset=utf-8 85.5681ms
+2024-09-10 16:58:41.728 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/trace/traces20240910.txt - null null
+2024-09-10 16:58:41.743 +07:00 [INF] Sending file. Request path: '/logs/trace/traces20240910.txt'. Physical path: 'D:\Projects\TechShopSolution\TechShopSolution.API\wwwroot\logs\trace\traces20240910.txt'
+2024-09-10 16:58:41.743 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/trace/traces20240910.txt - 200 794326 text/plain 15.0142ms
+2024-09-10 16:58:43.158 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/trace/traces20240910.txt - null null
+2024-09-10 16:58:43.174 +07:00 [INF] Sending file. Request path: '/logs/trace/traces20240910.txt'. Physical path: 'D:\Projects\TechShopSolution\TechShopSolution.API\wwwroot\logs\trace\traces20240910.txt'
+2024-09-10 16:58:43.174 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/trace/traces20240910.txt - 200 794815 text/plain 16.7011ms
+2024-09-10 17:01:24.262 +07:00 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-10 17:01:24.821 +07:00 [INF] Now listening on: https://localhost:7042
+2024-09-10 17:01:24.823 +07:00 [INF] Now listening on: http://localhost:5216
+2024-09-10 17:01:24.827 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 17:01:24.829 +07:00 [INF] Hosting environment: Development
+2024-09-10 17:01:24.830 +07:00 [INF] Content root path: D:\Projects\TechShopSolution\TechShopSolution.API
+2024-09-10 17:01:25.523 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/ - null null
+2024-09-10 17:01:25.586 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/ - 404 0 null 93.0258ms
+2024-09-10 17:01:25.594 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7042/, Response status code: 404
+2024-09-10 17:01:31.601 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 17:01:31.621 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:01:31.626 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:01:31.631 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:01:31.633 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:01:31.633 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 401 0 null 32.3278ms
+2024-09-10 17:01:43.954 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 17:01:43.957 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:01:43.960 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:01:43.965 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:01:43.966 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:01:43.966 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 401 0 null 12.708ms
+2024-09-10 17:03:41.054 +07:00 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-10 17:03:41.565 +07:00 [INF] Now listening on: https://localhost:7042
+2024-09-10 17:03:41.568 +07:00 [INF] Now listening on: http://localhost:5216
+2024-09-10 17:03:41.573 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 17:03:41.575 +07:00 [INF] Hosting environment: Development
+2024-09-10 17:03:41.578 +07:00 [INF] Content root path: D:\Projects\TechShopSolution\TechShopSolution.API
+2024-09-10 17:03:42.060 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/ - null null
+2024-09-10 17:03:42.120 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/ - 404 0 null 89.4733ms
+2024-09-10 17:03:42.129 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7042/, Response status code: 404
+2024-09-10 17:03:50.306 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/swagger/index.html - null null
+2024-09-10 17:03:50.385 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/swagger/index.html - 200 null text/html;charset=utf-8 79.6106ms
+2024-09-10 17:03:50.551 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/swagger/v1/swagger.json - null null
+2024-09-10 17:03:50.677 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 126.8625ms
+2024-09-10 17:03:57.589 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/categories/GetAll - null null
+2024-09-10 17:03:57.605 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:03:57.610 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:03:57.611 +07:00 [INF] Executing endpoint 'TechShopSolution.API.Controllers.CategoryController.GetAll (TechShopSolution.API)'
+2024-09-10 17:03:57.639 +07:00 [INF] Route matched with {action = "GetAll", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller TechShopSolution.API.Controllers.CategoryController (TechShopSolution.API).
+2024-09-10 17:03:57.643 +07:00 [INF] Executing action method TechShopSolution.API.Controllers.CategoryController.GetAll (TechShopSolution.API) - Validation state: "Valid"
+2024-09-10 17:03:57.963 +07:00 [INF] Getting all categories
+2024-09-10 17:03:59.191 +07:00 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CateName], [c].[CateSlug], [c].[CreateAt], [c].[DeleteAt], [c].[IsActive], [c].[IsDelete], [c].[MetaDescriptions], [c].[MetaKeywords], [c].[MetaTitle], [c].[ParentId], [c].[UpdateAt]
+FROM [Category] AS [c]
+2024-09-10 17:03:59.289 +07:00 [INF] Executed action method TechShopSolution.API.Controllers.CategoryController.GetAll (TechShopSolution.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1641.618ms.
+2024-09-10 17:03:59.294 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechShopSolution.Application.Models.Common.StandardResponse`1[[System.Collections.Generic.IEnumerable`1[[TechShopSolution.Application.Models.Categories.CategoryDTO, TechShopSolution.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-10 17:03:59.323 +07:00 [INF] Executed action TechShopSolution.API.Controllers.CategoryController.GetAll (TechShopSolution.API) in 1681.6746ms
+2024-09-10 17:03:59.324 +07:00 [INF] Executed endpoint 'TechShopSolution.API.Controllers.CategoryController.GetAll (TechShopSolution.API)'
+2024-09-10 17:03:59.332 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/categories/GetAll - 200 null application/json; charset=utf-8 1744.0198ms
+2024-09-10 17:04:03.606 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 17:04:03.608 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:04:03.610 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:04:03.615 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:04:03.617 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:04:03.617 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 401 0 null 11.5755ms
+2024-09-10 17:04:04.511 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 17:04:04.512 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:04:04.513 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:04:04.515 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:04:04.515 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:04:04.516 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 401 0 null 5.3823ms
+2024-09-10 17:04:06.630 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 17:04:06.630 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:04:06.633 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:04:06.634 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:04:06.634 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:04:06.635 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 401 0 null 5.3805ms
+2024-09-10 17:04:06.840 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 17:04:06.841 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:04:06.843 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:04:06.844 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:04:06.844 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:04:06.844 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 401 0 null 4.2587ms
+2024-09-10 17:04:07.044 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 17:04:07.044 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:04:07.046 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:04:07.047 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:04:07.047 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:04:07.047 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 401 0 null 2.9867ms
+2024-09-10 17:04:07.554 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 17:04:07.555 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:04:07.557 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:04:07.557 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:04:07.557 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:04:07.557 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 401 0 null 3.121ms
+2024-09-10 17:04:07.806 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 17:04:07.807 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:04:07.809 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:04:07.810 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:04:07.810 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:04:07.810 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 401 0 null 3.9845ms
+2024-09-10 17:04:08.034 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 17:04:08.034 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:04:08.037 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:04:08.038 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:04:08.038 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:04:08.038 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 401 0 null 4.5256ms
+2024-09-10 17:04:08.497 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 17:04:08.497 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:04:08.499 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:04:08.500 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:04:08.500 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:04:08.500 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 401 0 null 3.8581ms
+2024-09-10 17:06:48.388 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 17:06:48.393 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:06:48.395 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:06:48.395 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:06:48.395 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:06:48.395 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 401 0 null 8.373ms
+2024-09-10 17:07:32.105 +07:00 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-10 17:07:32.674 +07:00 [INF] Now listening on: https://localhost:7042
+2024-09-10 17:07:32.677 +07:00 [INF] Now listening on: http://localhost:5216
+2024-09-10 17:07:32.683 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 17:07:32.685 +07:00 [INF] Hosting environment: Development
+2024-09-10 17:07:32.686 +07:00 [INF] Content root path: D:\Projects\TechShopSolution\TechShopSolution.API
+2024-09-10 17:07:33.146 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/ - null null
+2024-09-10 17:07:33.200 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/ - 404 0 null 75.3222ms
+2024-09-10 17:07:33.210 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7042/, Response status code: 404
+2024-09-10 17:07:37.905 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 17:07:37.928 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:07:37.933 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:07:37.941 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:07:37.943 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:07:37.944 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 401 0 null 39.3051ms
+2024-09-10 17:07:45.075 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 17:07:45.077 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:07:45.079 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:07:45.081 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:07:45.081 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:07:45.082 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 401 0 null 7.006ms
+2024-09-10 17:07:45.538 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 17:07:45.539 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:07:45.541 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:07:45.542 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:07:45.543 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:07:45.543 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 401 0 null 5.5477ms
+2024-09-10 17:07:46.164 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 17:07:46.164 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:07:46.167 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:07:46.168 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:07:46.168 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:07:46.168 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 401 0 null 4.7414ms
+2024-09-10 17:08:54.435 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 17:08:54.435 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:08:54.437 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:08:54.438 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:08:54.438 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:08:54.438 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 401 0 null 3.9806ms
+2024-09-10 17:10:16.300 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/123 - null null
+2024-09-10 17:10:16.301 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:10:16.302 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:10:16.303 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:10:16.303 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:10:16.303 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/123 - 401 0 null 3.3451ms
+2024-09-10 17:13:25.321 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/123 - null null
+2024-09-10 17:13:25.322 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:13:25.324 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:13:25.324 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:13:25.324 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:13:25.324 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/123 - 401 0 null 7.9441ms
+2024-09-10 17:13:26.276 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/123 - null null
+2024-09-10 17:13:26.277 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:13:26.280 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:13:26.281 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:13:26.281 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:13:26.281 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/123 - 401 0 null 5.025ms
+2024-09-10 17:13:47.525 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/123 - null null
+2024-09-10 17:13:47.526 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:13:47.531 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:13:47.533 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:13:47.533 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:13:47.534 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/123 - 401 0 null 9.3538ms
+2024-09-10 17:13:56.904 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/123 - null null
+2024-09-10 17:13:56.904 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:13:56.907 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:13:56.908 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:13:56.908 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:13:56.908 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/123 - 401 0 null 4.5879ms
+2024-09-10 17:13:57.724 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/123 - null null
+2024-09-10 17:13:57.724 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:13:57.728 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:13:57.729 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:13:57.729 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:13:57.729 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/123 - 401 0 null 5.7589ms
+2024-09-10 17:13:57.970 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/123 - null null
+2024-09-10 17:13:57.970 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:13:57.978 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:13:57.979 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:13:57.980 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:13:57.980 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/123 - 401 0 null 11.2514ms
+2024-09-10 17:13:58.149 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/123 - null null
+2024-09-10 17:13:58.149 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:13:58.154 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:13:58.154 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:13:58.154 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:13:58.155 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/123 - 401 0 null 6.4334ms
+2024-09-10 17:13:58.326 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/123 - null null
+2024-09-10 17:13:58.327 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:13:58.330 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:13:58.346 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:13:58.347 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:13:58.347 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/123 - 401 0 null 21.5121ms
+2024-09-10 17:14:04.047 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/123 - null null
+2024-09-10 17:14:04.047 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:14:04.050 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:14:04.050 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:14:04.050 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:14:04.051 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/123 - 401 0 null 4.4536ms
+2024-09-10 17:14:04.552 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/123 - null null
+2024-09-10 17:14:04.553 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:14:04.557 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:14:04.557 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:14:04.557 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:14:04.557 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/123 - 401 0 null 5.7247ms
+2024-09-10 17:14:16.806 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/123 - null null
+2024-09-10 17:14:16.806 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:14:16.808 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:14:16.809 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:14:16.809 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:14:16.809 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/123 - 401 0 null 3.6309ms
+2024-09-10 17:15:29.043 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 17:15:29.060 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:15:29.062 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:15:38.114 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:15:38.114 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:15:39.838 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 401 0 null 10795.1237ms
+2024-09-10 17:18:01.367 +07:00 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-10 17:18:02.119 +07:00 [INF] Now listening on: https://localhost:7042
+2024-09-10 17:18:02.122 +07:00 [INF] Now listening on: http://localhost:5216
+2024-09-10 17:18:02.126 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 17:18:02.128 +07:00 [INF] Hosting environment: Development
+2024-09-10 17:18:02.130 +07:00 [INF] Content root path: D:\Projects\TechShopSolution\TechShopSolution.API
+2024-09-10 17:18:02.694 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/ - null null
+2024-09-10 17:18:08.067 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/ - 404 0 null 5418.3015ms
+2024-09-10 17:18:08.079 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7042/, Response status code: 404
+2024-09-10 17:18:13.936 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 17:18:13.945 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:18:13.954 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:18:13.960 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:18:13.962 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:18:13.970 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 401 null application/json 34.1199ms
+2024-09-10 17:20:25.002 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-10 17:20:25.006 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:20:25.009 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-10 17:20:25.010 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 17:20:25.011 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-10 17:20:25.011 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 401 null application/json 9.6765ms

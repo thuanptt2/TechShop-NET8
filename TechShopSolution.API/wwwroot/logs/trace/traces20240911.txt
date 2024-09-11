@@ -1,0 +1,66 @@
+2024-09-11 08:56:06.564 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/trace/ - null null
+2024-09-11 08:56:06.801 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/trace/ - 200 2219 text/html; charset=utf-8 245.4105ms
+2024-09-11 08:56:10.508 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/logs/ - null null
+2024-09-11 08:56:10.512 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/logs/ - 200 2294 text/html; charset=utf-8 4.2224ms
+2024-09-11 09:29:58.250 +07:00 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-11 09:29:59.026 +07:00 [INF] Now listening on: https://localhost:7042
+2024-09-11 09:29:59.028 +07:00 [INF] Now listening on: http://localhost:5216
+2024-09-11 09:29:59.033 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-11 09:29:59.035 +07:00 [INF] Hosting environment: Development
+2024-09-11 09:29:59.037 +07:00 [INF] Content root path: D:\Projects\TechShopSolution\TechShopSolution.API
+2024-09-11 09:29:59.613 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/ - null null
+2024-09-11 09:29:59.704 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/ - 404 0 null 131.7001ms
+2024-09-11 09:29:59.712 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7042/, Response status code: 404
+2024-09-11 09:30:45.981 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/categories/GetAll - null null
+2024-09-11 09:30:46.000 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-11 09:30:46.005 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-11 09:30:46.007 +07:00 [INF] Executing endpoint 'TechShopSolution.API.Controllers.CategoryController.GetAll (TechShopSolution.API)'
+2024-09-11 09:30:46.030 +07:00 [INF] Route matched with {action = "GetAll", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller TechShopSolution.API.Controllers.CategoryController (TechShopSolution.API).
+2024-09-11 09:30:46.035 +07:00 [INF] Executing action method TechShopSolution.API.Controllers.CategoryController.GetAll (TechShopSolution.API) - Validation state: "Valid"
+2024-09-11 09:30:46.384 +07:00 [INF] Getting all categories
+2024-09-11 09:30:47.744 +07:00 [INF] Executed DbCommand (63ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CateName], [c].[CateSlug], [c].[CreateAt], [c].[DeleteAt], [c].[IsActive], [c].[IsDelete], [c].[MetaDescriptions], [c].[MetaKeywords], [c].[MetaTitle], [c].[ParentId], [c].[UpdateAt]
+FROM [Category] AS [c]
+2024-09-11 09:30:47.855 +07:00 [INF] Executed action method TechShopSolution.API.Controllers.CategoryController.GetAll (TechShopSolution.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1816.3759ms.
+2024-09-11 09:30:47.866 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechShopSolution.Application.Models.Common.StandardResponse`1[[System.Collections.Generic.IEnumerable`1[[TechShopSolution.Application.Models.Categories.CategoryDTO, TechShopSolution.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-11 09:30:47.946 +07:00 [INF] Executed action TechShopSolution.API.Controllers.CategoryController.GetAll (TechShopSolution.API) in 1913.1026ms
+2024-09-11 09:30:47.946 +07:00 [INF] Executed endpoint 'TechShopSolution.API.Controllers.CategoryController.GetAll (TechShopSolution.API)'
+2024-09-11 09:30:47.955 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/categories/GetAll - 200 null application/json; charset=utf-8 1973.4899ms
+2024-09-11 09:31:38.697 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/products/GetAll - null null
+2024-09-11 09:31:38.700 +07:00 [INF] Identity.Bearer was not authenticated. Failure message: Unprotected token failed
+2024-09-11 09:31:38.702 +07:00 [INF] Identity.BearerAndApplication was not authenticated. Failure message: Unprotected token failed
+2024-09-11 09:31:38.709 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-11 09:31:38.711 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-11 09:31:38.717 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/products/GetAll - 401 null application/json 24.4345ms
+2024-09-11 09:34:47.881 +07:00 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-11 09:34:48.588 +07:00 [INF] Now listening on: https://localhost:7042
+2024-09-11 09:34:48.590 +07:00 [INF] Now listening on: http://localhost:5216
+2024-09-11 09:34:48.594 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-11 09:34:48.595 +07:00 [INF] Hosting environment: Development
+2024-09-11 09:34:48.597 +07:00 [INF] Content root path: D:\Projects\TechShopSolution\TechShopSolution.API
+2024-09-11 09:34:49.268 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/ - null null
+2024-09-11 09:34:49.346 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/ - 404 0 null 113.0248ms
+2024-09-11 09:34:49.353 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7042/, Response status code: 404
+2024-09-11 09:35:06.426 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/swagger/index.html - null null
+2024-09-11 09:35:06.503 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/swagger/index.html - 200 null text/html;charset=utf-8 77.4989ms
+2024-09-11 09:35:06.685 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/swagger/v1/swagger.json - null null
+2024-09-11 09:35:06.795 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 109.5527ms
+2024-09-11 09:35:14.141 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/categories/1 - null null
+2024-09-11 09:35:14.151 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-11 09:35:14.153 +07:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2024-09-11 09:35:14.158 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/categories/1 - 401 null application/json 17.5121ms
+2024-09-11 09:35:20.141 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7042/api/categories/GetAll - null null
+2024-09-11 09:35:20.144 +07:00 [INF] Executing endpoint 'TechShopSolution.API.Controllers.CategoryController.GetAll (TechShopSolution.API)'
+2024-09-11 09:35:20.168 +07:00 [INF] Route matched with {action = "GetAll", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller TechShopSolution.API.Controllers.CategoryController (TechShopSolution.API).
+2024-09-11 09:35:20.175 +07:00 [INF] Executing action method TechShopSolution.API.Controllers.CategoryController.GetAll (TechShopSolution.API) - Validation state: "Valid"
+2024-09-11 09:35:20.468 +07:00 [INF] Getting all categories
+2024-09-11 09:35:21.763 +07:00 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CateName], [c].[CateSlug], [c].[CreateAt], [c].[DeleteAt], [c].[IsActive], [c].[IsDelete], [c].[MetaDescriptions], [c].[MetaKeywords], [c].[MetaTitle], [c].[ParentId], [c].[UpdateAt]
+FROM [Category] AS [c]
+2024-09-11 09:35:21.855 +07:00 [INF] Executed action method TechShopSolution.API.Controllers.CategoryController.GetAll (TechShopSolution.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1677.2459ms.
+2024-09-11 09:35:21.863 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechShopSolution.Application.Models.Common.StandardResponse`1[[System.Collections.Generic.IEnumerable`1[[TechShopSolution.Application.Models.Categories.CategoryDTO, TechShopSolution.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-11 09:35:21.888 +07:00 [INF] Executed action TechShopSolution.API.Controllers.CategoryController.GetAll (TechShopSolution.API) in 1717.2187ms
+2024-09-11 09:35:21.889 +07:00 [INF] Executed endpoint 'TechShopSolution.API.Controllers.CategoryController.GetAll (TechShopSolution.API)'
+2024-09-11 09:35:21.896 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7042/api/categories/GetAll - 200 null application/json; charset=utf-8 1755.2462ms

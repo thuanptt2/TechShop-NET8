@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using TechShopSolution.Domain.Entities;
@@ -57,7 +58,6 @@ namespace TechShopSolution.Infrastructure.DBContext
 
              builder.Entity<Transport>().Property(p => p.CodPrice).HasColumnType("MONEY");
 
-            // Relationship configuration
             builder.Entity<Product>()
                 .HasOne(x => x.Brand)
                 .WithMany(p => p.Products)

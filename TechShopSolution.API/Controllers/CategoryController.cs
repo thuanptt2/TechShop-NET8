@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Serilog;
 using TechShopSolution.Application.Queries.Categories.GetAllCategories;
 using TechShopSolution.Application.Queries.Categories.GetCategoriesById;
 using TechShopSolution.Application.Models.Common;
@@ -12,7 +11,7 @@ namespace TechShopSolution.API.Controllers
 {
     [ApiController]
     [Authorize]
-    [Route("api/categories")]
+    [Route("api/[controller]")]
     public class CategoryController(IMediator mediator, ILogger<ProductController> logger) : ControllerBase
     {
         [HttpGet]

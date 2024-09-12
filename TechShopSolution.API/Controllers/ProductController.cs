@@ -9,16 +9,18 @@ using TechShopSolution.Application.Commands.Products.UpdateProduct;
 using TechShopSolution.Application.Models.Common;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Authorization;
+using TechShopSolution.Domain.Services;
 
 namespace TechShopSolution.API.Controllers
 {
     [ApiController]
     [Authorize]
-    [Route("api/products")]
-    public class ProductController(IMediator mediator, ILogger<ProductController> logger) : ControllerBase
+    [Route("api/[controller]")]
+    public class ProductController(IMediator mediator, 
+        ILogger<ProductController> logger) : ControllerBase
     {
         [HttpGet]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         [Route("GetAll")]
         public async Task<IActionResult> GetAll() 
         {
@@ -80,6 +82,7 @@ namespace TechShopSolution.API.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("DeleteProduct/{id}")]
         public async Task<IActionResult> DeleteProduct(int id)
         {
@@ -111,7 +114,7 @@ namespace TechShopSolution.API.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, response);
             }
         }
-
+        
         [HttpPost]
         [Route("Create")]
         public async Task<IActionResult> Create(CreateProductCommand command)

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "yjUCewK3gxCVmOviMLNogQA9jqbicB7nnRnvv1HQ/Ns=",
+  "Hash": "6myDBPt2Ez2+SMPBMlNjpR/CWNQvcI93Cb63CyfRSLE=",
   "Source": "TechShopSolution.API",
   "BasePath": "_content/TechShopSolution.API",
   "Mode": "Default",
@@ -34,6 +34,44 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\logs\\error\\error20240910.txt"
+    },
+    {
+      "Identity": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\error\\error20240911.txt",
+      "SourceId": "TechShopSolution.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\",
+      "BasePath": "_content/TechShopSolution.API",
+      "RelativePath": "logs/error/error20240911.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\logs\\error\\error20240911.txt"
+    },
+    {
+      "Identity": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\error\\error20240912.txt",
+      "SourceId": "TechShopSolution.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\",
+      "BasePath": "_content/TechShopSolution.API",
+      "RelativePath": "logs/error/error20240912.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\logs\\error\\error20240912.txt"
     },
     {
       "Identity": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\info\\info20240910.txt",
@@ -74,6 +112,25 @@
       "OriginalItemSpec": "wwwroot\\logs\\info\\info20240911.txt"
     },
     {
+      "Identity": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\info\\info20240912.txt",
+      "SourceId": "TechShopSolution.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\",
+      "BasePath": "_content/TechShopSolution.API",
+      "RelativePath": "logs/info/info20240912.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\logs\\info\\info20240912.txt"
+    },
+    {
       "Identity": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\trace\\traces20240910.txt",
       "SourceId": "TechShopSolution.API",
       "SourceType": "Discovered",
@@ -110,6 +167,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\logs\\trace\\traces20240911.txt"
+    },
+    {
+      "Identity": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\trace\\traces20240912.txt",
+      "SourceId": "TechShopSolution.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\",
+      "BasePath": "_content/TechShopSolution.API",
+      "RelativePath": "logs/trace/traces20240912.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\logs\\trace\\traces20240912.txt"
     }
   ]
 }

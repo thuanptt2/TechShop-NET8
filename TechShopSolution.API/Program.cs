@@ -6,6 +6,9 @@ using Microsoft.Extensions.FileProviders;
 using TechShopSolution.Infrastructure.Middlewares;
 using TechShopSolution.Domain.Entities;
 using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -93,5 +96,18 @@ app.UseMiddleware<CustomUnauthorizedMiddleware>();
 app.UseAuthorization();
 
 app.MapControllers();
+
+// Add Health Check endpoints
+app.MapHealthChecks("/health", new HealthCheckOptions()
+{
+    Predicate = _ => true,
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+})
+.WithMetadata(new AllowAnonymousAttribute());
+
+app.MapHealthChecksUI(options =>
+{
+    options.UIPath = "/health-ui"; // Path to access the Health Checks UI
+});
 
 app.Run();

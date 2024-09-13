@@ -19,6 +19,8 @@ public static class ServiceCollectionExtensions
     public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
         var connectionString = configuration.GetConnectionString("TechShopDB");
+        var kafkaBootstrapServers = configuration.GetSection("kafkaLoggingConfig:bootstrapServers").Value;
+
         services.AddDbContext<TechShopDbContext>(options => options.UseSqlServer(connectionString));
 
         services.AddIdentityApiEndpoints<User>()
@@ -59,6 +61,14 @@ public static class ServiceCollectionExtensions
                 }
             };
         });
+        
+        var healthChecksUI = configuration.GetSection("HealthChecksUI");
+        services.AddHealthChecks()
+            .AddCheck("sql_server", new SqlServerHealthCheck(connectionString), tags: new[] { "sql_server" })
+            .AddCheck("kafka", new KafkaHealthCheck(kafkaBootstrapServers), tags: new[] { "kafka" }, timeout: TimeSpan.FromSeconds(5));
+
+        services.AddHealthChecksUI()
+            .AddSqliteStorage(healthChecksUI["ConnectionString"]);
 
         services.AddScoped<IProductRepository, ProductRepository>();
         services.AddScoped<ICategoryRepository, CategoryRepository>();

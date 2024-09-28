@@ -39,25 +39,54 @@ builder.Services.ConfigureSerilog(
 
 // Add Swagger/OpenAPI support
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c => {
-    c.AddSecurityDefinition("bearerAuth", new OpenApiSecurityScheme {
+builder.Services.AddSwaggerGen(c =>
+{
+    // JWT Bearer
+    c.AddSecurityDefinition("bearerAuth", new OpenApiSecurityScheme
+    {
         Type = SecuritySchemeType.Http,
-        Scheme = "Bearer"
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        Description = "JWT Authorization header using the Bearer scheme."
     });
 
-    c.AddSecurityRequirement(new OpenApiSecurityRequirement {
+    // API Key
+    c.AddSecurityDefinition("apiKey", new OpenApiSecurityScheme
+    {
+        Type = SecuritySchemeType.ApiKey,
+        Name = "X-API-KEY",
+        In = ParameterLocation.Header,
+        Description = "API Key needed to access the endpoints."
+    });
+
+    // Thêm yêu cầu bảo mật
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
         {
             new OpenApiSecurityScheme 
             {
-                Reference = new OpenApiReference {
+                Reference = new OpenApiReference 
+                { 
                     Type = ReferenceType.SecurityScheme,
-                    Id = "bearerAuth"
+                    Id = "bearerAuth" 
                 }
-            }, []
+            },
+            new string[] {}
+        },
+        {
+            new OpenApiSecurityScheme 
+            {
+                Reference = new OpenApiReference 
+                { 
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "apiKey" 
+                }
+            },
+            new string[] {}
         }
     });
 });
-
+        
 builder.Services.AddEndpointsApiExplorer();
 
 var app = builder.Build(); // Build the app here (only once)

@@ -10,12 +10,11 @@ using Microsoft.AspNetCore.Authorization;
 namespace TechShopSolution.API.Controllers
 {
     [ApiController]
-    [Authorize]
     [Route("api/[controller]")]
     public class CategoryController(IMediator mediator, ILogger<ProductController> logger) : ControllerBase
     {
         [HttpGet]
-        [AllowAnonymous]
+        [Authorize(Policy = "JwtOrApiKey")]
         [Route("GetAll")]
         public async Task<IActionResult> GetAll()
         {
@@ -43,6 +42,7 @@ namespace TechShopSolution.API.Controllers
             }
         }
 
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {

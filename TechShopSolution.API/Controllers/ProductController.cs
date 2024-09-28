@@ -10,17 +10,17 @@ using TechShopSolution.Application.Models.Common;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Authorization;
 using TechShopSolution.Domain.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace TechShopSolution.API.Controllers
 {
     [ApiController]
-    [Authorize]
     [Route("api/[controller]")]
     public class ProductController(IMediator mediator, 
         ILogger<ProductController> logger) : ControllerBase
     {
         [HttpGet]
-        //[AllowAnonymous]
+        [Authorize(Policy = "JwtOrApiKey")]
         [Route("GetAll")]
         public async Task<IActionResult> GetAll() 
         {
@@ -48,6 +48,7 @@ namespace TechShopSolution.API.Controllers
             }
         }
 
+        [Authorize(AuthenticationSchemes = "apiKey")]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -82,7 +83,7 @@ namespace TechShopSolution.API.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin", AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpDelete("DeleteProduct/{id}")]
         public async Task<IActionResult> DeleteProduct(int id)
         {
@@ -116,6 +117,7 @@ namespace TechShopSolution.API.Controllers
         }
         
         [HttpPost]
+        [Authorize]
         [Route("Create")]
         public async Task<IActionResult> Create(CreateProductCommand command)
         {
@@ -152,6 +154,7 @@ namespace TechShopSolution.API.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         [Route("Update")]
         public async Task<IActionResult> Update(UpdateProductCommand command)
         {

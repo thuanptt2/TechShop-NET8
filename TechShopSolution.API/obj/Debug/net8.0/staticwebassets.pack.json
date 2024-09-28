@@ -17,6 +17,14 @@
       "PackagePath": "staticwebassets\\logs\\error\\error20240913.txt"
     },
     {
+      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\error\\error20240927.txt",
+      "PackagePath": "staticwebassets\\logs\\error\\error20240927.txt"
+    },
+    {
+      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\error\\error20240928.txt",
+      "PackagePath": "staticwebassets\\logs\\error\\error20240928.txt"
+    },
+    {
       "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\info\\info20240910.txt",
       "PackagePath": "staticwebassets\\logs\\info\\info20240910.txt"
     },
@@ -33,6 +41,14 @@
       "PackagePath": "staticwebassets\\logs\\info\\info20240913.txt"
     },
     {
+      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\info\\info20240927.txt",
+      "PackagePath": "staticwebassets\\logs\\info\\info20240927.txt"
+    },
+    {
+      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\info\\info20240928.txt",
+      "PackagePath": "staticwebassets\\logs\\info\\info20240928.txt"
+    },
+    {
       "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\trace\\traces20240910.txt",
       "PackagePath": "staticwebassets\\logs\\trace\\traces20240910.txt"
     },
@@ -47,6 +63,14 @@
     {
       "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\trace\\traces20240913.txt",
       "PackagePath": "staticwebassets\\logs\\trace\\traces20240913.txt"
+    },
+    {
+      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\trace\\traces20240927.txt",
+      "PackagePath": "staticwebassets\\logs\\trace\\traces20240927.txt"
+    },
+    {
+      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\trace\\traces20240928.txt",
+      "PackagePath": "staticwebassets\\logs\\trace\\traces20240928.txt"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.TechShopSolution.API.Microsoft.AspNetCore.StaticWebAssets.props",

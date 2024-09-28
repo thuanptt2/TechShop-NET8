@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +9,7 @@ using Microsoft.IdentityModel.Tokens;
 using TechShopSolution.Domain.Entities;
 using TechShopSolution.Domain.Repositories;
 using TechShopSolution.Domain.Services;
+using TechShopSolution.Infrastructure.Auth;
 using TechShopSolution.Infrastructure.DBContext;
 using TechShopSolution.Infrastructure.Repositories;
 using TechShopSolution.Infrastructure.Services;
@@ -47,7 +49,7 @@ public static class ServiceCollectionExtensions
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["SecretKey"])),
                 ClockSkew = TimeSpan.Zero
             };
-            
+
             options.Events = new JwtBearerEvents
             {
                 OnMessageReceived = context =>
@@ -60,7 +62,20 @@ public static class ServiceCollectionExtensions
                     return Task.CompletedTask;
                 }
             };
+        })
+        .AddScheme<AuthenticationSchemeOptions, ApiKeyAuthenticationHandler>("apiKey", options => { });
+
+        // Cấu hình Authorization
+        services.AddAuthorization(options =>
+        {
+            options.AddPolicy("JwtOrApiKey", policy =>
+            {
+                policy.AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme, "apiKey");
+                policy.RequireAuthenticatedUser();
+            });
         });
+
+        
         
         var healthChecksUI = configuration.GetSection("HealthChecksUI");
         services.AddHealthChecks()

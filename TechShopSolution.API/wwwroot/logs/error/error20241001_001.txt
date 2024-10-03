@@ -1,0 +1,1052 @@
+2024-10-01 22:29:04.670 +07:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5216: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2024-10-01 22:29:51.187 +07:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5216: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2024-10-01 22:30:57.374 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5126.4406ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:31:12.955 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5088.9545ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:31:28.085 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5072.3281ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:31:38.088 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5064.5046ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:31:43.201 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5065.0062ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:31:45.628 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5052.158ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:31:58.318 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5057.8728ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:32:13.455 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5087.4931ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:32:28.565 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5065.4616ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:32:43.684 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5076.8383ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:33:10.704 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5210.6078ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:33:26.351 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5085.0955ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:33:41.523 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5088.0418ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:33:56.645 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5061.7716ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:34:11.888 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5081.6857ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:34:27.024 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5068.7027ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:34:42.165 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5065.7218ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:34:57.322 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5081.0753ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:35:12.480 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5089.2872ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:35:27.622 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5069.2166ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:35:42.774 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5082.5645ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:35:57.913 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5073.0229ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:37:12.774 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5144.5632ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:37:28.417 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5091.9892ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:37:43.592 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5097.3884ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:37:58.744 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5087.701ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:38:14.099 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5178.5283ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:38:29.317 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5158.9972ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:38:44.471 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5084.3109ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:38:59.619 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5084.8902ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:39:14.786 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5090.32ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:39:30.017 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5074.0799ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:40:05.858 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5078.6937ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:40:21.335 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5058.7433ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:40:36.433 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5041.1023ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:40:51.548 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5073.91ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:41:06.667 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5062.4157ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:41:21.774 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5063.8502ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:41:36.913 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5074.9964ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:41:52.028 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5069.4715ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:42:07.148 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5069.9183ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:42:22.272 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5074.9709ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:42:37.387 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5074.9603ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:42:52.513 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5083.089ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:43:07.649 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5083.6759ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:43:22.745 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5045.0042ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:43:37.879 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5084.2719ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:43:53.003 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5071.5666ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:44:08.144 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5088.6854ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:44:23.278 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5078.7747ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:44:38.398 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5075.7055ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:44:53.515 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5070.4298ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:45:08.651 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5088.4713ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:45:23.792 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5097.3559ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:45:38.916 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5075.8743ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:45:54.027 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5069.5361ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:46:09.138 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5066.6394ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:46:24.258 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5074.4476ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:46:39.360 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5061.6059ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:46:54.487 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5083.085ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:47:09.623 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5094.4671ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:47:24.759 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5085.5734ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:47:39.904 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5098.4393ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:47:55.025 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5072.2334ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:48:10.182 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5099.9723ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:48:25.288 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5065.0756ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:48:40.417 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5084.3814ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:49:02.832 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5204.1173ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:49:18.461 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5085.6418ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:49:33.682 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5076.0415ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:50:08.235 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5083.4224ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:50:23.773 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5080.0335ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:50:38.901 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5073.7282ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:50:54.010 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5061.4631ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:51:09.189 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5064.351ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:51:24.315 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5081.1949ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:51:39.416 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5064.5287ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:51:54.534 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5069.4836ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:52:09.693 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5072.4892ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:52:24.812 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5084.0594ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:52:39.947 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5088.532ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:52:55.104 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5069.2223ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:53:22.782 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5145.097ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:53:38.418 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5083.3933ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:53:53.579 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5090.1841ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:54:08.736 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5079.4153ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:54:23.900 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5048.5239ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:54:39.073 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5097.4964ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:54:54.218 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5087.2642ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:55:09.372 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5083.363ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:55:24.501 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5063.52ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:55:39.651 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5073.0227ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:55:54.800 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5079.3695ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:56:09.946 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5071.8245ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:56:25.105 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5076.5205ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:56:40.230 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5059.3366ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:56:55.384 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5075.9363ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:57:22.909 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5118.562ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:57:38.472 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5082.2328ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:57:53.635 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5081.1702ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:58:08.781 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5088.6183ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:58:23.943 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5090.7024ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:58:39.091 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5081.9411ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:58:54.265 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5094.2549ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:59:09.418 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5085.4936ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:59:24.579 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5096.7062ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:59:39.802 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5069.5249ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 22:59:54.957 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5085.8457ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:00:10.093 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5059.7667ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:00:25.252 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5096.0688ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:00:40.365 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5057.6172ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:00:55.506 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5080.6319ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:01:10.752 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5169.2158ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:01:25.890 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5075.6401ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:01:41.050 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5079.9675ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:01:56.177 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5053.7697ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:02:11.340 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5089.9196ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:02:26.493 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5072.0003ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:02:41.609 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5049.1751ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:02:56.729 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5068.9196ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:03:11.891 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5094.5789ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:03:27.100 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5085.9874ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:03:42.240 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5069.5506ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:03:57.385 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5079.8575ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:04:12.526 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5077.7174ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:04:27.668 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5081.3877ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:04:42.806 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5075.2751ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:04:57.957 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5079.7788ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:05:13.135 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5100.1204ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:05:28.296 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5090.5176ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:05:43.465 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5091.541ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:05:58.630 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5093.4932ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:06:13.768 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5068.8818ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:06:28.894 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5064.9577ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:06:44.046 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5083.1447ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:06:59.210 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5090.465ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:07:14.376 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5086.4318ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:07:29.535 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5084.2519ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:07:44.683 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5084.6737ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:07:59.835 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5067.0922ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:08:14.995 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5088.2851ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:08:30.159 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5103.8033ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:08:45.322 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5096.4293ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:09:00.498 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5105.7864ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:09:15.643 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5078.9399ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:09:30.826 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5097.2457ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:09:46.025 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5085.2612ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:10:01.165 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5069.6144ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:10:16.264 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5038.1967ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:10:31.415 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5081.0308ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:10:46.558 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5073.2177ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:11:01.709 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5080.4938ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:11:16.848 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5067.786ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:11:32.004 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5076.5252ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:11:47.143 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5071.0513ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:12:02.273 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5059.5243ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:12:17.456 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5111.8763ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:12:32.623 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5091.4696ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:12:47.836 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5083.0339ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:13:02.989 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5076.7467ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:13:18.145 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5092.4219ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:13:33.310 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5087.6556ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:13:48.458 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5077.6976ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:14:03.595 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5068.0204ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:14:18.743 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5077.7591ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:14:33.895 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5080.3084ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:14:49.049 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5088.242ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:15:04.199 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5078.7075ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:15:19.356 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5088.8186ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:15:34.513 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5090.2513ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:15:49.658 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5079.4889ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:16:04.897 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5165.941ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:16:20.132 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5164.7898ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:16:35.304 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5089.588ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:16:50.486 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5083.7634ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:17:05.654 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5093.9365ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:17:20.816 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5091.2012ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:17:35.976 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5093.2425ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:17:51.129 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5088.0497ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:18:06.286 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5084.0508ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:18:21.436 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5085.1388ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:18:36.581 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5074.6567ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:18:51.711 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5065.6285ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:19:06.870 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5090.1489ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:19:21.992 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5056.151ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:19:37.147 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5083.3907ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:19:52.315 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5065.0448ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:20:07.462 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5079.0408ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:20:22.586 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5052.9028ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:20:37.724 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5056.2298ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:20:52.850 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5061.8342ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:21:07.960 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5053.1904ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:21:23.121 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5095.7849ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:21:38.373 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5171.5711ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:21:53.527 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5083.7755ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:22:08.666 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5082.3656ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:22:23.803 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5065.7019ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:22:38.977 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5095.2324ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:22:54.122 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5084.343ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:23:09.278 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5101.8864ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:23:24.427 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5082.5524ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:23:39.614 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5120.1135ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:23:54.766 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5088.3007ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:24:09.919 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5081.1035ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:24:25.073 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5087.2908ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:24:40.206 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5061.3674ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:24:55.387 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5076.4134ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:25:10.520 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5071.6795ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:25:25.649 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5054.7675ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:25:57.258 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5213.9237ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:26:12.933 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5083.12ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:26:28.134 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5091.836ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:26:43.304 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5089.3626ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:26:58.441 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5066.5189ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:27:13.619 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5097.1869ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:27:28.756 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5074.9537ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:27:43.888 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5060.5332ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:27:59.042 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5075.7317ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:28:14.179 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5076.5218ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:28:36.195 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5233.1714ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:28:51.805 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5079.7533ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:29:27.973 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5214.3154ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:29:43.485 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5076.4559ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:29:58.745 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5067.0019ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:30:13.902 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5085.0199ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:30:29.144 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5165.9166ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:30:44.301 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5080.9031ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:30:59.472 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5097.6991ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:31:26.301 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5084.9746ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:31:41.793 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5057.1675ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:31:56.980 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5079.9557ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:32:12.112 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5088.8676ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:32:27.241 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5074.1875ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:32:42.385 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5099.1259ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:32:57.507 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5078.9121ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:33:12.643 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5085.9077ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:33:27.777 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5084.3285ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:33:42.885 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5068.4246ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:33:57.992 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5070.412ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:34:13.123 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5074.3832ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:34:28.228 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5060.1431ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:34:43.328 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5064.7442ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:34:58.422 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5052.5833ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:35:13.546 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5078.7964ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:35:28.665 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5081.0289ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:35:43.823 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5104.71ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:35:58.962 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5090.0825ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:36:14.076 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5071.9455ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:36:29.197 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5072.2016ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26
+2024-10-01 23:36:44.330 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 5083.0413ms with message 'Kafka is not reachable.'
+Confluent.Kafka.ProduceException`2[Confluent.Kafka.Null,System.String]: Local: Message timed out
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in D:\Projects\TechShopSolution\TechShopSolution.Infrastructure\HealthCheck\KafkaHealthCheck.cs:line 26

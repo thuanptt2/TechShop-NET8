@@ -1,18 +1,6 @@
 {
   "Files": [
     {
-      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\error\\error20240910.txt",
-      "PackagePath": "staticwebassets\\logs\\error\\error20240910.txt"
-    },
-    {
-      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\error\\error20240911.txt",
-      "PackagePath": "staticwebassets\\logs\\error\\error20240911.txt"
-    },
-    {
-      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\error\\error20240912.txt",
-      "PackagePath": "staticwebassets\\logs\\error\\error20240912.txt"
-    },
-    {
       "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\error\\error20240913.txt",
       "PackagePath": "staticwebassets\\logs\\error\\error20240913.txt"
     },
@@ -25,20 +13,20 @@
       "PackagePath": "staticwebassets\\logs\\error\\error20240928.txt"
     },
     {
-      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\info\\info20240910.txt",
-      "PackagePath": "staticwebassets\\logs\\info\\info20240910.txt"
+      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\error\\error20240930.txt",
+      "PackagePath": "staticwebassets\\logs\\error\\error20240930.txt"
     },
     {
-      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\info\\info20240911.txt",
-      "PackagePath": "staticwebassets\\logs\\info\\info20240911.txt"
+      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\error\\error20241001.txt",
+      "PackagePath": "staticwebassets\\logs\\error\\error20241001.txt"
     },
     {
-      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\info\\info20240912.txt",
-      "PackagePath": "staticwebassets\\logs\\info\\info20240912.txt"
+      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\error\\error20241001_001.txt",
+      "PackagePath": "staticwebassets\\logs\\error\\error20241001_001.txt"
     },
     {
-      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\info\\info20240913.txt",
-      "PackagePath": "staticwebassets\\logs\\info\\info20240913.txt"
+      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\error\\error20241002.txt",
+      "PackagePath": "staticwebassets\\logs\\error\\error20241002.txt"
     },
     {
       "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\info\\info20240927.txt",
@@ -49,20 +37,28 @@
       "PackagePath": "staticwebassets\\logs\\info\\info20240928.txt"
     },
     {
-      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\trace\\traces20240910.txt",
-      "PackagePath": "staticwebassets\\logs\\trace\\traces20240910.txt"
+      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\info\\info20240930.txt",
+      "PackagePath": "staticwebassets\\logs\\info\\info20240930.txt"
     },
     {
-      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\trace\\traces20240911.txt",
-      "PackagePath": "staticwebassets\\logs\\trace\\traces20240911.txt"
+      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\info\\info20241001.txt",
+      "PackagePath": "staticwebassets\\logs\\info\\info20241001.txt"
     },
     {
-      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\trace\\traces20240912.txt",
-      "PackagePath": "staticwebassets\\logs\\trace\\traces20240912.txt"
+      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\info\\info20241001_001.txt",
+      "PackagePath": "staticwebassets\\logs\\info\\info20241001_001.txt"
     },
     {
-      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\trace\\traces20240913.txt",
-      "PackagePath": "staticwebassets\\logs\\trace\\traces20240913.txt"
+      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\info\\info20241002.txt",
+      "PackagePath": "staticwebassets\\logs\\info\\info20241002.txt"
+    },
+    {
+      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\info\\info20241003.txt",
+      "PackagePath": "staticwebassets\\logs\\info\\info20241003.txt"
+    },
+    {
+      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\product.json",
+      "PackagePath": "staticwebassets\\logs\\product.json"
     },
     {
       "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\trace\\traces20240927.txt",
@@ -71,6 +67,26 @@
     {
       "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\trace\\traces20240928.txt",
       "PackagePath": "staticwebassets\\logs\\trace\\traces20240928.txt"
+    },
+    {
+      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\trace\\traces20240930.txt",
+      "PackagePath": "staticwebassets\\logs\\trace\\traces20240930.txt"
+    },
+    {
+      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\trace\\traces20241001.txt",
+      "PackagePath": "staticwebassets\\logs\\trace\\traces20241001.txt"
+    },
+    {
+      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\trace\\traces20241001_001.txt",
+      "PackagePath": "staticwebassets\\logs\\trace\\traces20241001_001.txt"
+    },
+    {
+      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\trace\\traces20241002.txt",
+      "PackagePath": "staticwebassets\\logs\\trace\\traces20241002.txt"
+    },
+    {
+      "Id": "D:\\Projects\\TechShopSolution\\TechShopSolution.API\\wwwroot\\logs\\trace\\traces20241003.txt",
+      "PackagePath": "staticwebassets\\logs\\trace\\traces20241003.txt"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.TechShopSolution.API.Microsoft.AspNetCore.StaticWebAssets.props",

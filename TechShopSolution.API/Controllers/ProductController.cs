@@ -15,24 +15,28 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 namespace TechShopSolution.API.Controllers
 {
     [ApiController]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [Route("api/[controller]")]
+    [ApiVersion("1.0")]
+    [ApiVersion("2.0")]
     public class ProductController(IMediator mediator, 
         ILogger<ProductController> logger) : ControllerBase
     {
-        [HttpGet]
+        /// GET: api/v1/Product/GetAll
+        [HttpGet("GetAll")]
         [Authorize(Policy = "JwtOrApiKey")]
-        [Route("GetAll")]
-        public async Task<IActionResult> GetAll() 
+        [MapToApiVersion("1.0")]
+        public async Task<IActionResult> GetAllV1()
         {
             var response = new StandardResponse<IEnumerable<ProductDTO>>();
-            
-            try 
+
+            try
             {
                 var products = await mediator.Send(new GetAllProductQuery());
 
                 response.Success = true;
                 response.Data = products;
-                response.Message = "Products retrieved successfully";
+                response.Message = "Products retrieved successfully - V1";
 
                 return Ok(response);
             }
@@ -48,9 +52,68 @@ namespace TechShopSolution.API.Controllers
             }
         }
 
-        [Authorize(AuthenticationSchemes = "apiKey")]
+        /// GET: api/v2/Product/GetAll
+        [HttpGet("GetAll")]
+        [Authorize(Policy = "JwtOrApiKey")]
+        [MapToApiVersion("2.0")]
+        public async Task<IActionResult> GetAllV2(int pageNumber = 1, int pageSize = 10)
+        {
+            var response = new StandardResponse<IEnumerable<ProductDTO>>();
+
+            try
+            {
+                var (products, totalRecords) = await mediator.Send(new GetAllProductV2Query
+                {
+                    PageNumber = pageNumber,
+                    PageSize = pageSize
+                });
+
+                response.Success = true;
+                response.Data = products;
+                response.Message = "Products retrieved successfully - V2";
+                response.Paging = new Paging
+                {
+                    CurrentPage = pageNumber,
+                    PageSize = pageSize,
+                    TotalRecords = totalRecords,
+                };
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(JsonConvert.SerializeObject(ex));
+
+                response.Success = false;
+                response.Message = "An unexpected error occurred";
+                response.ExceptionMessage = ex.Message;
+
+                return StatusCode(StatusCodes.Status500InternalServerError, response);
+            }
+        }
+
+        [MapToApiVersion("1.0")]
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        [Authorize(AuthenticationSchemes = "apiKey")]
+        public async Task<IActionResult> GetByIdV1(int id)
+        {
+            var product = await mediator.Send(new GetProductByIdQuery(id));
+
+                if (product == null) 
+                {
+                    return NotFound();
+                }
+
+                decimal largeDecimalValue = 3.0e10M;
+                int intValue = (int)largeDecimalValue;
+
+                return Ok(product);
+        }
+
+        [MapToApiVersion("2.0")]
+        [HttpGet("{id}")]
+        [Authorize(AuthenticationSchemes = "apiKey")]
+        public async Task<IActionResult> GetByIdV2(int id)
         {
             var response = new StandardResponse<ProductDTO>();
             

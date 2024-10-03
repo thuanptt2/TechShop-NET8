@@ -74,8 +74,6 @@ public static class ServiceCollectionExtensions
                 policy.RequireAuthenticatedUser();
             });
         });
-
-        
         
         var healthChecksUI = configuration.GetSection("HealthChecksUI");
         services.AddHealthChecks()

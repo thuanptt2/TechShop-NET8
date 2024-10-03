@@ -1,17 +1,21 @@
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using TechShopSolution.Application.Models.Products;
 using TechShopSolution.Domain.Entities;
 using TechShopSolution.Domain.Repositories;
 using TechShopSolution.Infrastructure.DBContext;
+using TechShopSolution.Infrastructure.Helper;
 
 namespace TechShopSolution.Infrastructure.Repositories;
 
 public class ProductRepository : IProductRepository
 {
     private readonly TechShopDbContext _context;
-
-    public ProductRepository(TechShopDbContext context)
+    private readonly IMapper _mapper;
+    public ProductRepository(TechShopDbContext context, IMapper mapper)
     {
         _context = context;
+        _mapper = mapper;
     }
 
     public async Task<IEnumerable<Product>> GetAllAsync()
@@ -21,6 +25,22 @@ public class ProductRepository : IProductRepository
         .ThenInclude(pc => pc.Category!)
         .Include(b => b.Brand!).ToListAsync();
     }
+
+     public async Task<IEnumerable<Product>> GetPagedAsync(int pageNumber, int pageSize)
+        {
+            return await _context.Products
+                .Include(p => p.ProductInCategory!)
+                    .ThenInclude(pc => pc.Category!)
+                .Include(b => b.Brand!)
+                .Skip((pageNumber - 1) * pageSize) 
+                .Take(pageSize) 
+                .ToListAsync();
+        }
+
+        public async Task<int> CountAsync()
+        {
+            return await _context.Products.CountAsync();
+        }
 
     public async Task<Product?> GetByIdAsync(int id)
     {
@@ -44,8 +64,15 @@ public class ProductRepository : IProductRepository
 
             _context.CategoryProducts.AddRange(entity.ProductInCategory);
         }
-        await _context.SaveChangesAsync();
         
+        await _context.SaveChangesAsync();
+
+        var jsonFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "logs", "product.json");
+
+        var productDTO = _mapper.Map<ProductDTO>(entity);
+
+        await JsonFileHelper.AddItemToJsonFileAsync<ProductDTO>(jsonFilePath, productDTO);
+
         return entity.Id;
     }
 

@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "type": "coreclr",
+            "request": "launch",
+            "name": "Launch MonitorService",
+            "program": "${workspaceFolder}/src/monitor-service/MonitorService/bin/Debug/net8.0/MonitorService.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/monitor-service/MonitorService",
+            "stopAtEntry": false,
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
+        },
+        {
+            "type": "coreclr",
+            "request": "launch",
+            "name": "Launch TechShopSolution.API",
+            "program": "${workspaceFolder}/src/techshop/TechShopSolution.API/bin/Debug/net8.0/TechShopSolution.API.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/techshop/TechShopSolution.API",
+            "stopAtEntry": false,
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
+        }
+    ]
+}

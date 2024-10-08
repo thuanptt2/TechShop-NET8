@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using TechShopSolution.Application.Models.Common;
+using TechShopSolution.Domain.Models.Common;
 
 public class LoginCommand : IRequest<StandardResponse<string>>
 {

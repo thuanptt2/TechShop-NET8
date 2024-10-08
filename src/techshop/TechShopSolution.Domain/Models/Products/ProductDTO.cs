@@ -1,6 +1,6 @@
-using TechShopSolution.Application.Models.Brands;
+using TechShopSolution.Domain.Models.Brands;
 
-namespace TechShopSolution.Application.Models.Products
+namespace TechShopSolution.Domain.Models.Products
 {
     public class ProductDTO 
     {

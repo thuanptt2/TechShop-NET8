@@ -1,6 +1,6 @@
 using System.Text.Json;
 using Microsoft.AspNetCore.Http;
-using TechShopSolution.Application.Models.Common;
+using TechShopSolution.Domain.Models.Common;
 
 namespace TechShopSolution.Infrastructure.Middlewares
 {

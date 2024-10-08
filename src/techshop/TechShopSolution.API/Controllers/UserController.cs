@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using TechShopSolution.Application.Models.Common;
+using TechShopSolution.Domain.Models.Common;
 using TechShopSolution.Domain.Entities;
 using TechShopSolution.Domain.Repositories;
 

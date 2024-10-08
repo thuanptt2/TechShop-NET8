@@ -1,15 +1,14 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using TechShopSolution.Application.Models.Products;
+using TechShopSolution.Domain.Models.Products;
 using TechShopSolution.Application.Queries.Products.GetAllProducts;
 using TechShopSolution.Application.Queries.Products.GetProductById;
 using TechShopSolution.Application.Commands.Products.CreateProduct;
 using TechShopSolution.Application.Commands.Products.DeleteProduct;
 using TechShopSolution.Application.Commands.Products.UpdateProduct;
-using TechShopSolution.Application.Models.Common;
+using TechShopSolution.Domain.Models.Common;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace TechShopSolution.API.Controllers
 {
@@ -18,6 +17,7 @@ namespace TechShopSolution.API.Controllers
     [Route("api/[controller]")]
     [ApiVersion("1.0")]
     [ApiVersion("2.0")]
+    [AllowAnonymous]
     public class ProductController(IMediator mediator, 
         ILogger<ProductController> logger) : ControllerBase
     {
@@ -103,9 +103,6 @@ namespace TechShopSolution.API.Controllers
                 return NotFound();
             }
 
-            decimal largeDecimalValue = 3.0e10M;
-            int intValue = (int)largeDecimalValue;
-
             return Ok(product);
         }
 
@@ -145,7 +142,8 @@ namespace TechShopSolution.API.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin", AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        //[Authorize(Roles = "Admin", AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [AllowAnonymous]
         [HttpDelete("DeleteProduct/{id}")]
         public async Task<IActionResult> DeleteProduct(int id)
         {
@@ -179,7 +177,8 @@ namespace TechShopSolution.API.Controllers
         }
         
         [HttpPost]
-        [Authorize]
+        //[Authorize]
+        [AllowAnonymous]
         [Route("Create")]
         public async Task<IActionResult> Create(CreateProductCommand command)
         {
@@ -216,7 +215,8 @@ namespace TechShopSolution.API.Controllers
         }
 
         [HttpPost]
-        [Authorize]
+        //[Authorize]
+        [AllowAnonymous]
         [Route("Update")]
         public async Task<IActionResult> Update(UpdateProductCommand command)
         {

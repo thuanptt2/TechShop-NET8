@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using TechShopSolution.Application.Models.Common;
+using TechShopSolution.Domain.Models.Common;
 using TechShopSolution.Domain.Services;
 
 public class LoginHandler(IUserService userService,

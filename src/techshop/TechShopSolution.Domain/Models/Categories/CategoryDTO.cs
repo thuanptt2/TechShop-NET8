@@ -1,6 +1,4 @@
-using TechShopSolution.Application.Models.Products;
-
-namespace TechShopSolution.Application.Models.Categories
+namespace TechShopSolution.Domain.Models.Categories
 {
     public class CategoryDTO 
     {

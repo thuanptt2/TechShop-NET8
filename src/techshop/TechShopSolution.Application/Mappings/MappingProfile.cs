@@ -1,10 +1,12 @@
 using AutoMapper;
 using TechShopSolution.Domain.Entities;
-using TechShopSolution.Application.Models.Categories;
-using TechShopSolution.Application.Models.Products;
-using TechShopSolution.Application.Models.Brands;
+using TechShopSolution.Domain.Models.Categories;
+using TechShopSolution.Domain.Models.Products;
+using TechShopSolution.Domain.Models.Brands;
 using TechShopSolution.Application.Commands.Products.CreateProduct;
 using TechShopSolution.Application.Commands.Products.UpdateProduct;
+using TechShopSolution.Domain.Models;
+using TechShopSolution.Application.Events;
 
 namespace TechShopSolution.Application.Mappings
 {
@@ -24,7 +26,15 @@ namespace TechShopSolution.Application.Mappings
             CreateMap<Category, ProductDTO.CategoryDTO>();
 
             CreateMap<CreateProductCommand, Product>();
+            CreateMap<CreateProductCommand, MongoProduct>();
+            CreateMap<CreateProductCommand, ProductCreatedEvent>();
             CreateMap<UpdateProductCommand, Product>();
+            CreateMap<Product, ProductCreatedEvent>()
+            .ForMember(dest => dest.Categories, opt => opt.MapFrom(src => src.ProductInCategory!.Select(pc => pc.CateId)));
+            CreateMap<Product, ProductUpdatedEvent>()
+            .ForMember(dest => dest.Categories, opt => opt.MapFrom(src => src.ProductInCategory!.Select(pc => pc.CateId)));
+            CreateMap<ProductCreatedEvent, MongoProduct>();
+            CreateMap<ProductUpdatedEvent, MongoProduct>();
 
             //CategoryProduct
             CreateMap<CategoryProductDTO, CategoryProduct>();

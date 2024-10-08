@@ -19,6 +19,9 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
     options.SuppressModelStateInvalidFilter = true;
 });
 
+// Configure KafkaLoggingConfig
+builder.Services.Configure<KafkaLoggingConfig>(builder.Configuration.GetSection("kafkaLoggingConfig"));
+
 // Add application and infrastructure layers
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);

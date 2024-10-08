@@ -1,17 +1,26 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using Microsoft.Extensions.Logging;
+using TechShopSolution.Application.Events;
 using TechShopSolution.Domain.Repositories;
+using TechShopSolution.Domain.Services;
 
 namespace TechShopSolution.Application.Commands.Products.DeleteProduct;
 
 public class DeleteProductCommandHandler(ILogger<DeleteProductCommandHandler> logger,
-    IProductRepository productRepository) : IRequestHandler<DeleteProductCommand, bool>
+    IKafkaProducerService kafkaProducerService,
+    IProductRepository productRepository,
+    IRedisCacheService redisCacheService) : IRequestHandler<DeleteProductCommand, bool>
 {
     public async Task<bool> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
     {
         logger.LogInformation("Deleting a product with id: " + request.Id);
 
         var product = await productRepository.GetByIdAsync(request.Id);
+
+        // Tạo và gửi sự kiện lên Kafka
+        var productDeletedEvent = new ProductDeletedEvent { Id = request.Id };
+        await kafkaProducerService.ProduceAsync("product-events", productDeletedEvent);
 
         if (product == null)
         {
@@ -20,6 +29,11 @@ public class DeleteProductCommandHandler(ILogger<DeleteProductCommandHandler> lo
         }
 
         await productRepository.Delete(product);
+
+        // Cập nhật cache
+        string cacheKey = $"Product:{request.Id}";
+        await redisCacheService.RemoveCacheAsync(cacheKey);
+
         return true;
     }
 }

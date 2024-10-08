@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using TechShopSolution.Application.Queries.Categories.GetAllCategories;
 using TechShopSolution.Application.Queries.Categories.GetCategoriesById;
-using TechShopSolution.Application.Models.Common;
-using TechShopSolution.Application.Models.Categories;
+using TechShopSolution.Domain.Models.Common;
+using TechShopSolution.Domain.Models.Categories;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Authorization;
 

@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using TechShopSolution.Application.Models.Products;
+using TechShopSolution.Domain.Models.Products;
 
 namespace TechShopSolution.Application.Queries.Products.GetAllProducts;
 

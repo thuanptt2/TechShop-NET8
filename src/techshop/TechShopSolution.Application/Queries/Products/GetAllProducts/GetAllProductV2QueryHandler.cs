@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using TechShopSolution.Application.Models.Products;
+using TechShopSolution.Domain.Models.Products;
 using TechShopSolution.Domain.Repositories;
 
 namespace TechShopSolution.Application.Queries.Products.GetAllProducts

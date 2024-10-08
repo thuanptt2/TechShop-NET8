@@ -1,4 +1,4 @@
-namespace TechShopSolution.Application.Models.Common
+namespace TechShopSolution.Domain.Models.Common
 {
     public class StandardResponse<TData, TErrorData> {
         public bool Success { get; set; }

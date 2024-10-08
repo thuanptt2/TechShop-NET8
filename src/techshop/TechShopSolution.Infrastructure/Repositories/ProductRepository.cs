@@ -1,6 +1,6 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using TechShopSolution.Application.Models.Products;
+using TechShopSolution.Domain.Models.Products;
 using TechShopSolution.Domain.Entities;
 using TechShopSolution.Domain.Repositories;
 using TechShopSolution.Infrastructure.DBContext;

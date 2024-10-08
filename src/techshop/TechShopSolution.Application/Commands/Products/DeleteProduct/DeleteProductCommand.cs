@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using TechShopSolution.Application.Models.Categories;
 
 namespace TechShopSolution.Application.Commands.Products.DeleteProduct;
 

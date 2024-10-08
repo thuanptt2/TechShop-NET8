@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using TechShopSolution.Application.Models.Categories;
+using TechShopSolution.Domain.Models.Categories;
 
 namespace TechShopSolution.Application.Queries.Categories.GetAllCategories;
 

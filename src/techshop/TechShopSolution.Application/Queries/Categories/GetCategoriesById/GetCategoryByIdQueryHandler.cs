@@ -1,9 +1,8 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using TechShopSolution.Application.Models.Categories;
+using TechShopSolution.Domain.Models.Categories;
 using TechShopSolution.Domain.Repositories;
-using TechShopSolution.Application.Queries.Categories;
 
 namespace TechShopSolution.Application.Queries.Categories.GetCategoriesById;
 

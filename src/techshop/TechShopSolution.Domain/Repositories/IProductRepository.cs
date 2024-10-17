@@ -6,6 +6,7 @@ public interface IProductRepository
 {
     Task<IEnumerable<Product>> GetAllAsync();
     Task<IEnumerable<Product>> GetPagedAsync(int pageNumber, int pageSize);
+    Task<IEnumerable<Product>> GetProductsWithDynamicFilter(string filterExpression);
     Task<int> CountAsync();
     Task<Product?> GetByIdAsync(int id);
     Task<int> Create(Product product);

@@ -7,6 +7,7 @@ using TechShopSolution.Infrastructure.Middlewares;
 using TechShopSolution.Domain.Entities;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Mvc.Versioning;
+using System.Threading.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,6 +38,27 @@ builder.Services.ConfigureSerilog(
     builder.Configuration.GetSection(nameof(KafkaLoggingConfig)).Get<KafkaLoggingConfig>(),
     builder.Configuration.GetValue<string>("otlpUrl")
 );
+
+builder.Services.AddRateLimiter(options =>
+{
+    options.GlobalLimiter = PartitionedRateLimiter.Create<HttpContext, string>(httpContext =>
+        RateLimitPartition.GetFixedWindowLimiter(
+            partitionKey: httpContext.User.Identity?.Name ?? httpContext.Request.Headers.Host.ToString(),
+            factory: partition => new FixedWindowRateLimiterOptions
+            {
+                PermitLimit = 60, // Maximum number of requests allowed
+                Window = TimeSpan.FromMinutes(1), // Time window (e.g., 1 minute)
+                QueueProcessingOrder = QueueProcessingOrder.OldestFirst,
+                QueueLimit = 0 // Number of requests allowed to be queued
+            }));
+
+    options.OnRejected = async (context, cancellationToken) =>
+    {
+        context.HttpContext.Response.StatusCode = StatusCodes.Status429TooManyRequests;
+        await context.HttpContext.Response.WriteAsync("Rate limit exceeded. Please try again later.", cancellationToken);
+    };
+});
+        
 
 // Add Swagger/OpenAPI support
 builder.Services.AddEndpointsApiExplorer();
@@ -115,6 +137,8 @@ if (!Directory.Exists(logsPath))
 
 // Serve static files
 app.UseStaticFiles();
+
+app.UseRateLimiter();
 
 // Enable directory browsing for logs
 app.UseDirectoryBrowser(new DirectoryBrowserOptions

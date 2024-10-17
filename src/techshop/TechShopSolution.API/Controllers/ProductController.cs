@@ -9,6 +9,8 @@ using TechShopSolution.Application.Commands.Products.UpdateProduct;
 using TechShopSolution.Domain.Models.Common;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using TechShopSolution.Application.Queries.Products.GetProductsWithDynamicFilter;
 
 namespace TechShopSolution.API.Controllers
 {
@@ -17,7 +19,6 @@ namespace TechShopSolution.API.Controllers
     [Route("api/[controller]")]
     [ApiVersion("1.0")]
     [ApiVersion("2.0")]
-    [AllowAnonymous]
     public class ProductController(IMediator mediator, 
         ILogger<ProductController> logger) : ControllerBase
     {
@@ -92,7 +93,7 @@ namespace TechShopSolution.API.Controllers
         }
 
         [MapToApiVersion("1.0")]
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         [Authorize(AuthenticationSchemes = "apiKey")]
         public async Task<IActionResult> GetByIdV1(int id)
         {
@@ -107,7 +108,7 @@ namespace TechShopSolution.API.Controllers
         }
 
         [MapToApiVersion("2.0")]
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         [Authorize(AuthenticationSchemes = "apiKey")]
         public async Task<IActionResult> GetByIdV2(int id)
         {
@@ -141,9 +142,37 @@ namespace TechShopSolution.API.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, response);
             }
         }
-
-        //[Authorize(Roles = "Admin", AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        
         [AllowAnonymous]
+        [HttpGet("filter")]
+        public async Task<IActionResult> GetProductsWithFilter(string filterExpression)
+        {
+            var response = new StandardResponse<IEnumerable<dynamic>>();
+
+            try
+            {
+                var query = new GetProductsWithDynamicFilterQuery(filterExpression);
+                var result = await mediator.Send(query);
+
+                response.Success = true;
+                response.Data = result;
+                response.Message = "Products retrieved successfully";
+
+                return Ok(response); 
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(JsonConvert.SerializeObject(ex));
+
+                response.Success = false;
+                response.Message = "An unexpected error occurred";
+                response.ExceptionMessage = ex.Message;
+
+                return StatusCode(StatusCodes.Status500InternalServerError, response);
+            }
+        }
+
+        [Authorize(Roles = "Admin", AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpDelete("DeleteProduct/{id}")]
         public async Task<IActionResult> DeleteProduct(int id)
         {
@@ -177,8 +206,7 @@ namespace TechShopSolution.API.Controllers
         }
         
         [HttpPost]
-        //[Authorize]
-        [AllowAnonymous]
+        [Authorize]
         [Route("Create")]
         public async Task<IActionResult> Create(CreateProductCommand command)
         {
@@ -215,8 +243,7 @@ namespace TechShopSolution.API.Controllers
         }
 
         [HttpPost]
-        //[Authorize]
-        [AllowAnonymous]
+        [Authorize]
         [Route("Update")]
         public async Task<IActionResult> Update(UpdateProductCommand command)
         {
@@ -255,6 +282,13 @@ namespace TechShopSolution.API.Controllers
 
                 return StatusCode(StatusCodes.Status500InternalServerError, response);
             }
+        }
+
+        [HttpGet("health")]
+        [AllowAnonymous]
+        public IActionResult CheckHealth()
+        {
+            return Ok(new { status = "Healthy", message = "Product Service is healthy." });
         }
     }
 }

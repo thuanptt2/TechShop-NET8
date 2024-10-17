@@ -5,6 +5,7 @@ using TechShopSolution.Domain.Entities;
 using TechShopSolution.Domain.Repositories;
 using TechShopSolution.Infrastructure.DBContext;
 using TechShopSolution.Infrastructure.Helper;
+using System.Linq.Dynamic.Core;
 
 namespace TechShopSolution.Infrastructure.Repositories;
 
@@ -26,21 +27,21 @@ public class ProductRepository : IProductRepository
         .Include(b => b.Brand!).ToListAsync();
     }
 
-     public async Task<IEnumerable<Product>> GetPagedAsync(int pageNumber, int pageSize)
-        {
-            return await _context.Products
-                .Include(p => p.ProductInCategory!)
-                    .ThenInclude(pc => pc.Category!)
-                .Include(b => b.Brand!)
-                .Skip((pageNumber - 1) * pageSize) 
-                .Take(pageSize) 
-                .ToListAsync();
-        }
+    public async Task<IEnumerable<Product>> GetPagedAsync(int pageNumber, int pageSize)
+    {
+        return await _context.Products
+            .Include(p => p.ProductInCategory!)
+                .ThenInclude(pc => pc.Category!)
+            .Include(b => b.Brand!)
+            .Skip((pageNumber - 1) * pageSize) 
+            .Take(pageSize) 
+            .ToListAsync();
+    }
 
-        public async Task<int> CountAsync()
-        {
-            return await _context.Products.CountAsync();
-        }
+    public async Task<int> CountAsync()
+    {
+        return await _context.Products.CountAsync();
+    }
 
     public async Task<Product?> GetByIdAsync(int id)
     {
@@ -49,6 +50,22 @@ public class ProductRepository : IProductRepository
         .ThenInclude(pc => pc.Category!)
         .Include(b => b.Brand!)
         .FirstOrDefaultAsync( x => x.Id == id);
+    }
+
+    public async Task<IEnumerable<Product>> GetProductsWithDynamicFilter(string filterExpression)
+    {
+        var query = _context.Products.AsQueryable();
+
+        if (!string.IsNullOrWhiteSpace(filterExpression))
+        {
+            query = query.Where(filterExpression);
+        }
+
+        return await query
+            .Include(p => p.ProductInCategory!)
+                .ThenInclude(pc => pc.Category!)
+            .Include(p => p.Brand!)
+            .ToListAsync();
     }
 
     public async Task<int> Create(Product entity)

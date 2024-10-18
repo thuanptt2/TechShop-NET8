@@ -13,7 +13,7 @@ namespace TechShopSolution.Infrastructure.Services
 
         public VaultService(IConfiguration configuration)
         {
-            var vaultClientSettings = new VaultClientSettings("http://localhost:8202", new TokenAuthMethodInfo("root"));
+            var vaultClientSettings = new VaultClientSettings("http://localhost:8202", new TokenAuthMethodInfo("your-root-token"));
 
             _vaultClient = new VaultClient(vaultClientSettings);
         }

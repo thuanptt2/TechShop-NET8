@@ -18,6 +18,7 @@ using TechShopSolution.Infrastructure.Repositories;
 using TechShopSolution.Infrastructure.Services;
 using TechShopSolution.Infrastructure.EventHandlers;
 using MongoDB.Driver;
+using TechShopSolution.Infrastructure.Configuration;
 
 namespace TechShopSolution.Infrastructure.Extensions;
 
@@ -45,7 +46,7 @@ public static class ServiceCollectionExtensions
         services.AddIdentityApiEndpoints<User>()
             .AddRoles<IdentityRole>()
             .AddEntityFrameworkStores<TechShopDbContext>();
-        
+
         // Configure JWT Authentication
         var jwtSettings = configuration.GetSection("JwtSettings");
         services.AddAuthentication(options =>
@@ -100,6 +101,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IJwtService, JwtService>();
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
+        services.AddSingleton<IVaultService, VaultService>();
 
         // Register Kafka Producer Service
         services.AddSingleton<IKafkaProducerService, KafkaProducerService>();

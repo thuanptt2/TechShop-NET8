@@ -13,9 +13,12 @@ namespace TechShopSolution.Infrastructure.Services
 
         public VaultService(IConfiguration configuration)
         {
-            var vaultClientSettings = new VaultClientSettings("http://localhost:8202", new TokenAuthMethodInfo("your-root-token"));
+            string vaultAddress = configuration["Vault:Address"];
+            string vaultToken = configuration["Vault:Token"];
 
-            _vaultClient = new VaultClient(vaultClientSettings);
+            IAuthMethodInfo authMethod = new TokenAuthMethodInfo(vaultToken);
+            
+            _vaultClient = new VaultClient(new VaultClientSettings(vaultAddress, authMethod));
         }
 
         // Phương thức lấy secret từ Vault

@@ -119,5 +119,7 @@ public static class ServiceCollectionExtensions
             return ConnectionMultiplexer.Connect(config);
         });
         services.AddScoped<IRedisCacheService, RedisCacheService>();
+        services.AddMemoryCache();
+        services.AddScoped<IMemoryCacheService, MemoryCacheService>();
     }
 }

@@ -42,7 +42,8 @@ namespace TechShopSolution.API.Controllers
             }
         }
 
-        [Authorize]
+        //[Authorize]
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {

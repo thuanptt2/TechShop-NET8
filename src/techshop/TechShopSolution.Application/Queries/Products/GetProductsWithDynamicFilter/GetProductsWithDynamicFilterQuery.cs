@@ -1,9 +1,10 @@
 ﻿using MediatR;
+using TechShopSolution.Domain.Models.Common;
 using TechShopSolution.Domain.Models.Products;
 
 namespace TechShopSolution.Application.Queries.Products.GetProductsWithDynamicFilter
 {
-     public class GetProductsWithDynamicFilterQuery : IRequest<IEnumerable<ProductDTO>?>
+     public class GetProductsWithDynamicFilterQuery : IRequest<StandardResponse>
     {
         public string FilterExpression { get; }
 

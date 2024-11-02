@@ -1,9 +1,10 @@
 ﻿using MediatR;
 using TechShopSolution.Domain.Models.Categories;
+using TechShopSolution.Domain.Models.Common;
 
 namespace TechShopSolution.Application.Commands.Products.CreateProduct;
 
-public class CreateProductCommand : IRequest<int>
+public class CreateProductCommand : IRequest<StandardResponse>
 {
     public string Name { get; set; } = default!;
     public string Code { get; set; } = default!;

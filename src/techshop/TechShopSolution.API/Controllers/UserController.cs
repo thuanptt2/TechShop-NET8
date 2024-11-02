@@ -18,137 +18,57 @@ ILogger<UserController> logger) : ControllerBase
 {
     [AllowAnonymous]
     [HttpPost("login")]
-    public async Task<IActionResult> Login(LoginRequest request)
+    public async Task<IActionResult> Login(LoginCommand command)
     {
-        try 
-        {
-            var result = await mediator.Send(new LoginCommand(request.Email, request.Password));
-            return Ok(result);
-        }
-        catch (Exception ex)
-        {
-            logger.LogError(JsonConvert.SerializeObject(ex));
+        var response = await mediator.Send(command);
 
-            var response = new StandardResponse<string>() {
-                Success = false,
-                Message = "An unexpected error occurred",
-                ExceptionMessage = ex.Message
-            };
-
-            return StatusCode(StatusCodes.Status500InternalServerError, response);
+        if (!response.Success) 
+        {
+            BadRequest(response);
         }
+
+        return Ok(response);
     }
     [Authorize(Roles = "Admin")]
     [HttpPost("create")]
     public async Task<IActionResult> CreateUser(CreateUserCommand command, CancellationToken cancellationToken)
     {
-        if (!ModelState.IsValid)
+        var response = await mediator.Send(command);
+
+        if (!response.Success) 
         {
-            return BadRequest(new StandardResponse<object>
-            {
-                Success = false,
-                Message = "Invalid request data",
-                ErrorData = ModelState
-            });
+            BadRequest(response);
         }
 
-        try
-        {
-            var user = await mediator.Send(command, cancellationToken);
-            return Ok(new StandardResponse<User>
-            {
-                Success = true,
-                Message = "User created successfully",
-                Data = user
-            });
-        }
-        catch (Exception ex)
-        {
-            return StatusCode(StatusCodes.Status500InternalServerError, new StandardResponse<object>
-            {
-                Success = false,
-                Message = "An error occurred while creating the user",
-                ExceptionMessage = ex.Message
-            });
-        }
+        return Ok(response);
     }
 
     [Authorize(Roles = "Admin")]
     [HttpPost("AddUserToRole")]
-    public async Task<IActionResult> AddUserToRole(AddUserToRoleRequest request)
+    public async Task<IActionResult> AddUserToRole(AddUserToRoleCommand command)
     {
-        try 
-        {
-            var user = await userRepository.GetUserByUserName(request.UserName);
-        
-            if(user == null)
-            {
-                return NotFound(new StandardResponse<string>
-                {
-                    Success = false,
-                    Message = $"User '{request.UserName}' was not found",
-                });
-            }
+        var response = await mediator.Send(command);
 
-            await mediator.Send(new AddUserToRoleCommand {
-                User = user,
-                RoleName = request.RoleName
-            } );
-
-            return Ok(new StandardResponse<string>
-            {
-                Success = true,
-                Message = $"Add role '{request.RoleName}' to user '{request.UserName}' succesfully",
-            });
-        }
-        catch (Exception ex)
+        if (!response.Success) 
         {
-            return StatusCode(StatusCodes.Status500InternalServerError, new StandardResponse<object>
-            {
-                Success = false,
-                Message = "An error occurred while adding role to user",
-                ExceptionMessage = ex.Message
-            });
+            return response.Data == null ? NotFound(response) : BadRequest(response);
         }
+
+        return Ok(response);
     }
 
     [Authorize(Roles = "Admin")]
     [HttpPost("RemoveUserFromRole")]
-    public async Task<IActionResult> RemoveUserFromRole(RemoveUserFromRoleRequest request)
+    public async Task<IActionResult> RemoveUserFromRole(RemoveUserFromRoleCommand command)
     {
-        var user = await userRepository.GetUserByUserName(request.UserName);
-        if (user == null)
+        var response = await mediator.Send(command);
+
+        if (!response.Success) 
         {
-            return NotFound(new StandardResponse<object>
-            {
-                Success = false,
-                Message = $"User '{request.UserName}' was not found",
-            });
+            return response.Data == null ? NotFound(response) : BadRequest(response);
         }
 
-        var result = await mediator.Send(new RemoveUserFromRoleCommand {
-            User = user,
-            RoleName = request.RoleName
-        } );
-
-        if (result.Succeeded)
-        {
-            return Ok(new StandardResponse<string>
-            {
-                Success = true,
-                Message = $"Role '{request.RoleName}' removed from user successfully",
-                Data = request.RoleName
-            });
-        }
-        else
-        {
-            return BadRequest(new StandardResponse<object>
-            {
-                Success = false,
-                Message = "Failed to remove role",
-                ErrorData = result.Errors
-            });
-        }
+        return Ok(response);
     }
 
 }

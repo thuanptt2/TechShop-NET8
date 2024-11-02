@@ -19,8 +19,7 @@ namespace TechShopSolution.API.Controllers
     [Route("api/[controller]")]
     [ApiVersion("1.0")]
     [ApiVersion("2.0")]
-    public class ProductController(IMediator mediator, 
-        ILogger<ProductController> logger) : ControllerBase
+    public class ProductController(IMediator mediator) : ControllerBase
     {
         /// GET: api/v1/Product/GetAll
         [HttpGet("GetAll")]
@@ -28,28 +27,14 @@ namespace TechShopSolution.API.Controllers
         [MapToApiVersion("1.0")]
         public async Task<IActionResult> GetAllV1()
         {
-            var response = new StandardResponse<IEnumerable<ProductDTO>>();
+             var response = await mediator.Send(new GetAllProductQuery());
 
-            try
+            if (!response.Success) 
             {
-                var products = await mediator.Send(new GetAllProductQuery());
-
-                response.Success = true;
-                response.Data = products;
-                response.Message = "Products retrieved successfully - V1";
-
-                return Ok(response);
+                BadRequest(response);
             }
-            catch (Exception ex)
-            {
-                logger.LogError(JsonConvert.SerializeObject(ex));
 
-                response.Success = false;
-                response.Message = "An unexpected error occurred";
-                response.ExceptionMessage = ex.Message;
-
-                return StatusCode(StatusCodes.Status500InternalServerError, response);
-            }
+            return Ok(response);
         }
 
         /// GET: api/v2/Product/GetAll
@@ -58,38 +43,17 @@ namespace TechShopSolution.API.Controllers
         [MapToApiVersion("2.0")]
         public async Task<IActionResult> GetAllV2(int pageNumber = 1, int pageSize = 10)
         {
-            var response = new StandardResponse<IEnumerable<ProductDTO>>();
+            var response = await mediator.Send(new GetAllProductV2Query {
+                PageNumber = pageNumber,
+                PageSize = pageSize
+            });
 
-            try
+            if (!response.Success) 
             {
-                var (products, totalRecords) = await mediator.Send(new GetAllProductV2Query
-                {
-                    PageNumber = pageNumber,
-                    PageSize = pageSize
-                });
-
-                response.Success = true;
-                response.Data = products;
-                response.Message = "Products retrieved successfully - V2";
-                response.Paging = new Paging
-                {
-                    CurrentPage = pageNumber,
-                    PageSize = pageSize,
-                    TotalRecords = totalRecords,
-                };
-
-                return Ok(response);
+                BadRequest(response);
             }
-            catch (Exception ex)
-            {
-                logger.LogError(JsonConvert.SerializeObject(ex));
 
-                response.Success = false;
-                response.Message = "An unexpected error occurred";
-                response.ExceptionMessage = ex.Message;
-
-                return StatusCode(StatusCodes.Status500InternalServerError, response);
-            }
+            return Ok(response);
         }
 
         [MapToApiVersion("1.0")]
@@ -109,137 +73,62 @@ namespace TechShopSolution.API.Controllers
 
         [MapToApiVersion("2.0")]
         [HttpGet("{id:int}")]
-        [Authorize(AuthenticationSchemes = "apiKey")]
+        //[Authorize(AuthenticationSchemes = "apiKey")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetByIdV2(int id)
         {
-            var response = new StandardResponse<ProductDTO>();
-            
-            try 
+            var response = await mediator.Send(new GetProductByIdQuery(id));
+
+            if (!response.Success) 
             {
-                var product = await mediator.Send(new GetProductByIdQuery(id));
-
-                if (product == null) 
-                {
-                    response.Success = false;
-                    response.Message = $"Product with ID {id} was not found";
-                    return NotFound(response);
-                }
-
-                response.Success = true;
-                response.Data = product;
-                response.Message = "Product retrieved successfully";
-
-                return Ok(response);
+                return response.Data == null ? NotFound(response) : BadRequest(response);
             }
-            catch (Exception ex)
-            {
-                logger.LogError(JsonConvert.SerializeObject(ex));
 
-                response.Success = false;
-                response.Message = "An unexpected error occurred";
-                response.ExceptionMessage = ex.Message;
-
-                return StatusCode(StatusCodes.Status500InternalServerError, response);
-            }
+            return Ok(response);
         }
         
         [AllowAnonymous]
         [HttpGet("filter")]
         public async Task<IActionResult> GetProductsWithFilter(string filterExpression)
         {
-            var response = new StandardResponse<IEnumerable<dynamic>>();
+            var query = new GetProductsWithDynamicFilterQuery(filterExpression);
+            var result = await mediator.Send(query);
 
-            try
+            if (!result.Success) 
             {
-                var query = new GetProductsWithDynamicFilterQuery(filterExpression);
-                var result = await mediator.Send(query);
-
-                response.Success = true;
-                response.Data = result;
-                response.Message = "Products retrieved successfully";
-
-                return Ok(response); 
+                return BadRequest(result);
             }
-            catch (Exception ex)
-            {
-                logger.LogError(JsonConvert.SerializeObject(ex));
 
-                response.Success = false;
-                response.Message = "An unexpected error occurred";
-                response.ExceptionMessage = ex.Message;
-
-                return StatusCode(StatusCodes.Status500InternalServerError, response);
-            }
+            return Ok(result);
         }
 
         [Authorize(Roles = "Admin", AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpDelete("DeleteProduct/{id}")]
         public async Task<IActionResult> DeleteProduct(int id)
         {
-            var response = new StandardResponse<object>();
-            
-            try 
+            var response = await mediator.Send(new DeleteProductCommand(id));
+
+            if (!response.Success) 
             {
-                var isDeleted = await mediator.Send(new DeleteProductCommand(id));
-
-                if (!isDeleted)
-                {
-                    response.Success = false;
-                    response.Message = $"Product with id: {id} not found";
-                    return NotFound(response);
-                }
-
-                response.Success = true;
-                response.Message = "Product deleted successfully";
-                return Ok(response);
+                BadRequest(response);
             }
-            catch (Exception ex)
-            {
-                logger.LogError(JsonConvert.SerializeObject(ex));
 
-                response.Success = false;
-                response.Message = "An unexpected error occurred";
-                response.ExceptionMessage = ex.Message;
-
-                return StatusCode(StatusCodes.Status500InternalServerError, response);
-            }
+            return Ok(response);
         }
         
         [HttpPost]
         [Authorize]
         [Route("Create")]
         public async Task<IActionResult> Create(CreateProductCommand command)
-        {
-            var response = new StandardResponse<object>();
-            
-            try 
-            {
-                if (!ModelState.IsValid) 
-                {
-                    response.Success = false;
-                    response.Message = "Invalid request data";
-                    response.ErrorData = ModelState;
-                    return BadRequest(response);
-                }
-                
-                var id = await mediator.Send(command);
+        {         
+            var response = await mediator.Send(command);
 
-                response.Success = true;
-                response.Message = "Product created successfully";
-                response.Data = new { ProductId = id };
-                
-                return Ok(response);
-            }
-            catch (Exception ex)
+            if (!response.Success) 
             {
-                logger.LogError(JsonConvert.SerializeObject(ex));
-                
-                response.Success = false;
-                response.Message = "An unexpected error occurred";
-                response.ExceptionMessage = ex.Message;
-
-                return StatusCode(StatusCodes.Status500InternalServerError, response);
+                BadRequest(response);
             }
+
+            return Ok(response);
         }
 
         [HttpPost]
@@ -247,41 +136,14 @@ namespace TechShopSolution.API.Controllers
         [Route("Update")]
         public async Task<IActionResult> Update(UpdateProductCommand command)
         {
-            var response = new StandardResponse<object>();
-            
-            try 
+            var response = await mediator.Send(command);
+
+            if (!response.Success) 
             {
-                if (!ModelState.IsValid)
-                {
-                    response.Success = false;
-                    response.Message = "Invalid request data";
-                    response.ErrorData = ModelState;
-                    return BadRequest(response);
-                }
-
-                var isUpdated = await mediator.Send(command);
-
-                if (!isUpdated)
-                {
-                    response.Success = false;
-                    response.Message = "Failed to update product";
-                    return NotFound(response);
-                }
-
-                response.Success = true;
-                response.Message = "Product updated successfully";
-                return Ok(response);
+                BadRequest(response);
             }
-            catch (Exception ex)
-            {
-                logger.LogError(JsonConvert.SerializeObject(ex));
 
-                response.Success = false;
-                response.Message = "An unexpected error occurred";
-                response.ExceptionMessage = ex.Message;
-
-                return StatusCode(StatusCodes.Status500InternalServerError, response);
-            }
+            return Ok(response);
         }
 
         [HttpGet("health")]

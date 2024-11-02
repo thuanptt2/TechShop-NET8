@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.Extensions.Logging;
 using TechShopSolution.Application.Events;
+using TechShopSolution.Domain.Models.Common;
 using TechShopSolution.Domain.Repositories;
 using TechShopSolution.Domain.Services;
 
@@ -10,9 +11,9 @@ namespace TechShopSolution.Application.Commands.Products.DeleteProduct;
 public class DeleteProductCommandHandler(ILogger<DeleteProductCommandHandler> logger,
     IKafkaProducerService kafkaProducerService,
     IProductRepository productRepository,
-    IRedisCacheService redisCacheService) : IRequestHandler<DeleteProductCommand, bool>
+    IRedisCacheService redisCacheService) : IRequestHandler<DeleteProductCommand, StandardResponse>
 {
-    public async Task<bool> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
+    public async Task<StandardResponse> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
     {
         logger.LogInformation("Deleting a product with id: " + request.Id);
 
@@ -24,8 +25,11 @@ public class DeleteProductCommandHandler(ILogger<DeleteProductCommandHandler> lo
 
         if (product == null)
         {
-            logger.LogWarning("Product with id: " + request.Id + " not found");
-            return false;
+            return new StandardResponse
+            {
+                Success = false,
+                Message = $"Product with ID {request.Id} was not found"
+            };
         }
 
         await productRepository.Delete(product);
@@ -34,6 +38,10 @@ public class DeleteProductCommandHandler(ILogger<DeleteProductCommandHandler> lo
         string cacheKey = $"Product:{request.Id}";
         await redisCacheService.RemoveCacheAsync(cacheKey);
 
-        return true;
+        return new StandardResponse
+        {
+            Success = true,
+            Message = $"Delete product with ID {request.Id} successfully",
+        };
     }
 }

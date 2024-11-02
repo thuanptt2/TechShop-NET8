@@ -1,12 +1,13 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using TechShopSolution.Domain.Models.Common;
 using TechShopSolution.Domain.Models.Products;
 using TechShopSolution.Domain.Repositories;
 
 namespace TechShopSolution.Application.Queries.Products.GetAllProducts
 {
-    public class GetAllProductV2QueryHandler : IRequestHandler<GetAllProductV2Query, (IEnumerable<ProductDTO>, int)>
+    public class GetAllProductV2QueryHandler : IRequestHandler<GetAllProductV2Query, StandardResponse>
     {
         private readonly ILogger<GetAllProductV2QueryHandler> _logger;
         private readonly IMapper _mapper;
@@ -21,7 +22,7 @@ namespace TechShopSolution.Application.Queries.Products.GetAllProducts
             _productRepository = productRepository;
         }
 
-        public async Task<(IEnumerable<ProductDTO>, int)> Handle(GetAllProductV2Query request, CancellationToken cancellationToken)
+        public async Task<StandardResponse> Handle(GetAllProductV2Query request, CancellationToken cancellationToken)
         {
             var totalRecords = await _productRepository.CountAsync();
 
@@ -29,7 +30,18 @@ namespace TechShopSolution.Application.Queries.Products.GetAllProducts
 
             var productDTOs = _mapper.Map<IEnumerable<ProductDTO>>(products);
 
-            return (productDTOs, totalRecords);
+            return new StandardResponse
+            {
+                Success = true,
+                Data = productDTOs,
+                Message = "Product retrieved successfully",
+                Paging = new Paging
+                {
+                    CurrentPage = request.PageNumber,
+                    PageSize = request.PageSize,
+                    TotalRecords = totalRecords,
+                }
+            };
         }
     }
 }

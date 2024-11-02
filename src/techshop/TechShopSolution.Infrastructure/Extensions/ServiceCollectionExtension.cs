@@ -18,7 +18,8 @@ using TechShopSolution.Infrastructure.Repositories;
 using TechShopSolution.Infrastructure.Services;
 using TechShopSolution.Infrastructure.EventHandlers;
 using MongoDB.Driver;
-using TechShopSolution.Infrastructure.Configuration;
+using MediatR;
+using MediatR.Pipeline;
 
 namespace TechShopSolution.Infrastructure.Extensions;
 
@@ -121,5 +122,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IRedisCacheService, RedisCacheService>();
         services.AddMemoryCache();
         services.AddScoped<IMemoryCacheService, MemoryCacheService>();
+
+        
     }
 }

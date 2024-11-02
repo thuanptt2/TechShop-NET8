@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
+using FluentValidation.Results;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using TechShopSolution.Application.Events;
 using TechShopSolution.Domain.Entities;
+using TechShopSolution.Domain.Models.Common;
 using TechShopSolution.Domain.Models.Products;
 using TechShopSolution.Domain.Repositories;
 using TechShopSolution.Domain.Services;
@@ -13,18 +15,36 @@ public class UpdateProductCommandHandler(ILogger<UpdateProductCommandHandler> lo
     IMapper mapper,
     IKafkaProducerService kafkaProducerService,
     IProductRepository productRepository,
-    IRedisCacheService redisCacheService) : IRequestHandler<UpdateProductCommand, bool>
+    IRedisCacheService redisCacheService,
+    UpdateProductCommandValidator validator) : IRequestHandler<UpdateProductCommand, StandardResponse>
 {
-    public async Task<bool> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
+    public async Task<StandardResponse> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
     {
+        ValidationResult validationResult = validator.Validate(request);
+
+        if (!validationResult.IsValid)
+        {
+            var errors = validationResult.Errors.Select(e => e.ErrorMessage).ToList();
+
+            return new StandardResponse
+            {
+                Success = false,
+                Message = "Validation failed",
+                Data = errors
+            };
+        }
+        
         logger.LogInformation("Updating a product with id: " + request.Id);
 
         var product = await productRepository.GetByIdAsync(request.Id);
 
         if (product == null)
         {
-            logger.LogWarning("Product with id: " + request.Id + " not found");
-            return false;
+            return new StandardResponse
+            {
+                Success = false,
+                Message = $"Product with ID {request.Id} was not found"
+            };
         }
 
         mapper.Map(request, product);
@@ -42,6 +62,10 @@ public class UpdateProductCommandHandler(ILogger<UpdateProductCommandHandler> lo
         var productDTO = mapper.Map<ProductDTO>(product);
         await redisCacheService.SetCacheAsync(cacheKey, productDTO, TimeSpan.FromHours(1));
         
-        return true;
+        return new StandardResponse
+        {
+            Success = true,
+            Message = $"Update product with ID {request.Id} successfully",
+        };
     }
 }

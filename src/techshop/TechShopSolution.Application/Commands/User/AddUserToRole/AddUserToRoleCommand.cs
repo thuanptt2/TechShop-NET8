@@ -1,14 +1,8 @@
 using MediatR;
-using TechShopSolution.Domain.Entities;
+using TechShopSolution.Domain.Models.Common;
 
-public class AddUserToRoleRequest
+public class AddUserToRoleCommand : IRequest<StandardResponse>
 {
     public string? UserName { get; set; } 
-    public string? RoleName { get; set; }
-}
-
-public class AddUserToRoleCommand : IRequest
-{
-    public User? User { get; set; } 
     public string? RoleName { get; set; }
 }

@@ -8,6 +8,7 @@ using TechShopSolution.Domain.Entities;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using System.Threading.RateLimiting;
+using Microsoft.AspNetCore.HttpLogging;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -126,7 +127,16 @@ builder.Services.AddVersionedApiExplorer(options =>
         
 builder.Services.AddEndpointsApiExplorer();
 
+builder.Services.AddHttpLogging(logging =>
+{
+    logging.LoggingFields = HttpLoggingFields.All;
+    logging.RequestBodyLogLimit = 4096;
+    logging.ResponseBodyLogLimit = 4096;
+});
+
 var app = builder.Build(); // Build the app here (only once)
+
+app.UseHttpLogging();
 
 // Ensure the logs directory exists
 var logsPath = Path.Combine(builder.Environment.ContentRootPath, "wwwroot", "logs");
@@ -161,7 +171,7 @@ app.MapGroup("api/identity")
 
 // Register the custom middleware
 app.UseMiddleware<CustomUnauthorizedMiddleware>();
-app.UseMiddleware<UnhandledExceptionLoggingMiddleware>();
+//app.UseMiddleware<UnhandledExceptionLoggingMiddleware>();
 
 app.UseAuthorization();
 

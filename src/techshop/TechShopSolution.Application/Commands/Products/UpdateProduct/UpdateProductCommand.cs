@@ -1,8 +1,9 @@
 ﻿using MediatR;
+using TechShopSolution.Domain.Models.Common;
 
 namespace TechShopSolution.Application.Commands.Products.UpdateProduct;
 
-public class UpdateProductCommand : IRequest<bool>
+public class UpdateProductCommand : IRequest<StandardResponse>
 {
     public int Id { get; set; } = default!;
     public string Name { get; set; } = default!;
